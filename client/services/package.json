@@ -1,0 +1,9 @@
+{
+  "name": "chromaneural-node-service",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@icp-sdk/core": "5.4.0"
+  }
+}

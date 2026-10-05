@@ -1,0 +1,51 @@
+name: Native MCP candidate acceptance
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      mac_deadline:
+        type: boolean
+        default: false
+      delta:
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  mcp:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(inputs.mac_deadline && '["macos-15-intel"]' || '["windows-2025","ubuntu-24.04","macos-15-intel"]') }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      REMOTE_EXECUTION: DISABLED
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14.0'
+      - name: Linux native prerequisites
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y python3-tk python3-pip xvfb
+      - name: Native Linux MCP staging and acceptance
+        if: runner.os == 'Linux'
+        run: xvfb-run -a /usr/bin/python3 -B packaging/mcp_native.py ${{ inputs.mac_deadline && '--mac-deadline' || inputs.delta && '--delta' || '' }}
+      - name: Native Windows/macOS MCP staging and acceptance
+        if: runner.os != 'Linux'
+        run: python -B packaging/mcp_native.py ${{ inputs.mac_deadline && '--mac-deadline' || inputs.delta && '--delta' || '' }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: MCP-0.2.21-rc.3-${{ matrix.os }}
+          path: |
+            build/mcp-acceptance/STARTUP.json
+            build/mcp-acceptance/RESULT.json
+            build/mcp-acceptance/acceptance.log
+            build/mcp-acceptance/MCP_PAYLOAD_SHA256SUMS.txt
+          if-no-files-found: warn
+          retention-days: 14

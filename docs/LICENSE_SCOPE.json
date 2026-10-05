@@ -1,0 +1,495 @@
+{
+  "mainLicense": "Apache-2.0",
+  "copyright": "Copyright (c) 2026 Janus Rokkjær",
+  "publicDistributionCleared": true,
+  "reason": "Refract provenance checked; first MIT license explicitly authorized 2026-10-01. Source-license clearance only, not native artifact acceptance or publication approval.",
+  "files": [
+    {
+      "path": "client/chroma/ai_provider.py",
+      "sha256": "b83a4231c2a9efb3820a41062970089a69ac038c930e3b53e2bc5585c016a303",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/ai_provider_worker.py",
+      "sha256": "76ff7f8f930b342d317276243e286fbd3a5af906f288ffadc5d28724e3ba0ec7",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/assistance.py",
+      "sha256": "256cee4308a990c02d798f47e748892ffd22a417762b40480a594bc39fb79e3c",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/collaboration.py",
+      "sha256": "b3cb4446b8df52da892c8593ffd500601ca69df6829a2528685048319a2ab9f0",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/connection_probe.py",
+      "sha256": "f4bea5318db271c4d26e00e87f36c37b08561d80747f79475285670553bde15b",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/connection_profile.py",
+      "sha256": "a54636ac6c1c7c6f0e78ea6d25c33762f471e33e5bf601f73472df25240887e3",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/connection_ui.py",
+      "sha256": "2d48c03fcff731b3672ba7bb1f8d02059bae870a82bf314b038984de28584a11",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/dashboard.py",
+      "sha256": "263efb213d228eaad195b1a79e455a81b0fbcacb7a88be807600cf1e2c775d35",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/engine.py",
+      "sha256": "8e8c6a624270de6a86b0f949ab8e5c99add527b2c63b88e55ef55b0dfc215980",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/formats.py",
+      "sha256": "5fdcaa8d0ae8a861b1e2ec6997ef21de00f33338e8e108ee717a7479e1b517a6",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/icp_client.py",
+      "sha256": "53da1254369d4c1b94be4f184cd20fd2c89b8ba09d10feab86555342781378e6",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/local_ai.py",
+      "sha256": "af0bb5eb9f03807eba43c76a5bc2960dc368260b7c5069a203c12212d3ea2324",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/native_ai.py",
+      "sha256": "7a06fea2c8d3e670b49cdba1ae00cea82c1448b062a04be7e2b2ea6bb1108294",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/network_state.py",
+      "sha256": "4fa1e0bf82c7a392dd7288b5f9446b831ad6fe84bc965b6099d604b12d2ffad8",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/node_setup.py",
+      "sha256": "b489833f2321dbed06d5ef380861689be9cd6226ec0fc42df13a03426230a972",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/participation.py",
+      "sha256": "01a304a4baa4692db2c614a2cf52ae41a19551bb77d957c9581b21220d6ef6ae",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/policy.py",
+      "sha256": "a1ebc360ac48cd517c6dc87bacc69560ddef361ab830f6e6aea2af8213840396",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/process_lifetime.py",
+      "sha256": "9ccd0060c9b788083f4d42fbdc5ec54a1113930099037a4ddb973aece4a59733",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/publication.py",
+      "sha256": "74fdd17bcb1d6680aa494f95cc1db49a227b966c13f04e27f31e298f82eb9592",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/sandbox.py",
+      "sha256": "d5f5589dd7929083cb4b5937bc21826457a12bbafff44b62f6d9d92a7adbb369",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/settings.py",
+      "sha256": "be110375739a11182908db2c7817dda79af335d2bae183874385708c4f57bec2",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/speech.py",
+      "sha256": "50900f5558a5209c4ced4e623724b8d87ddfca69c21c610bb42926726372e563",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/speech_cli.py",
+      "sha256": "904412727770fc058c2328b7857491ecb962e3c7c7406d128eac53fcb8c6bc5f",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/speech_identity.py",
+      "sha256": "6d92ffc5a1e392ea4194dd76b99d1418dc7cc6855ba3c01071d4ed7e7a6666b0",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/storage.py",
+      "sha256": "5acc5dca0dfe8983b1423ab9036fafee40d6ba05f00f94d96223da529dce8385",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/targets.py",
+      "sha256": "1acff05ff27c6fdeab28598d3df58014d6e0a3b82d587bff116611c5a87a71ba",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/target_ui.py",
+      "sha256": "09e65c9d0bdc16fed34ef05a10a64e9fe417172fa9ffa2cc8afbf77ddc282a36",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/theme.py",
+      "sha256": "0c17acda04cb0606df50d816bf4c8c2cdd36aa77a8692402ace49974eab133a4",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/transport.py",
+      "sha256": "2f280c0658d991e27e96ae467622e6094ab5e9435b70887b2ec6dc2a86f5a4a4",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/tray.py",
+      "sha256": "8c9e7dc701cc878079a7fa25343e6f28668436e635b4c6c0cea063f7b8dc3ac0",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/ui.py",
+      "sha256": "8d05f4699da40c0319031337e5d7581f15c27ab9a046ed0c6b86a3282d732f77",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/worker.py",
+      "sha256": "b4e71b7a45a2c2fbd7e10970facdb096d6588a522b906b0e0cc8318cc5cbff30",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/worker_resources.py",
+      "sha256": "52122745ef0d9b76e71b2b03ef4f1433bca8fc2f144c3682522eec62ab91215b",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/work_queue.py",
+      "sha256": "e83eb2bf4e497cc6d9a1cad84c761104d1f730255c12d8be19c4abf2c9805d21",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/__init__.py",
+      "sha256": "8ffda24c1993fd8d483ffae067730dda5ddc6145dab1e8f8c031311def4e65bd",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/chroma/speech_wire/frame.py",
+      "sha256": "71addd4dcd8fee817ba228786b8f7067cdbb07b50d6afb7aaacbc2e2fbaa8a51",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/chroma/speech_wire/lan.py",
+      "sha256": "5339fd82ccffc2e1af454c8ffb6c2880d811a632efa32c61981b17f09bd72c47",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/chroma/speech_wire/LICENSE",
+      "sha256": "1450404980c163e952128750672cf6e12ab12445fe0d58a7ed8613f65927ab7b",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/chroma/speech_wire/__init__.py",
+      "sha256": "fb526df10d60187d228e8f868b8808858f3834ba4622b7db6956f1ffa23c6b97",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/reference_core/cpl_adapter.py",
+      "sha256": "80a61666d4dff31174987c10dc8bfa3e002e4a304eb9d200967c3cc4b860013e",
+      "category": "C",
+      "license": "MIT",
+      "licenseFile": "client/reference_core/LICENSE"
+    },
+    {
+      "path": "client/reference_core/optical_bridge.py",
+      "sha256": "baf52ff453a04b433f077e6ff8f1e89679de4a917776e490cc35a668f9882bf3",
+      "category": "C",
+      "license": "MIT",
+      "licenseFile": "client/reference_core/LICENSE"
+    },
+    {
+      "path": "client/reference_core/prisme_isa.py",
+      "sha256": "6f34c043a0a491b1efa6fbeb4b0e213b627842b8733ef3f5612d6bd5edd58108",
+      "category": "C",
+      "license": "MIT",
+      "licenseFile": "client/reference_core/LICENSE"
+    },
+    {
+      "path": "client/reference_core/prisme_runner.py",
+      "sha256": "247bf52d14b9cd3936dd4a12caee3e04407568e3bf2f9ba12a821a3cfee3b432",
+      "category": "C",
+      "license": "MIT",
+      "licenseFile": "client/reference_core/LICENSE"
+    },
+    {
+      "path": "client/reference_core/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/vendor/chromaplex-main/LICENSE",
+      "sha256": "a083f710b6b919f99dd8811717f33e20954c2201ed531b1deca3cb6a1bc7582a",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-toolchain/LICENSE",
+      "sha256": "1450404980c163e952128750672cf6e12ab12445fe0d58a7ed8613f65927ab7b",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-toolchain/chromaplex_os/assembler.py",
+      "sha256": "0c965334a801de53efbd6c3ea7d56eb664dfd84923729a4ffccb11b0001a5a8b",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-toolchain/chromaplex_os/compiler.py",
+      "sha256": "e3e9cbf356af4273879bd779304e2f34f44a8975ca19f09d8581f6f627f06ed6",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-toolchain/chromaplex_os/hardware.py",
+      "sha256": "3985e5cfe2fab45af6dfc4bbc501536305a0c8220df02ff736adea0202e0c5a8",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-toolchain/chromaplex_os/spec.py",
+      "sha256": "25c73b7967cdfe3ea1f9b6598e13ad18bc631e93905e5f03eac575ef421e4988",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-toolchain/chromaplex_os/storage.py",
+      "sha256": "0be4abf15d9f8a886eedc3b7e471e1a4af2ed5ff67de3356f389b78c5b9ace8f",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-toolchain/chromaplex_os/vm.py",
+      "sha256": "32ac11d373f4bb619e334982a9f0bcc6be4c42f52f34ead816bfc94b50962e34",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-toolchain/chromaplex_os/__init__.py",
+      "sha256": "66b79a7c1e248abe94297bbb17bd04d1348508729047dec414c4f082f001bca0",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-main/chromaplex/cpa_assembler.py",
+      "sha256": "1108d530e00174b754553890af0aace7ae854dbae23e2cbfda483ef085ee11df",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-main/chromaplex/cpl_compiler.py",
+      "sha256": "3a8ee5b06a50f6fe7b1e36b295adab5c3ee8b318e3970fd51e74f457f035cad5",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-main/chromaplex/crystal_simulator.py",
+      "sha256": "b711c1d1f6bf306b190f498872740a366014ef4a429f12e44ea864ca2fca4c19",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-main/chromaplex/utils.py",
+      "sha256": "8c0c803f9736368aec4a02333641318af1dd0e2077a254f446a8f779558baea4",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/vendor/chromaplex-main/chromaplex/__init__.py",
+      "sha256": "9270ba1df54883b52e1b7fa242e473a5dcd367906a5fb098ab8d8ce6ca33626b",
+      "category": "C",
+      "license": "MIT"
+    },
+    {
+      "path": "client/services/backend.did.js",
+      "sha256": "4805f8d641117de197081dc94fbd31905ec19150861fc944f7906be4657c3e9a",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/services/connection_probe.mjs",
+      "sha256": "8352a14bcfb8552cdb73460892e189f652ee7929bbb360d00856939fe8240510",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/services/icp_bridge.mjs",
+      "sha256": "e37b6908f806ab4046071c1739fa4731853cc3c36f057b6744e311c4278b12fb",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/services/node_connection.mjs",
+      "sha256": "050a460ffde1247419d3bb467bb18052520adc7d242084e3161545eaca2056b5",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/services/package-lock.json",
+      "sha256": "da604f671ec30ffa39787bce67bf696e9dcff65e0597dd26fc8d7339945cea6d",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/services/package.json",
+      "sha256": "9505b3792081ce5d342f0ea8ba4b5965a05f826a182f1cad2359de493989976a",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/services/publication.mjs",
+      "sha256": "6df820d3a582ba09730ead5f55e08f7a041deff1498121b57af52c50ee02ac87",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/assets/chroma.ico",
+      "sha256": "068b2af03ca5a6bd432d24410cc11d0fb0daa39a4beb439d5c414acde55eb0f5",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/launch.py",
+      "sha256": "c4cb917cad69fb8640cf38446a46e6a426af56e035091f1ae93bfd455176090a",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/Start-ChromaNeural.ps1",
+      "sha256": "b0f1515fa3c93432c62706f700191551300fea7aa737e77e39939e5434718484",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/start-linux.sh",
+      "sha256": "11fee79812a0ad1da84a6151d22565ef57e39839bd5b3d97d12f15aca08a7034",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/scripts/dashboard_smoke.py",
+      "sha256": "64fc3a03864bead08e5f0051891c4d44f50ac7f6f914bea06f4760ec441d24cf",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "client/scripts/gui_smoke.py",
+      "sha256": "0688b71ed0f20272cea7d99bb71ad1ce2f1ed1180d0eeeb3d55da56a02aa7007",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "Start-ChromaNeural.ps1",
+      "sha256": "82cbd843d1ceb15ada4f8df333a61036b7e0bb561353b6a5b355a0e601461c08",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "Install-ChromaNeural.ps1",
+      "sha256": "b53c18684af2cc3d9e736c7d564405b7579d8e5149bcb8e62ba1609f22622738",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "ChromaSpeech-WSL.ps1",
+      "sha256": "f9995e8338512cc723a313f3d97309686322f99541c87a00d575801f2b8469e3",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "ChromaNetwork-WSL.ps1",
+      "sha256": "88f49d293d6ef120087077ff726fd438ab3855a72d1966b15129988a717ba28a",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "scripts/network_client.py",
+      "sha256": "b12f4a66a4139eeb70426db68ad7c089f2a9b474a9b0b79e4c00573abc46f218",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "scripts/peer_provider.py",
+      "sha256": "37a5be6bfbb1b0282d7c6a2f939cb98ba2c3231f518cf19c247ab4b2efd7bbbf",
+      "category": "A",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "scripts/prepare_node_runtime.py",
+      "sha256": "92610c2ae83c753b16a6a8cbbc201ba8f67ff7bac6a03e7a8978b3fc50341991",
+      "category": "A",
+      "license": "Apache-2.0"
+    }
+  ],
+  "otherFirstPartyMaterial": "New release documentation and packaging scripts only. Upstream license texts, third-party assets and notices are excluded.",
+  "separateComponents": [
+    "client/vendor/",
+    "client/chroma/speech_wire/",
+    "client/reference_core/cpl_adapter.py",
+    "client/reference_core/optical_bridge.py",
+    "client/reference_core/prisme_isa.py",
+    "client/reference_core/prisme_runner.py",
+    "client/services/node_modules/",
+    "packaging/windows-optional-deps/",
+    "client/optional-deps/",
+    "models/",
+    "runtime/",
+    "docs/licenses/"
+  ]
+}

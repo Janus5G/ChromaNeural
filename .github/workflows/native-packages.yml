@@ -1,0 +1,93 @@
+name: Native release candidate packages
+on:
+  workflow_dispatch:
+    inputs:
+      installer_only:
+        description: "Only rc.4 installer acceptance; reuse closed MCP/GUI gates"
+        type: boolean
+        default: false
+      mcp_mac_deadline:
+        description: "Continue macOS MCP deadline diagnostic only"
+        type: boolean
+        default: false
+      mcp_delta:
+        description: "Run only MCP timeout/target-binding continuation"
+        type: boolean
+        default: false
+      mcp_only:
+        description: "Run only additive MCP native staging/runtime acceptance"
+        type: boolean
+        default: false
+      windows_only:
+        description: 'Retest only Windows when Linux and macOS already passed'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  mcp:
+    if: inputs.mcp_only
+    uses: ./.github/workflows/mcp-acceptance.yml
+    with:
+      mac_deadline: ${{ inputs.mcp_mac_deadline }}
+      delta: ${{ inputs.mcp_delta }}
+  package:
+    if: ${{ !inputs.mcp_only }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(inputs.windows_only && '[{"os":"windows-2025","platform":"windows-x64"}]' || '[{"os":"windows-2025","platform":"windows-x64"},{"os":"ubuntu-24.04","platform":"linux-amd64"}]') }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      REMOTE_EXECUTION: DISABLED
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14.0'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24.13.0'
+      - name: Native Linux prerequisites
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y python3-tk python3-cryptography python3-pip libgomp1 xvfb
+      - name: Native macOS crypto prerequisites
+        if: runner.os == 'macOS'
+        run: 'python -m pip install --require-hashes --only-binary=:all: -r packaging/requirements-runtime.txt'
+      - name: Verify Windows installer prerequisites before build
+        if: runner.os == 'Windows'
+        run: |
+          python -c "import shutil,sys,subprocess; print('build Python:',sys.executable); print({n:shutil.which(n) for n in ['py.exe','pyw.exe','node.exe']}); subprocess.run(['py.exe','-0p'],check=False) if shutil.which('py.exe') else None; assert shutil.which('py.exe') and shutil.which('pyw.exe'), 'Official Python launcher py/pyw prerequisite is missing'; subprocess.run(['py.exe','-3','-c','import sys,tkinter; print(sys.executable,sys.version); assert sys.version_info >= (3,14)'],check=True)"
+      - name: Bind accepted application source for installer build
+        if: inputs.installer_only
+        run: python -B packaging/installer_acceptance.py source
+      - name: Validate curated checkout and packaging tests
+        if: ${{ !inputs.installer_only }}
+        run: python -B packaging/check_release.py
+      - name: Build on native runner
+        run: python -B packaging/build.py
+      - name: Native Linux package smoke
+        if: runner.os == 'Linux'
+        run: xvfb-run -a /usr/bin/python3 -B packaging/smoke.py ${{ inputs.installer_only && '--installer-only' || '' }}
+      - name: Native Windows or macOS package smoke
+        if: runner.os != 'Linux'
+        run: python -B packaging/smoke.py ${{ inputs.installer_only && '--installer-only' || '' }}
+      - name: Curated source archive
+        if: runner.os == 'Windows'
+        run: python -B packaging/source_archive.py
+      - name: Final installer artifact hashes and build environment
+        if: inputs.installer_only
+        run: python -B packaging/installer_acceptance.py finalize
+      - name: Final artifact hashes and build environment
+        if: ${{ !inputs.installer_only }}
+        run: python -B packaging/check_release.py --artifacts
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ChromaNeural-0.2.21-rc.4-${{ matrix.platform }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14

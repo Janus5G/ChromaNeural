@@ -1,0 +1,102 @@
+[
+  {
+    "path": "client/locale-registry.json",
+    "sha256": "52d06e0cfd3a7a89c585a4bc72ae404576161fe17fa7089a2c45b0152ac90753",
+    "reason": "Previously verified localization/docs resource or documented reference-core license; explicit added-file inventory."
+  },
+  {
+    "path": "client/chroma/i18n.py",
+    "sha256": "d46dd8cb3b216056a45f6feed68fb0bfabd9d33e694922ab9e1856ed99d79d44",
+    "reason": "Previously verified localization/docs resource or documented reference-core license; explicit added-file inventory."
+  },
+  {
+    "path": "client/chroma/localized_dialogs.py",
+    "sha256": "4e8f8363376132e0d74b6660a9a48593f29fbc29c9a429d65e7de5ce6fd0927a",
+    "reason": "Previously verified localization/docs resource or documented reference-core license; explicit added-file inventory."
+  },
+  {
+    "path": "client/chroma/localized_views.py",
+    "sha256": "116099a0d51e4ae0b489d7da052d1f1802fd9e889288c214f8143a9fbc4a6299",
+    "reason": "Previously verified localization/docs resource or documented reference-core license; explicit added-file inventory."
+  },
+  {
+    "path": "client/docs/TARGETS.json",
+    "sha256": "e4b10c19a38a642461e98cecea4653033013ca9188604759b3d34c399efbe628",
+    "reason": "Previously verified localization/docs resource or documented reference-core license; explicit added-file inventory."
+  },
+  {
+    "path": "client/locales/da.json",
+    "sha256": "7759a62ecf082d25f2e990dca304aabdb051aef134fd7458bb4196c1bac24a60",
+    "reason": "49 additive MCP/onboarding messages; existing messages unchanged."
+  },
+  {
+    "path": "client/locales/de.json",
+    "sha256": "2fb6ca17c01f7f5b8ae78d013a3a20b7fdd90977966b7e5bc4ca2faf09d4bbbb",
+    "reason": "49 additive MCP/onboarding messages; existing messages unchanged."
+  },
+  {
+    "path": "client/locales/en.json",
+    "sha256": "80a56034886f84a10086ec209da75ab4f357df4203ff1ab94deea86156732dfa",
+    "reason": "49 additive MCP/onboarding messages; existing messages unchanged."
+  },
+  {
+    "path": "client/locales/fr.json",
+    "sha256": "2e69e7aa7f95989e15d6f47cdc8aca6d6db1d379ed14bf313ff57b160e2c92fb",
+    "reason": "49 additive MCP/onboarding messages; existing messages unchanged."
+  },
+  {
+    "path": "client/locales/hi-IN.json",
+    "sha256": "1afd4df1aa4255976daf0f8b8c615997b684ee4cb07bc5f18e2ee4dc9be5234e",
+    "reason": "49 additive MCP/onboarding messages; existing messages unchanged."
+  },
+  {
+    "path": "client/locales/ja.json",
+    "sha256": "ac0498b6456f6a2a4b52e460cd15ee6f93eaa494068015ce41f23626e31bb2ee",
+    "reason": "49 additive MCP/onboarding messages; existing messages unchanged."
+  },
+  {
+    "path": "client/locales/zh-CN.json",
+    "sha256": "646b9d3702afeb3277471e59142f61b02ae69d80c709dca4adabba4425e05210",
+    "reason": "49 additive MCP/onboarding messages; existing messages unchanged."
+  },
+  {
+    "path": "client/reference_core/LICENSE",
+    "sha256": "1450404980c163e952128750672cf6e12ab12445fe0d58a7ed8613f65927ab7b",
+    "reason": "Previously verified localization/docs resource or documented reference-core license; explicit added-file inventory."
+  },
+  {
+    "path": "client/reference_core/NOTICE",
+    "sha256": "d12c00c03009a875280503fc3d313f345aec0c18c5632d123bb6dea5da3c9abb",
+    "reason": "Previously verified localization/docs resource or documented reference-core license; explicit added-file inventory."
+  },
+  {
+    "path": "client/chroma/mcp_config.py",
+    "sha256": "9376edab04a5aa1df4551184cff16a1b65213b9e57296cfd540d084cc09c4ee2",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  },
+  {
+    "path": "client/chroma/mcp_client.py",
+    "sha256": "f8cb8cd57c18fcc4611e57ab32170f6f0df1e454c1c8cf6bcfb09e0d4e743e3b",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  },
+  {
+    "path": "client/chroma/mcp_provider.py",
+    "sha256": "732a961cf1cf68ce14e3e177df72b9c1f056165d57f05342b80561b280c3623d",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  },
+  {
+    "path": "client/chroma/mcp_worker.py",
+    "sha256": "1cf0569b6603a639dc9d4ebbcc8f13345fe4568c6dc1ac9b6a1ad669d10248cb",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  },
+  {
+    "path": "client/chroma/onboarding.py",
+    "sha256": "6a56ca1534a6d2b3312cea869ced55112602078a0bcd2a91ac8b15e3ab41c57a",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  },
+  {
+    "path": "client/chroma/onboarding_ui.py",
+    "sha256": "fd1ca9c7fb5e9e039ec4eabc49b1dcd3983afb78995f0fd43bc676d3923a572c",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  }
+]
