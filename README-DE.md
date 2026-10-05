@@ -1,14 +1,14 @@
 <p align="center"><img src="docs/images/chroma-neural-hero.png" alt="ChromaNeural — Lokale Intelligenz. Ausdrücklich genehmigte Zusammenarbeit." width="1000"></p>
 <p align="center"><strong>ChromaNeural 0.2.21-rc.4</strong><br>Release Candidate / Vorabversion</p>
-<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="docs/de/ChromaNeural-Installation.md">Installation</a> · <a href="docs/README.md">Dokumentation und englische PDFs</a> · <a href="VERIFICATION.md">Verifizierte Funktionen</a> · <a href="KNOWN_LIMITATIONS.md">Einschränkungen</a></p>
+<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="INSTALLATION.md">Installation</a> · <a href="docs/README.md">Dokumentation und englische PDFs</a> · <a href="VERIFICATION.md">Verifizierte Funktionen</a> · <a href="KNOWN_LIMITATIONS.md">Einschränkungen</a></p>
 
 # ChromaNeural
 
-**RC4 erscheint nur für Windows x64 und Linux amd64. macOS, Android und iOS gehören nicht zum Umfang dieser Veröffentlichung.**
+**RC4 unterstützt nur Windows x64 und Linux amd64.**
 
 [English](README.md) · [Dansk](README-DK.md) · [Deutsch](README-DE.md) · [Français](README-FR.md) · [日本語](README-JA.md) · [简体中文](README-ZH-CN.md) · [हिन्दी](README-HI-IN.md)
 
-**RC4 lokaler Kandidat: NICHT VERÖFFENTLICHT.** Die neue Paket- und Sicherheitsabnahme steht aus. Frühere Funktionsnachweise gelten nur bei unveränderten Quellcode-Hashes. [Status und Grenzen](RELEASE_NOTES.md).
+**RC4 veröffentlichte Vorabversion: VERIFIED/PASS.** Windows/Linux-Pakete, sauberer Erststart und manuelle Abnahme durch den Eigentümer bestanden. [Status und Grenzen](RELEASE_NOTES.md).
 
 **Lokale KI-Arbeit, authentifizierte Peer-Zusammenarbeit und eine klare Grenze zwischen privater Arbeit und geteilten Ergebnissen.**
 
@@ -67,7 +67,7 @@ Das optionale CLI-Argument `--language` überschreibt die Sprache nur für diese
 | Funktion | Verfügbarer Umfang |
 |---|---|
 | Hintergrundarbeit | Bereits genehmigte lokale Aufträge in bestehender dauerhafter Warteschlange mit Leases, Pause, Abbruch, Stopp und Neustart. |
-| Lokale KI-Anbieter | Gebündelte CPU/Qwen-Inferenz für Windows/Linux; ausdrücklich gewählter lokaler Ollama-Adapter mit Modell. Kein stiller Anbieterwechsel. macOS ohne gebündelte Inferenzlaufzeit. |
+| Lokale KI-Anbieter | Gebündelte CPU/Qwen-Inferenz für Windows/Linux; ausdrücklich gewählter lokaler Ollama-Adapter mit Modell. Kein stiller Anbieterwechsel. |
 | Peer-Zusammenarbeit | Genehmigte Fragen und Antworten bleiben über bestehenden TLS-Transport und SQLite-Posteingang mit dem ursprünglichen Codevorschlagsauftrag verbunden. |
 | Ressourcenkontrolle | Dokumentiertes Windows-Profil steuert CPU-Zeitplanung, Inferenzthreads, zugesicherten Speicher und Lebenszyklus. Gesamter physischer RAM ist nicht garantiert. Andere kontrollierte Anbieter-/OS-Profile werden sicher abgelehnt. |
 | Ergebnisse | Lokale und Peer-Beiträge behalten Herkunft und Prüfstatus. Ausgabe bleibt unverifiziert, bis die bestehende maßgebliche Verifikation sie akzeptiert. |
@@ -101,7 +101,7 @@ Einstellungen, Warteschlange und Protokolle speichert der Desktop lokal. Ein Arb
 | Ort | Standard |
 |---|---|
 | Windows-Clientzustand | `%LOCALAPPDATA%\ChromaNeural\client` |
-| Linux-/macOS-Clientzustand | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
+| Linux-Clientzustand | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
 | Arbeitsdateien | Ausdrücklich gewählter Ordner; kein automatischer Upload des gesamten Ordners |
 | Private Browserdaten | Bestehende Webanwendung unter dem authentifizierten Internet Identity-Aufrufer |
 
@@ -109,7 +109,7 @@ Einstellungen, Warteschlange und Protokolle speichert der Desktop lokal. Ein Arb
 
 **Private II storage** informiert in dieser Version nur. Nativer privater Datei-Upload/-Download mit Browser-Eigentümerberechtigung ist nicht implementiert. Nutzung der Webanwendung überträgt keine Sitzung an den Node. Lokale Datenschutz-/Zugriffsschutzprüfung belegt keine Bereitstellung dieser Korrekturen im Live-Dienst.
 
-## Historische rc.1-Plattformen und Downloads
+## RC4-Plattformen und Downloads
 
 | Offizielle Vorabplattform | Download | Verifizierter Umfang |
 |---|---|---|
@@ -117,15 +117,14 @@ Einstellungen, Warteschlange und Protokolle speichert der Desktop lokal. Ein Arb
 | Linux amd64 | [Debian-Paket](RELEASE_NOTES.md) | Native Ubuntu-24.04-Erstellung, Entpacken, SDK/CLI, Xvfb/Tk; kein vollständiger Installations-/Entfernungszyklus |
 | Quellcode | [Akzeptierte Quellcode-ZIP](RELEASE_NOTES.md) | Quellcode der akzeptierten Veröffentlichung; Dokumentation kann neuer sein |
 
-**Voraussetzungen:** Windows: Python 3.14 mit Tk, `py`/`pyw`, Node.js 24. Linux: Python 3.11+, Tk, cryptography, Node.js 20+, libgomp1. macOS: macOS 15+, Python 3.14/Tk, Node.js 24 und festgelegte Python-Kryptografieabhängigkeiten. Lesen Sie vor dem Download die [Installation](docs/de/ChromaNeural-Installation.md).
+**Voraussetzungen:** Windows: Python 3.14 mit Tk, `py`/`pyw`, Node.js 24. Linux: Python 3.11+, Tk, cryptography, Node.js 20+, libgomp1.  Lesen Sie vor dem Download die [Installation](INSTALLATION.md).
 
-Pakete sind **unsigniert**, macOS **nicht notarisiert**. Keine Universal-2-Version. Betriebssystemwarnungen sind möglich. Einschränkungen der Linux-/macOS-Starter- und Windows-Installersymbole stehen im [Brandingstatus](docs/BRANDING.md).
+Pakete sind **unsigniert**. Betriebssystemwarnungen sind möglich. Siehe [Brandingstatus](docs/BRANDING.md).
 
-Offizielle Android- und iOS-Unterstützung ist auf später verschoben.
 
 ### Download prüfen
 
-Laden Sie [SHA256SUMS.txt](RELEASE_NOTES.md) mit dem Paket herunter. Windows: `Get-FileHash -Algorithm SHA256`; Linux: `sha256sum`; macOS: `shasum -a 256`. Vergleichen Sie den vollständigen Wert zum genauen Dateinamen. SHA-256 prüft Bytes, nicht Herausgeberidentität. [Alle veröffentlichten Hashes und Befehle](docs/DOWNLOADS.md).
+Laden Sie [SHA256SUMS.txt](RELEASE_NOTES.md) mit dem Paket herunter. Windows: `Get-FileHash -Algorithm SHA256`; Linux: `sha256sum`. Vergleichen Sie den vollständigen Wert zum genauen Dateinamen. SHA-256 prüft Bytes, nicht Herausgeberidentität. [Alle veröffentlichten Hashes und Befehle](docs/DOWNLOADS.md).
 
 GitHub änderte den DEB-Downloadnamen von `~rc.1` auf `.rc.1`. Bytes und Inhaltshash sind unverändert.
 
@@ -138,7 +137,7 @@ Die erhaltene rc.2-Dokumentationsbasis ist VERIFIED/PASS: 35 PDFs in sieben Spra
 | Überblick | [System und Ablauf](docs/de/ChromaNeural-Overview.md) | [Überblick](docs/pdf/ChromaNeural-Overview.pdf) |
 | Benutzerhandbuch | [Client verwenden](docs/de/ChromaNeural-User-Guide.md) | [Benutzerhandbuch](docs/pdf/ChromaNeural-User-Guide.pdf) |
 | Datenschutz und Speicherung | [Daten, Pfade, Identität](docs/de/ChromaNeural-Privacy-and-Storage.md) | [Datenschutz und Speicherung](docs/pdf/ChromaNeural-Privacy-and-Storage.pdf) |
-| Installation | [Windows, Linux, macOS](docs/de/ChromaNeural-Installation.md) | [Installation](docs/pdf/ChromaNeural-Installation.pdf) |
+| Installation | [Windows, Linux](INSTALLATION.md) | [Installation](docs/pdf/ChromaNeural-Installation.pdf) |
 | Verifizierte Funktionen | [Belege und Grenzen](docs/de/ChromaNeural-Verified-Capabilities.md) | [Verifizierte Funktionen](docs/pdf/ChromaNeural-Verified-Capabilities.pdf) |
 
 Für Entwickler: [Reproduktion und Nachweise](VERIFICATION.md), [Mitwirken](CONTRIBUTING.md), [Änderungsprotokoll](CHANGELOG.md), [Lizenzgrenzen](docs/LICENSING.md).

@@ -2,7 +2,9 @@
 
 [English](../en/README.md) · [Dansk](../da/README.md) · [Deutsch](../de/README.md) · [Français](README.md) · [日本語](../ja/README.md) · [简体中文](../zh-CN/README.md) · [हिन्दी](../hi-IN/README.md)
 
-**Vérification rc.3 : VERIFIED/PASS.** L’acceptation native des installateurs/paquets Windows x64, Linux amd64 et macOS Intel a réussi dans le périmètre documenté. Localisation, i18n extensible, captures et PDF sont vérifiés. MCP et configuration, y compris l’utilisation d’un outil par un vrai modèle, ont réussi. Les [notes rc.3 actuelles (anglais)](../../RELEASE_NOTES.md) précisent le commit de compilation et les limites. Les téléchargements rc.1 et preuves anciennes ci-dessous restent historiques.
+**RC4 préversion publiée : VERIFIED/PASS.** Paquets Windows/Linux, premier démarrage sans état antérieur et validation manuelle du propriétaire réussis. [État et limites](../../RELEASE_NOTES.md).
+
+Guides historiques rc.2 ; les plateformes indiquées décrivent leur périmètre initial. Installation RC4 actuelle : [Windows x64 / Linux amd64](../../INSTALLATION.md).
 
 [README](../../README-FR.md)
 

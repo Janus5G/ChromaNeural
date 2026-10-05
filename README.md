@@ -5,11 +5,11 @@
 
 # ChromaNeural
 
-**RC4 release platforms: Windows x64 and Linux amd64 only. macOS, Android and iOS are outside this release scope.**
+**RC4 release platforms: Windows x64 and Linux amd64 only.**
 
 [English](README.md) · [Dansk](README-DK.md) · [Deutsch](README-DE.md) · [Français](README-FR.md) · [日本語](README-JA.md) · [简体中文](README-ZH-CN.md) · [हिन्दी](README-HI-IN.md)
 
-**RC4 local candidate: NOT RELEASED.** New package and security acceptance is pending. Previously verified functionality is reused only through unchanged source hashes. [Current status and limits](RELEASE_NOTES.md).
+**RC4 published prerelease: VERIFIED/PASS.** Windows/Linux packages, clean-state startup and owner manual acceptance passed. [Current status and limits](RELEASE_NOTES.md).
 
 **Local AI work, authenticated peer collaboration, and a clear boundary between private work and shared results.**
 
@@ -70,7 +70,7 @@ No Internet Identity session is transferred to the desktop.
 | Capability | What is available in this release |
 |---|---|
 | Background work | Already approved local jobs run through the existing persistent queue, with leases, pause, cancellation, stop and restart handling. |
-| Local AI providers | Bundled CPU/Qwen path on Windows/Linux; explicit local Ollama adapter with a selected model. No silent provider fallback. macOS has no bundled inference runtime. |
+| Local AI providers | Bundled CPU/Qwen path on Windows/Linux; explicit local Ollama adapter with a selected model. No silent provider fallback. |
 | Peer collaboration | Approved questions and replies remain correlated to the original code-proposal task using the existing TLS transport and SQLite inbox. |
 | Resource controls | Documented Windows bundled-CPU profile controls CPU scheduling, inference threads, committed memory and lifecycle. Total physical RAM is not guaranteed. Other controlled provider/OS profiles fail closed. |
 | Results | Local and peer contributions retain their origin and review status. Output remains unverified until the existing authoritative verification process accepts it. |
@@ -104,7 +104,7 @@ The desktop stores settings, queue data and logs locally. A selected workspace r
 | Location | Default |
 |---|---|
 | Windows client state | `%LOCALAPPDATA%\ChromaNeural\client` |
-| Linux and macOS client state | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
+| Linux client state | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
 | Work files | The folder you explicitly choose; no automatic whole-folder upload |
 | Browser-owned private data | The existing web application under the authenticated Internet Identity caller |
 
@@ -112,7 +112,7 @@ The desktop stores settings, queue data and logs locally. A selected workspace r
 
 The **Private II storage** desktop entry is informational in this release. Native private-file upload/download through the browser owner's authority is not implemented. Use of the existing browser application does not transfer its session to the node. Local privacy/access-guard verification does not prove that those corrections have been deployed to the live service.
 
-## Historical rc.1 platforms and downloads
+## RC4 platforms and downloads
 
 | Official prerelease platform | Download | Verified scope |
 |---|---|---|
@@ -120,15 +120,14 @@ The **Private II storage** desktop entry is informational in this release. Nativ
 | Linux amd64 | [Debian package](RELEASE_NOTES.md) | Native Ubuntu 24.04 build, extraction, SDK/CLI and Xvfb/Tk; not a full install/remove lifecycle |
 | Source | [Accepted source ZIP](RELEASE_NOTES.md) | Source at the accepted release; current documentation may be newer |
 
-**Prerequisites:** Windows: Python 3.14 with Tk and `py`/`pyw`, Node.js 24. Linux: Python 3.11+, Tk, cryptography, Node.js 20+, libgomp1. macOS: macOS 15+, Python 3.14/Tk, Node.js 24 and the pinned Python crypto dependencies. Read [installation instructions](INSTALLATION.md) before downloading.
+**Prerequisites:** Windows: Python 3.14 with Tk and `py`/`pyw`, Node.js 24. Linux: Python 3.11+, Tk, cryptography, Node.js 20+, libgomp1.  Read [installation instructions](INSTALLATION.md) before downloading.
 
-Packages are **unsigned**; macOS is **not notarized**. This is not a Universal 2 release. OS security warnings may appear. Linux/macOS launcher icons and the Windows installer icon have the limitations documented in [branding status](docs/BRANDING.md).
+Packages are **unsigned**. OS security warnings may appear. See [branding status](docs/BRANDING.md).
 
-Official Android and iOS support is deferred to a later time.
 
 ### Verify your download
 
-Download [SHA256SUMS.txt](RELEASE_NOTES.md) with your package. On Windows use `Get-FileHash -Algorithm SHA256`; on Linux use `sha256sum`; on macOS use `shasum -a 256`. Compare the full value for the exact filename. SHA-256 verifies bytes, not publisher identity. [All published hashes and commands](docs/DOWNLOADS.md).
+Download [SHA256SUMS.txt](RELEASE_NOTES.md) with your package. On Windows use `Get-FileHash -Algorithm SHA256`; on Linux use `sha256sum`. Compare the full value for the exact filename. SHA-256 verifies bytes, not publisher identity. [All published hashes and commands](docs/DOWNLOADS.md).
 
 GitHub changed the DEB download name from `~rc.1` to `.rc.1`. The DEB bytes and content hash are unchanged.
 
@@ -141,7 +140,7 @@ The preserved rc.2 documentation baseline is VERIFIED/PASS: 35 PDFs in seven lan
 | Overview | [System and workflow](docs/en/ChromaNeural-Overview.md) | [Overview](docs/pdf/ChromaNeural-Overview.pdf) |
 | User guide | [Using the client](docs/en/ChromaNeural-User-Guide.md) | [User guide](docs/pdf/ChromaNeural-User-Guide.pdf) |
 | Privacy and storage | [Data, paths and identity](docs/en/ChromaNeural-Privacy-and-Storage.md) | [Privacy and storage](docs/pdf/ChromaNeural-Privacy-and-Storage.pdf) |
-| Installation | [Windows, Linux and macOS](docs/en/ChromaNeural-Installation.md) | [Installation](docs/pdf/ChromaNeural-Installation.pdf) |
+| Installation | [Windows, Linux](INSTALLATION.md) | [Installation](docs/pdf/ChromaNeural-Installation.pdf) |
 | Verified capabilities | [Evidence and limits](docs/en/ChromaNeural-Verified-Capabilities.md) | [Verified capabilities](docs/pdf/ChromaNeural-Verified-Capabilities.pdf) |
 
 For developers: [reproduction and evidence](VERIFICATION.md), [contributing](CONTRIBUTING.md), [changelog](CHANGELOG.md), [license boundaries](docs/LICENSING.md).

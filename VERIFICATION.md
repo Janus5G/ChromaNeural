@@ -2,6 +2,19 @@
 
 This is curated evidence, not a dump of private diagnostics. Historical checks are reused only where their relevant bytes/contracts remain unchanged. Passing a hash or software test does not verify AI correctness or physical hardware performance.
 
+## Current RC4 acceptance
+
+Windows x64 and Linux amd64 only: package integrity, clean first launch with
+empty connection state, ChromaPoints presentation and owner manual acceptance
+are VERIFIED/PASS. The current source-only platform/documentation correction
+does not rebuild either accepted binary. Full Linux removal lifecycle and live
+production-network acceptance are not newly claimed.
+
+## Preserved historical functional and rc.1 package evidence
+
+The table and native-run records below describe earlier verified scopes,
+including platforms that are not current RC4 release targets.
+
 | Area | Evidence | Scope / limitation |
 |---|---|---|
 | Result publication v0.2.9 | PASS local integration | Consent, verification and backend role requirements preserved; no new live publication claim |
@@ -40,11 +53,11 @@ Physical LAN/WAN and NODE_A inference observations are physical evidence for tho
 
 Remaining NOT VERIFIED and deferred items are enumerated in KNOWN_LIMITATIONS.md. AI output remains unverified; SHA-256 establishes byte integrity, not correctness or permission to publish.
 
-## Accepted native runs and final documentation review
+## Historical rc.1 native runs and final documentation review
 
 Windows: run **36878986730**, job **110425631415**, commit `cab3fbb345181c0f08e75e03013b63a63d05aea0`. Linux: run **36850929767**, job **110332149953**; macOS: the same run, job **110332149677**, commit `00f547e89954a9b88339bf68195a7b7951aa43e9`. The latter run as a whole failed on the earlier Windows job; only its successful Linux/macOS jobs are accepted. Earlier failed/cancelled runs remain historical evidence.
 
-The subsequent packaging fixes affected Windows bootstrap/cleanup and the optional Windows-only workflow selection; Linux/macOS packages were not rebuilt without a regression reason. The current workflow is the successfully verified Windows revision and retains the accepted Linux/macOS paths.
+The subsequent packaging fixes affected Windows bootstrap/cleanup and the optional Windows-only workflow selection; Linux/macOS packages were not rebuilt without a regression reason. That historical workflow retained the accepted Linux/macOS paths; the current RC4 workflows support Windows and Linux only.
 
 CI exposed a Windows PowerShell module-discovery failure and a short/long temporary-path comparison failure. The release bootstrap now selects the native utility module explicitly and canonicalises both cleanup paths while preserving its exact parent/name guard. Application code, dependency versions and licenses did not change. The final Windows payload matched all 1,547 accepted local payload files.
 

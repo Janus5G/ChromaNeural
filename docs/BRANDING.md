@@ -1,8 +1,8 @@
 # ChromaNeural branding and package icons
 
-The product name is **ChromaNeural**. `0.2.21-rc.1` is its version; Release Candidate / Prerelease is its status, not part of a replacement product name.
+The product name is **ChromaNeural**. RC4 supports Windows x64 and Linux amd64. The Windows EXE and per-user Start Menu shortcut use the product icon; the Linux package installs the hicolor icon and desktop entry. The older records below are historical.
 
-## Published 0.2.21-rc.1 packages
+## Historical published 0.2.21-rc.1 packages
 
 | Surface | Actual status |
 |---|---|
@@ -16,11 +16,11 @@ The product name is **ChromaNeural**. `0.2.21-rc.1` is its version; Release Cand
 
 The accepted tag and five published assets are immutable in this presentation update. No binary was silently replaced and no new native-build acceptance is claimed.
 
-## Prepared packaging assets
+## Historical prepared packaging assets
 
-`packaging/branding/` supplies Linux PNG/SVG and macOS ICNS assets derived from the client's existing prism geometry, plus the existing ICO copied byte-for-byte. The native package builder now includes the Linux hicolor PNG/SVG with an Icon field and the macOS ICNS with CFBundleIconFile for a future versioned build. These metadata-only paths are locally checked. The accepted workflow and runtime code are unchanged. Windows EXE/shortcut branding still requires a later packaging decision and extraction validation.
+`packaging/branding/` supplies Linux PNG/SVG and macOS ICNS assets derived from the client's existing prism geometry, plus the existing ICO copied byte-for-byte. The historical native package builder included the Linux hicolor PNG/SVG with an Icon field and the macOS ICNS with CFBundleIconFile for a future versioned build. These metadata-only paths are locally checked. The accepted workflow and runtime code are unchanged. Windows EXE/shortcut branding still requires a later packaging decision and extraction validation.
 
-A native rebuild and package-specific validation are needed before claiming those launcher/installer changes in downloadable apps. Current icons therefore remain a documented presentation limitation, not a completed product fix.
+These statements record the earlier rc.1 presentation gate; they do not describe the accepted RC4 Windows/Linux packaging.
 
 ## Public artwork
 

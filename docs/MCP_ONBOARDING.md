@@ -1,6 +1,6 @@
 # AI and MCP setup - ChromaNeural 0.2.21-rc.3
 
-MCP and integrated onboarding are VERIFIED/PASS within the scope below. Public publication is a separate final gate. The verified 0.2.21-rc.2 pre-MCP baseline remains independently preserved; its documentation/PDFs are unchanged. This focused supplement describes rc.3. See [release notes](../RELEASE_NOTES.md) for the accepted version, source and platform limits.
+MCP and integrated onboarding are VERIFIED/PASS within the scope below. RC4 is published for Windows x64 and Linux amd64 only. The verified 0.2.21-rc.2 pre-MCP baseline remains independently preserved; its documentation/PDFs are unchanged. This focused supplement describes rc.3. See [release notes](../RELEASE_NOTES.md) for the accepted version, source and platform limits.
 
 **ChromaSpeechAI is node-to-node. MCP is node-to-tool.** MCP does not replace the peer protocol, queue, results or publication. ChromaNeural starts and performs ordinary local work without MCP.
 
@@ -56,7 +56,7 @@ The official Python SDK is mcp 2.3.0 (MIT), supporting protocol 2026-07-28 and n
 
 ## Verified scope
 
-Native MCP runtime acceptance on Windows x64, Linux amd64 and macOS Intel,
+Historical rc.3 native MCP runtime acceptance on Windows x64, Linux amd64 and macOS Intel,
 trust controls, credential-target binding and GUI startup: VERIFIED/PASS.
 Final native installer/package acceptance also passed, reusing closed gates.
 

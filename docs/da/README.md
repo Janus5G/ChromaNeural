@@ -2,7 +2,9 @@
 
 [English](../en/README.md) · [Dansk](README.md) · [Deutsch](../de/README.md) · [Français](../fr/README.md) · [日本語](../ja/README.md) · [简体中文](../zh-CN/README.md) · [हिन्दी](../hi-IN/README.md)
 
-**rc.3-verifikation: VERIFIED/PASS.** Native installer-/pakkeaccept er bestået for Windows x64, Linux amd64 og macOS Intel inden for det dokumenterede omfang. Lokalisering, udvidelig i18n, skærmbilleder og PDF'er er verificeret. MCP og onboarding, inklusive værktøjsbrug med en rigtig model, er bestået. [Aktuelle rc.3-release notes (engelsk)](../../RELEASE_NOTES.md) angiver build-commit og begrænsninger. rc.1-downloads og ældre evidens nedenfor er fortsat historiske.
+**RC4 udgivet prerelease: VERIFIED/PASS.** Windows/Linux-pakker, ren opstart og ejerens manuelle accept er bestået. [Status og begrænsninger](../../RELEASE_NOTES.md).
+
+Historiske rc.2-vejledninger; platformoplysninger beskriver det oprindelige omfang. Aktuel RC4-installation: [Windows x64 / Linux amd64](../../INSTALLATION.md).
 
 [README](../../README-DK.md)
 

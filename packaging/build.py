@@ -1,6 +1,6 @@
 """Native package builder. No publication, credentials or backend access."""
 from pathlib import Path, PurePosixPath
-import argparse,hashlib,json,os,platform,plistlib,shutil,subprocess,sys,tarfile,urllib.request,zipfile
+import argparse,hashlib,json,os,platform,shutil,subprocess,sys,tarfile,urllib.request,zipfile
 ROOT=Path(__file__).resolve().parents[1]
 VERSION=(ROOT/'VERSION').read_text().strip()
 BUILD=ROOT/'build';DIST=ROOT/'dist'
@@ -53,20 +53,20 @@ def assets(target,cache):
      with stream,dest.open('wb') as out:shutil.copyfileobj(stream,out)
      dest.chmod(member.mode & 0o777)
 def stage(kind,cache):
+ if kind not in ('windows','linux'):raise SystemExit('RC4 supports Windows x64 and Linux amd64 only')
  target=BUILD/'payload';target.mkdir(parents=True)
  from release_guard import stage_source
  stage_source(ROOT,target,kind)
  # Lock-driven, release time only. No user state or live endpoint involved.
  run([sys.executable,'-B',target/'scripts/prepare_node_runtime.py','--prepare','--cache',BUILD/'npm-cache'])
- if kind!='macos':
-  assets(target,cache)
-  for name,dest in [('Qwen.txt','models/QWEN_LICENSE'),('llama.cpp.txt','runtime/windows-x64/LICENSE-llama.cpp'),('LLVM-OpenMP.txt','runtime/windows-x64/LICENSE-LLVM-OpenMP')]:
-   p=target/dest;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'docs/licenses'/name,p)
-  # Verify every accepted model/runtime byte, not merely compressed archives.
-  expected=json.loads((ROOT/'packaging/binaries.lock.json').read_text())
-  for rel,h in expected.items():
-   if not (target/rel).is_file() or digest(target/rel)!=h:raise ValueError('Extracted runtime mismatch: '+rel)
-  if kind=='linux':shutil.rmtree(target/'runtime/windows-x64')
+ assets(target,cache)
+ for name,dest in [('Qwen.txt','models/QWEN_LICENSE'),('llama.cpp.txt','runtime/windows-x64/LICENSE-llama.cpp'),('LLVM-OpenMP.txt','runtime/windows-x64/LICENSE-LLVM-OpenMP')]:
+  p=target/dest;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'docs/licenses'/name,p)
+ # Verify every accepted model/runtime byte, not merely compressed archives.
+ expected=json.loads((ROOT/'packaging/binaries.lock.json').read_text())
+ for rel,h in expected.items():
+  if not (target/rel).is_file() or digest(target/rel)!=h:raise ValueError('Extracted runtime mismatch: '+rel)
+ if kind=='linux':shutil.rmtree(target/'runtime/windows-x64')
  from mcp_package import stage as stage_mcp
  stage_mcp(ROOT,target)
  from release_guard import inspect_payload
@@ -133,29 +133,22 @@ def linux(payload):
  for directory,name in [('512x512/apps','chromaneural.png'),('scalable/apps','chromaneural.svg')]:
   icon=deb/'usr/share/icons/hicolor'/directory/name;icon.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'packaging/branding'/name,icon)
  run(['dpkg-deb','--root-owner-group','--build',deb,DIST/('chromaneural_'+VERSION.replace('-rc.','.rc.')+'_amd64.deb')])
-def macos(payload):
- app=BUILD/'ChromaNeural.app';contents=app/'Contents';resources=contents/'Resources';resources.mkdir(parents=True);shutil.copytree(payload,resources/'payload')
- mac=contents/'MacOS';mac.mkdir();launch=mac/'ChromaNeural'
- launch.write_text('#!/bin/sh\nset -eu\nPATH="/Library/Frameworks/Python.framework/Versions/3.14/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:$PATH"\nexport PATH\nHERE="$(CDPATH= cd -- "$(dirname -- "$0")/../Resources/payload" && pwd)"\nexec python3 -B "$HERE/client/launch.py" "$@"\n');launch.chmod(0o755)
- shutil.copyfile(ROOT/'packaging/branding/ChromaNeural.icns',resources/'ChromaNeural.icns')
- with (contents/'Info.plist').open('wb') as f:plistlib.dump({'CFBundleIconFile':'ChromaNeural.icns','CFBundleExecutable':'ChromaNeural','CFBundleIdentifier':'net.aagii.chromaneural','CFBundleName':'ChromaNeural','CFBundlePackageType':'APPL','CFBundleShortVersionString':'0.2.21','CFBundleVersion':'21.4','LSMinimumSystemVersion':'15.0','NSHighResolutionCapable':True},f)
- run(['plutil','-lint',contents/'Info.plist'])
- run(['ditto','-c','-k','--sequesterRsrc','--keepParent',app,DIST/('ChromaNeural-'+VERSION+'-macos-x86_64.zip')])
 def require_license_clearance():
  scope=json.loads((ROOT/'docs/LICENSE_SCOPE.json').read_text(encoding='utf-8'))
  if scope.get('publicDistributionCleared') is not True:
   raise SystemExit('LICENSE BLOCKED: documented source-license clearance is required before packaging')
 
 def main():
+ if platform.system() not in ('Windows','Linux'):raise SystemExit('RC4 supports Windows x64 and Linux amd64 only')
  require_license_clearance()
  parser=argparse.ArgumentParser();parser.add_argument('--asset-cache',type=Path,default=BUILD/'asset-cache');args=parser.parse_args()
- kind={'Windows':'windows','Linux':'linux','Darwin':'macos'}[platform.system()]
+ kind={'Windows':'windows','Linux':'linux'}[platform.system()]
  if platform.machine().lower() not in ('amd64','x86_64'):raise SystemExit('This RC package profile is x86_64 only; source remains portable')
  if (BUILD/'payload').exists() or DIST.exists():raise SystemExit('Preserve existing output; use a fresh checkout/build directory')
  from release_guard import source_files
  source_files(ROOT)
  DIST.mkdir();payload=stage(kind,args.asset_cache)
- {'windows':windows,'linux':linux,'macos':macos}[kind](payload)
+ {'windows':windows,'linux':linux}[kind](payload)
  (DIST/'SHA256SUMS.txt').write_text(''.join(digest(p)+'  '+p.name+'\n' for p in sorted(DIST.iterdir()) if p.is_file()),encoding='utf-8')
- (DIST/'BUILD_INFO.json').write_text(json.dumps({'version':VERSION,'platform':kind,'architecture':platform.machine(),'python':sys.version,'signing':'UNSIGNED / NOT NOTARIZED','productSource':'accepted-source.json plus exact reviewed source-overrides.json and source-additions.json','status':'BUILT; package smoke still required'},indent=2))
+ (DIST/'BUILD_INFO.json').write_text(json.dumps({'version':VERSION,'platform':kind,'architecture':platform.machine(),'python':sys.version,'signing':'UNSIGNED','productSource':'accepted-source.json plus exact reviewed source-overrides.json and source-additions.json','status':'BUILT; package smoke still required'},indent=2))
 if __name__=='__main__':main()

@@ -1,14 +1,14 @@
 <p align="center"><img src="docs/images/chroma-neural-hero.png" alt="ChromaNeural — 本地智能，明确授权的协作。" width="1000"></p>
 <p align="center"><strong>ChromaNeural 0.2.21-rc.4</strong><br>发布候选 / 预发布版本</p>
-<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="docs/zh-CN/ChromaNeural-Installation.md">安装</a> · <a href="docs/README.md">文档及英语 PDF</a> · <a href="VERIFICATION.md">已验证能力</a> · <a href="KNOWN_LIMITATIONS.md">限制</a></p>
+<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="INSTALLATION.md">安装</a> · <a href="docs/README.md">文档及英语 PDF</a> · <a href="VERIFICATION.md">已验证能力</a> · <a href="KNOWN_LIMITATIONS.md">限制</a></p>
 
 # ChromaNeural
 
-**RC4仅面向Windows x64和Linux amd64发布。macOS、Android和iOS不在本次发布范围内。**
+**RC4仅支持Windows x64和Linux amd64。**
 
 [English](README.md) · [Dansk](README-DK.md) · [Deutsch](README-DE.md) · [Français](README-FR.md) · [日本語](README-JA.md) · [简体中文](README-ZH-CN.md) · [हिन्दी](README-HI-IN.md)
 
-**RC4 本地候选版本：未发布。** 新的软件包和安全验收尚待完成。仅在源代码哈希不变时复用已有功能验证。[状态与限制](RELEASE_NOTES.md)。
+**RC4已发布预发行版：VERIFIED/PASS。** Windows/Linux软件包、首次干净启动及所有者手动验收均已通过。[状态与限制](RELEASE_NOTES.md)。
 
 **本地 AI 工作、已认证对等协作，以及私人工作与共享结果之间的明确边界。**
 
@@ -67,7 +67,7 @@ ChromaNeural 是供明确批准 AI 工作使用的桌面客户端和软件框架
 | 能力 | 可用范围 |
 |---|---|
 | 后台工作 | 已批准本地任务通过现有持久队列，支持租约、暂停、取消、停止和重启。 |
-| 本地 AI | Windows/Linux 内置 CPU/Qwen；明确选择本地 Ollama 和模型。无静默回退，macOS 无内置推理运行时。 |
+| 本地 AI | Windows/Linux 内置 CPU/Qwen；明确选择本地 Ollama 和模型。无静默回退。 |
 | 对等协作 | 已批准问答通过现有 TLS 和 SQLite 收件箱关联原代码提案任务。 |
 | 资源控制 | 所述 Windows CPU 配置控制 CPU 调度、线程、提交内存及生命周期，不保证总物理 RAM。其他受控提供者／OS 配置安全拒绝。 |
 | 结果 | 本地与节点贡献保留来源和审查状态，现有权威验证接受前仍未验证。 |
@@ -101,7 +101,7 @@ ChromaNeural 是供明确批准 AI 工作使用的桌面客户端和软件框架
 | 位置 | 默认 |
 |---|---|
 | Windows 状态 | `%LOCALAPPDATA%\ChromaNeural\client` |
-| Linux/macOS 状态 | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
+| Linux 状态 | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
 | 工作文件 | 明确选择的目录，不自动上传整个目录 |
 | 浏览器私人数据 | 已认证 Internet Identity 调用者下的现有 Web 应用 |
 
@@ -109,7 +109,7 @@ ChromaNeural 是供明确批准 AI 工作使用的桌面客户端和软件框架
 
 **Private II storage** 仅为信息。浏览器所有者授权的原生私人上传／下载未实现。使用 Web 不转移会话到节点。本地隐私／访问防护验证不证明修正已部署线上。
 
-## 历史 rc.1 平台与下载
+## RC4平台与下载
 
 | 官方预发布平台 | 下载 | 验证范围 |
 |---|---|---|
@@ -117,15 +117,14 @@ ChromaNeural 是供明确批准 AI 工作使用的桌面客户端和软件框架
 | Linux amd64 | [Debian 包](RELEASE_NOTES.md) | 原生 Ubuntu 24.04 构建、解压、SDK/CLI、Xvfb/Tk，不含完整安装／删除 |
 | 源代码 | [已接受源 ZIP](RELEASE_NOTES.md) | 已接受发行的源码，当前文档可能更新 |
 
-**前提：** Windows：Python 3.14、Tk、`py`/`pyw`、Node.js 24。Linux：Python 3.11+、Tk、cryptography、Node.js 20+、libgomp1。macOS：15+、Python 3.14/Tk、Node.js 24、固定 Python 加密依赖。下载前读[安装](docs/zh-CN/ChromaNeural-Installation.md)。
+**前提：** Windows：Python 3.14、Tk、`py`/`pyw`、Node.js 24。Linux：Python 3.11+、Tk、cryptography、Node.js 20+、libgomp1。下载前读[安装](INSTALLATION.md)。
 
-包**未签名**，macOS **未公证**，不是 Universal 2。可能出现安全警告。Linux/macOS 启动器和 Windows 安装图标限制见[品牌状态](docs/BRANDING.md)。
+软件包**未签名**。系统可能显示安全警告。请参阅[品牌状态](docs/BRANDING.md)。
 
-官方 Android 和 iOS 支持延期。
 
 ### 验证下载
 
-同时获取 [SHA256SUMS.txt](RELEASE_NOTES.md)。Windows 使用 `Get-FileHash -Algorithm SHA256`，Linux `sha256sum`，macOS `shasum -a 256`。比较精确文件名对应的全部值。SHA-256 验证字节而非发布者身份。[全部公开哈希与命令](docs/DOWNLOADS.md)。
+同时获取 [SHA256SUMS.txt](RELEASE_NOTES.md)。Windows 使用 `Get-FileHash -Algorithm SHA256`，Linux `sha256sum`。比较精确文件名对应的全部值。SHA-256 验证字节而非发布者身份。[全部公开哈希与命令](docs/DOWNLOADS.md)。
 
 GitHub 将 DEB 名从 `~rc.1` 改为 `.rc.1`，字节和内容哈希不变。
 
@@ -138,7 +137,7 @@ GitHub 将 DEB 名从 `~rc.1` 改为 `.rc.1`，字节和内容哈希不变。
 | 概览 | [系统和工作流](docs/zh-CN/ChromaNeural-Overview.md) | [概览](docs/pdf/ChromaNeural-Overview.pdf) |
 | 用户 | [使用客户端](docs/zh-CN/ChromaNeural-User-Guide.md) | [用户](docs/pdf/ChromaNeural-User-Guide.pdf) |
 | 隐私与存储 | [数据、路径、身份](docs/zh-CN/ChromaNeural-Privacy-and-Storage.md) | [隐私与存储](docs/pdf/ChromaNeural-Privacy-and-Storage.pdf) |
-| 安装 | [Windows、Linux、macOS](docs/zh-CN/ChromaNeural-Installation.md) | [安装](docs/pdf/ChromaNeural-Installation.pdf) |
+| 安装 | [Windows、Linux](INSTALLATION.md) | [安装](docs/pdf/ChromaNeural-Installation.pdf) |
 | 已验证能力 | [证据与限制](docs/zh-CN/ChromaNeural-Verified-Capabilities.md) | [已验证能力](docs/pdf/ChromaNeural-Verified-Capabilities.pdf) |
 
 开发者：[复现与证据](VERIFICATION.md)、[贡献](CONTRIBUTING.md)、[变更](CHANGELOG.md)、[许可证边界](docs/LICENSING.md)。

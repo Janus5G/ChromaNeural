@@ -6,10 +6,6 @@ on:
         description: "Only rc.4 installer acceptance; reuse closed MCP/GUI gates"
         type: boolean
         default: false
-      mcp_mac_deadline:
-        description: "Continue macOS MCP deadline diagnostic only"
-        type: boolean
-        default: false
       mcp_delta:
         description: "Run only MCP timeout/target-binding continuation"
         type: boolean
@@ -19,7 +15,7 @@ on:
         type: boolean
         default: false
       windows_only:
-        description: 'Retest only Windows when Linux and macOS already passed'
+        description: 'Retest only Windows when Linux already passed'
         type: boolean
         default: false
 permissions:
@@ -29,7 +25,6 @@ jobs:
     if: inputs.mcp_only
     uses: ./.github/workflows/mcp-acceptance.yml
     with:
-      mac_deadline: ${{ inputs.mcp_mac_deadline }}
       delta: ${{ inputs.mcp_delta }}
   package:
     if: ${{ !inputs.mcp_only }}
@@ -55,9 +50,6 @@ jobs:
       - name: Native Linux prerequisites
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y python3-tk python3-cryptography python3-pip libgomp1 xvfb
-      - name: Native macOS crypto prerequisites
-        if: runner.os == 'macOS'
-        run: 'python -m pip install --require-hashes --only-binary=:all: -r packaging/requirements-runtime.txt'
       - name: Verify Windows installer prerequisites before build
         if: runner.os == 'Windows'
         run: |
@@ -73,8 +65,8 @@ jobs:
       - name: Native Linux package smoke
         if: runner.os == 'Linux'
         run: xvfb-run -a /usr/bin/python3 -B packaging/smoke.py ${{ inputs.installer_only && '--installer-only' || '' }}
-      - name: Native Windows or macOS package smoke
-        if: runner.os != 'Linux'
+      - name: Native Windows package smoke
+        if: runner.os == 'Windows'
         run: python -B packaging/smoke.py ${{ inputs.installer_only && '--installer-only' || '' }}
       - name: Curated source archive
         if: runner.os == 'Windows'

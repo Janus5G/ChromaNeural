@@ -1,14 +1,14 @@
 <p align="center"><img src="docs/images/chroma-neural-hero.png" alt="ChromaNeural — ローカルの知能。明示的に承認する協働。" width="1000"></p>
 <p align="center"><strong>ChromaNeural 0.2.21-rc.4</strong><br>リリース候補 / プレリリース</p>
-<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="docs/ja/ChromaNeural-Installation.md">インストール</a> · <a href="docs/README.md">文書と英語 PDF</a> · <a href="VERIFICATION.md">検証済み機能</a> · <a href="KNOWN_LIMITATIONS.md">制約</a></p>
+<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="INSTALLATION.md">インストール</a> · <a href="docs/README.md">文書と英語 PDF</a> · <a href="VERIFICATION.md">検証済み機能</a> · <a href="KNOWN_LIMITATIONS.md">制約</a></p>
 
 # ChromaNeural
 
-**RC4のリリース対象はWindows x64とLinux amd64のみです。macOS、Android、iOSは今回のリリース対象外です。**
+**RC4の対応プラットフォームはWindows x64とLinux amd64のみです。**
 
 [English](README.md) · [Dansk](README-DK.md) · [Deutsch](README-DE.md) · [Français](README-FR.md) · [日本語](README-JA.md) · [简体中文](README-ZH-CN.md) · [हिन्दी](README-HI-IN.md)
 
-**RC4 ローカル候補：未公開。** 新しいパッケージとセキュリティの検証は保留中です。過去の機能検証は、ソースのハッシュが一致する場合にのみ再利用します。[状態と制限](RELEASE_NOTES.md)。
+**RC4公開プレリリース：VERIFIED/PASS。** Windows/Linuxパッケージ、初回のクリーン起動、所有者による手動確認に合格しました。[状態と制限](RELEASE_NOTES.md)。
 
 **ローカル AI 作業、認証されたピア協働、私的作業と共有結果の明確な境界。**
 
@@ -67,7 +67,7 @@ GUI で明示的に選択すると、既存の `preferences.json` と同じ状�
 | 機能 | 提供範囲 |
 |---|---|
 | 背景作業 | 承認済みローカルジョブを既存永続キューで実行。リース、一時停止、取消、停止、再起動に対応。 |
-| ローカル AI | Windows/Linux に CPU/Qwen 同梱。ローカル Ollama とモデルは明示選択。無断フォールバックなし。macOS に推論ランタイム同梱なし。 |
+| ローカル AI | Windows/Linux に CPU/Qwen 同梱。ローカル Ollama とモデルは明示選択。無断フォールバックなし。 |
 | ピア協働 | 承認済み質問・回答を元のコード提案タスクに関連付け、既存 TLS と SQLite 受信箱を使用。 |
 | リソース制御 | 記載された Windows CPU プロファイルで CPU スケジューリング、推論スレッド、コミットメモリー、ライフサイクルを制御。物理 RAM 全体は保証せず、他の制御プロファイルは安全側で拒否。 |
 | 結果 | ローカル／ピア由来とレビュー状態を維持。既存の権威ある検証が受理するまで未検証。 |
@@ -101,7 +101,7 @@ GUI で明示的に選択すると、既存の `preferences.json` と同じ状�
 | 場所 | 既定 |
 |---|---|
 | Windows 状態 | `%LOCALAPPDATA%\ChromaNeural\client` |
-| Linux/macOS 状態 | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
+| Linux 状態 | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
 | 作業ファイル | 明示選択フォルダー。全フォルダー自動送信なし |
 | ブラウザーの私的データ | 認証済み Internet Identity 呼出元による既存 Web アプリ |
 
@@ -109,7 +109,7 @@ GUI で明示的に選択すると、既存の `preferences.json` と同じ状�
 
 **Private II storage** は情報表示のみです。ブラウザー所有者権限のネイティブ私的転送は未実装です。Web 利用でセッションをノードに渡しません。ローカルプライバシー／アクセス保護検証は、本番への修正配備を証明しません。
 
-## 過去の rc.1 プラットフォームとダウンロード
+## RC4のプラットフォームとダウンロード
 
 | 公式先行版対象 | 取得 | 検証範囲 |
 |---|---|---|
@@ -117,15 +117,14 @@ GUI で明示的に選択すると、既存の `preferences.json` と同じ状�
 | Linux amd64 | [Debian パッケージ](RELEASE_NOTES.md) | Ubuntu 24.04 ビルド、展開、SDK/CLI、Xvfb/Tk。全導入／削除ではない |
 | ソース | [受け入れ済みソース ZIP](RELEASE_NOTES.md) | 受け入れ時のソース。現在文書の方が新しい場合あり |
 
-**前提条件：** Windows は Python 3.14/Tk、`py`/`pyw`、Node.js 24。Linux は Python 3.11+、Tk、cryptography、Node.js 20+、libgomp1。macOS は 15+、Python 3.14/Tk、Node.js 24、固定 Python 暗号依存物。[導入手順](docs/ja/ChromaNeural-Installation.md)を取得前に読んでください。
+**前提条件：** Windows は Python 3.14/Tk、`py`/`pyw`、Node.js 24。Linux は Python 3.11+、Tk、cryptography、Node.js 20+、libgomp1。[導入手順](INSTALLATION.md)を取得前に読んでください。
 
-パッケージは**未署名**、macOS は**未公証**で、Universal 2 ではありません。OS 警告が出る場合があります。Linux/macOS ランチャーと Windows インストーラーのアイコン制約は[ブランド表示状態](docs/BRANDING.md)に記載しています。
+パッケージは**未署名**です。OSの警告が出る場合があります。[ブランド表示状態](docs/BRANDING.md)を参照してください。
 
-Android と iOS の公式対応は延期です。
 
 ### ダウンロード確認
 
-[SHA256SUMS.txt](RELEASE_NOTES.md) も取得します。Windows は `Get-FileHash -Algorithm SHA256`、Linux は `sha256sum`、macOS は `shasum -a 256`。正確なファイル名の全値を比較してください。SHA-256 はバイトを検証し、発行者 ID は検証しません。[公開ハッシュとコマンド](docs/DOWNLOADS.md)。
+[SHA256SUMS.txt](RELEASE_NOTES.md) も取得します。Windows は `Get-FileHash -Algorithm SHA256`、Linux は `sha256sum`。正確なファイル名の全値を比較してください。SHA-256 はバイトを検証し、発行者 ID は検証しません。[公開ハッシュとコマンド](docs/DOWNLOADS.md)。
 
 GitHub が DEB 名を `~rc.1` から `.rc.1` に変更しましたが、バイトとハッシュは不変です。
 
@@ -138,7 +137,7 @@ GitHub が DEB 名を `~rc.1` から `.rc.1` に変更しましたが、バイ�
 | 概要 | [システムと流れ](docs/ja/ChromaNeural-Overview.md) | [概要](docs/pdf/ChromaNeural-Overview.pdf) |
 | 利用 | [クライアント操作](docs/ja/ChromaNeural-User-Guide.md) | [利用](docs/pdf/ChromaNeural-User-Guide.pdf) |
 | プライバシーと保存 | [データ、パス、ID](docs/ja/ChromaNeural-Privacy-and-Storage.md) | [プライバシーと保存](docs/pdf/ChromaNeural-Privacy-and-Storage.pdf) |
-| インストール | [Windows、Linux、macOS](docs/ja/ChromaNeural-Installation.md) | [インストール](docs/pdf/ChromaNeural-Installation.pdf) |
+| インストール | [Windows、Linux](INSTALLATION.md) | [インストール](docs/pdf/ChromaNeural-Installation.pdf) |
 | 検証済み機能 | [証拠と制約](docs/ja/ChromaNeural-Verified-Capabilities.md) | [検証済み機能](docs/pdf/ChromaNeural-Verified-Capabilities.pdf) |
 
 開発者向け：[再現と証拠](VERIFICATION.md)、[貢献](CONTRIBUTING.md)、[変更履歴](CHANGELOG.md)、[ライセンス境界](docs/LICENSING.md)。

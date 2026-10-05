@@ -2,7 +2,9 @@
 
 [English](README.md) · [Dansk](../da/README.md) · [Deutsch](../de/README.md) · [Français](../fr/README.md) · [日本語](../ja/README.md) · [简体中文](../zh-CN/README.md) · [हिन्दी](../hi-IN/README.md)
 
-**rc.3 verification: VERIFIED/PASS.** Native Windows x64, Linux amd64 and macOS Intel installer/package acceptance passed within the documented scope. Localization, extensible i18n, screenshots and PDFs are verified. MCP and onboarding, including real-model tool use, passed. [Current rc.3 release notes](../../RELEASE_NOTES.md) give the accepted build commit and limits. The rc.1 downloads and older evidence below remain explicitly historical.
+**RC4 published prerelease: VERIFIED/PASS.** Windows/Linux packages, clean-state startup and owner manual acceptance passed. [Current status and limits](../../RELEASE_NOTES.md).
+
+Historical rc.2 guides; platform claims below describe their original scope. Current RC4 installation: [Windows x64 / Linux amd64](../../INSTALLATION.md).
 
 [README](../../README.md)
 

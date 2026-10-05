@@ -2,7 +2,9 @@
 
 [English](../en/README.md) · [Dansk](../da/README.md) · [Deutsch](../de/README.md) · [Français](../fr/README.md) · [日本語](README.md) · [简体中文](../zh-CN/README.md) · [हिन्दी](../hi-IN/README.md)
 
-**rc.3 検証状態：VERIFIED/PASS。** Windows x64、Linux amd64、macOS Intel のネイティブインストーラー／パッケージ受け入れは、文書に記載した範囲で合格しました。ローカライズ、拡張可能な i18n、スクリーンショット、PDF は検証済みです。実モデルのツール利用を含む MCP と設定ウィザードも合格しました。[現在の rc.3 リリースノート（英語）](../../RELEASE_NOTES.md)にビルドコミットと制限を記載しています。以下の rc.1 ダウンロードと古い証拠は過去の記録です。
+**RC4公開プレリリース：VERIFIED/PASS。** Windows/Linuxパッケージ、初回のクリーン起動、所有者による手動確認に合格しました。[状態と制限](../../RELEASE_NOTES.md)。
+
+過去のrc.2ガイドです。プラットフォームの記載は当時の対象範囲を示します。現在のRC4導入：[Windows x64 / Linux amd64](../../INSTALLATION.md)。
 
 [README](../../README-JA.md)
 

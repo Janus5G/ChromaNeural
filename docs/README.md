@@ -1,6 +1,6 @@
 # ChromaNeural documentation
 
-ChromaNeural 0.2.21-rc.3: native Windows x64, Linux amd64 and macOS Intel installer/package acceptance VERIFIED/PASS within the documented scope. English is canonical. Localization, extensible i18n, screenshots, PDFs and optional MCP/onboarding are verified. See [current release notes](../RELEASE_NOTES.md). Existing guides preserve the rc.2 baseline and explicitly historical evidence; no backend deployment is claimed.
+ChromaNeural 0.2.21-rc.4 supports Windows x64 and Linux amd64 only: package and owner manual acceptance VERIFIED/PASS. English is canonical. Localization, extensible i18n, screenshots, PDFs and optional MCP/onboarding are verified. See [current release notes](../RELEASE_NOTES.md). Existing guides preserve the rc.2 baseline and explicitly historical evidence; no backend deployment is claimed.
 
 | Language | README | Overview | User guide | Privacy and storage | Installation | Verified capabilities |
 |---|---|---|---|---|---|---|
@@ -26,6 +26,6 @@ The original Danish screenshots and English PDFs below remain historical. [28 ve
 
 [Screenshot provenance](SCREENSHOTS.md) · [Branding and package-icon status](BRANDING.md)
 
-[Historical installation](../INSTALLATION.md) · [Known limitations](../KNOWN_LIMITATIONS.md) · [Downloads and checksums](DOWNLOADS.md) · [Verification](../VERIFICATION.md) · [License boundaries](LICENSING.md) · [Contributing](../CONTRIBUTING.md)
+[Current RC4 installation](../INSTALLATION.md) · [Known limitations](../KNOWN_LIMITATIONS.md) · [Downloads and checksums](DOWNLOADS.md) · [Verification](../VERIFICATION.md) · [License boundaries](LICENSING.md) · [Contributing](../CONTRIBUTING.md)
 
 Historical assets and the frozen rc.2 baseline remain unchanged. rc.3 MCP/onboarding and real-model tool use are VERIFIED/PASS. ChromaSpeechAI remains node-to-node; optional MCP is node-to-tool. See [MCP setup and verified scope](MCP_ONBOARDING.md).

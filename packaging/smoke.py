@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'packaging')
 from build import validate,VERSION
 def run(args,**kw):return subprocess.run([str(a) for a in args],check=True,timeout=180,**kw)
 def main():
+ if platform.system() not in ('Windows','Linux'):raise SystemExit('RC4 supports Windows x64 and Linux amd64 only')
  installer_only=sys.argv[1:]==["--installer-only"]
  assert installer_only or not sys.argv[1:],"Unknown smoke arguments"
  env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1');env.pop('NODE_PATH',None);env.pop('NODE_OPTIONS',None)
@@ -23,9 +24,6 @@ def main():
     raise AssertionError('EXE installation or extraction cleanup failed; installer transcript printed above')
   elif kind=='Linux':
    run(['dpkg-deb','--extract',next((ROOT/'dist').glob('*.deb')),tmp/'deb']);target=tmp/'deb/opt/chromaneural'
-  else:
-   run(['ditto','-x','-k',next((ROOT/'dist').glob('*.zip')),tmp/'mac']);target=tmp/'mac/ChromaNeural.app/Contents/Resources/payload'
-   run(['plutil','-lint',tmp/'mac/ChromaNeural.app/Contents/Info.plist'])
   validate(target)
   assert sentinel.read_bytes()==b'SYNTHETIC STATE MUST SURVIVE','Existing state changed'
   if kind=='Windows':

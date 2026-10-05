@@ -1,17 +1,18 @@
 # ChromaNeural 0.2.21-rc.4
 
-**LOCAL CANDIDATE — NOT RELEASED. New artifact/security acceptance pending.**
+**PUBLISHED PRERELEASE. Windows x64 and Linux amd64: VERIFIED/PASS.**
 
-This candidate is prepared locally. No repository, tag or public release has
-been created. Previous release downloads and checksums are not valid for RC4.
-Use only the new candidate's SHA256SUMS.txt after its acceptance is complete.
+Package integrity, private-state checks, clean first launch and owner manual
+Windows/Linux/source/checksum acceptance passed. Use the current RC4
+[release](https://github.com/Janus5G/ChromaNeural/releases/tag/v0.2.21-rc.4)
+and its SHA256SUMS.txt.
 
 ChromaSpeechAI remains node-to-node. MCP remains optional node-to-tool.
 ChromaNeural remains usable without MCP; remote execution remains disabled.
 
 ## RC4 release scope
 
-Only Windows x64 and Linux amd64 are release targets. macOS, Android and iOS are outside this release. Portable code and historical documentation remain unchanged.
+Only Windows x64 and Linux amd64 are release targets. Portable code and historical documentation remain unchanged.
 
 The Overview and Windows tray now share a compact ChromaPoints/network status from the existing accounting state. Developer accounting remains available; no local action awards points.
 
@@ -37,21 +38,22 @@ structured tool call; qwen2.5-coder:0.5b is not a verified MCP tool-calling mode
 The existing seven locales, screenshots and PDF guides retain their historical
 labels. They are not evidence that a new RC4 installer has passed.
 
-The RC4 Windows and Linux package, contamination and clean-install gates
-remain pending until separately recorded as passed. No native macOS result is
-inferred from Windows or Linux.
+The RC4 Windows and Linux package, contamination and clean-install gates are
+VERIFIED/PASS, including owner manual acceptance. This source-only platform
+and documentation correction leaves both accepted binary hashes unchanged.
+The original attached README/release-note snapshots are preserved; current
+repository documentation supersedes their preparation-time status.
 
 ## Important limits
 
-- Packages are unsigned. macOS is not notarized, is Intel-only and has no bundled native inference runtime. OS warnings may appear.
-- Manual macOS GUI, full Linux DEB install/remove lifecycle, live Internet Identity end-to-end, live migration and live node admission remain **NOT VERIFIED**.
-- General resource sharing remains disabled. Total physical RAM is not guaranteed; controlled Ollama/Linux/macOS/GPU contribution is unsupported.
+- Packages are unsigned. OS warnings may appear.
+- Full Linux DEB install/remove lifecycle, live Internet Identity end-to-end, live migration and live node admission remain **NOT VERIFIED**.
+- General resource sharing remains disabled. Total physical RAM is not guaranteed; controlled Ollama/Linux/GPU contribution is unsupported.
 - Native private-file browser/desktop integration and direct private owner-result retrieval before optional global sharing are not delivered.
 - SHA-256 is integrity, not AI correctness; a peer response does not self-verify or automatically publish. Downloading does not award ChromaPoints.
 - [Current package-icon limitations](docs/BRANDING.md) are documented separately from application functionality.
 - This is a software release. No specialised optical/GPU hardware performance is claimed as physically verified.
 
-Official Android and iOS support is deferred to a later time.
 
 ## Licenses
 

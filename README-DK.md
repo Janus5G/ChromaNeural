@@ -1,15 +1,15 @@
 <p align="center"><img src="docs/images/chroma-neural-hero.png" alt="ChromaNeural — Lokal intelligens. Udtrykkeligt godkendt samarbejde." width="1000"></p>
 
 <p align="center"><strong>ChromaNeural 0.2.21-rc.4</strong><br>Udgivelseskandidat / prerelease</p>
-<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="docs/da/ChromaNeural-Installation-DA.md">Installation</a> · <a href="docs/README.md">Dokumentation og engelske PDF'er</a> · <a href="VERIFICATION.md">Verificerede funktioner</a> · <a href="KNOWN_LIMITATIONS.md">Begrænsninger</a></p>
+<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="INSTALLATION.md">Installation</a> · <a href="docs/README.md">Dokumentation og engelske PDF'er</a> · <a href="VERIFICATION.md">Verificerede funktioner</a> · <a href="KNOWN_LIMITATIONS.md">Begrænsninger</a></p>
 
 # ChromaNeural
 
-**RC4 udgives kun til Windows x64 og Linux amd64. macOS, Android og iOS er uden for denne udgivelse.**
+**RC4 udgives kun til Windows x64 og Linux amd64.**
 
 [English](README.md) · [Dansk](README-DK.md) · [Deutsch](README-DE.md) · [Français](README-FR.md) · [日本語](README-JA.md) · [简体中文](README-ZH-CN.md) · [हिन्दी](README-HI-IN.md)
 
-**RC4 lokal kandidat: IKKE UDGIVET.** Ny pakke- og sikkerhedsaccept afventer. Tidligere verificeret funktionalitet genbruges kun ved uændrede kildehashes. [Aktuel status og begrænsninger](RELEASE_NOTES.md).
+**RC4 udgivet prerelease: VERIFIED/PASS.** Windows/Linux-pakker, ren opstart og ejerens manuelle accept er bestået. [Status og begrænsninger](RELEASE_NOTES.md).
 
 **Lokalt AI-arbejde, autentificeret peersamarbejde og en klar grænse mellem privat arbejde og delte resultater.**
 
@@ -68,7 +68,7 @@ Det valgfrie CLI-argument `--language` tilsidesætter sproget for den pågælden
 | Funktion | Hvad der er tilgængeligt |
 |---|---|
 | Baggrundsarbejde | Allerede godkendte lokale job kører gennem den eksisterende vedvarende kø med leases, pause, annullering, stop og genstart. |
-| Lokale AI-udbydere | Medfølgende CPU/Qwen på Windows/Linux og en udtrykkeligt valgt lokal Ollama-adapter med valgt model. Ingen skjult fallback. macOS har ingen medfølgende inferenceruntime. |
+| Lokale AI-udbydere | Medfølgende CPU/Qwen på Windows/Linux og en udtrykkeligt valgt lokal Ollama-adapter med valgt model. Ingen skjult fallback. |
 | Peersamarbejde | Godkendte spørgsmål og svar forbliver knyttet til det oprindelige kodeforslagsjob gennem eksisterende TLS-transport og SQLite-indbakke. |
 | Ressourcestyring | Den dokumenterede Windows-profil med medfølgende CPU styrer CPU-planlægning, inferencetråde, committed memory og livscyklus. Samlet fysisk RAM garanteres ikke. Andre styrede udbyder-/OS-profiler afvises sikkert. |
 | Resultater | Lokale bidrag og peerbidrag beholder oprindelse og reviewstatus. Output forbliver ikke-verificeret, indtil den eksisterende autoritative verifikationsproces accepterer det. |
@@ -102,7 +102,7 @@ Desktopklienten gemmer indstillinger, kødata og logfiler lokalt. En valgt arbej
 | Placering | Standard |
 |---|---|
 | Windows-klienttilstand | `%LOCALAPPDATA%\ChromaNeural\client` |
-| Linux- og macOS-klienttilstand | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
+| Linux-klienttilstand | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
 | Arbejdsfiler | Mappen, du udtrykkeligt vælger; ingen automatisk upload af hele mappen |
 | Browserens private data | Den eksisterende webapplikation under den autentificerede Internet Identity-caller |
 
@@ -110,7 +110,7 @@ Desktopklienten gemmer indstillinger, kødata og logfiler lokalt. En valgt arbej
 
 Desktopindgangen **Private II storage** viser kun information i denne udgave. Native upload/download af private filer med browserejerens autoritet er ikke implementeret. Den eksisterende browserapplikation overfører ikke sin session til noden. Lokal verifikation af privatlivs- og adgangskontrol beviser ikke, at rettelserne er deployet til livetjenesten.
 
-## Historiske rc.1-platforme og downloads
+## RC4-platforme og downloads
 
 | Officiel prereleaseplatform | Download | Verificeret omfang |
 |---|---|---|
@@ -118,15 +118,14 @@ Desktopindgangen **Private II storage** viser kun information i denne udgave. Na
 | Linux amd64 | [Debian-pakke](RELEASE_NOTES.md) | Native Ubuntu 24.04-build, udpakning, SDK/CLI og Xvfb/Tk; ikke fuld installation/afinstallation |
 | Kildekode | [Accepteret kildekode-ZIP](RELEASE_NOTES.md) | Kildekode fra den accepterede udgivelse; aktuel dokumentation kan være nyere |
 
-**Forudsætninger:** Windows: Python 3.14 med Tk og `py`/`pyw`, Node.js 24. Linux: Python 3.11+, Tk, cryptography, Node.js 20+, libgomp1. macOS: macOS 15+, Python 3.14/Tk, Node.js 24 og fastlåste Python-kryptografiafhængigheder. Læs [installationsvejledningen](docs/da/ChromaNeural-Installation-DA.md) før download.
+**Forudsætninger:** Windows: Python 3.14 med Tk og `py`/`pyw`, Node.js 24. Linux: Python 3.11+, Tk, cryptography, Node.js 20+, libgomp1.  Læs [installationsvejledningen](INSTALLATION.md) før download.
 
-Pakkerne er **usignerede**; macOS er **ikke notariseret**. Dette er ikke en Universal 2-udgivelse. OS-sikkerhedsadvarsler kan forekomme. Linux-/macOS-launcherikoner og Windows-installationsikonet har de dokumenterede begrænsninger i [brandingstatus](docs/BRANDING.md).
+Pakkerne er **usignerede**. OS-sikkerhedsadvarsler kan forekomme. Se [brandingstatus](docs/BRANDING.md).
 
-Officiel Android- og iOS-understøttelse er udskudt.
 
 ### Verificér din download
 
-Hent [SHA256SUMS.txt](RELEASE_NOTES.md) sammen med pakken. Brug `Get-FileHash -Algorithm SHA256` på Windows, `sha256sum` på Linux og `shasum -a 256` på macOS. Sammenlign hele værdien for det præcise filnavn. SHA-256 verificerer bytes, ikke udgiveridentitet. [Alle offentliggjorte hashværdier og kommandoer](docs/DOWNLOADS.md).
+Hent [SHA256SUMS.txt](RELEASE_NOTES.md) sammen med pakken. Brug `Get-FileHash -Algorithm SHA256` på Windows, `sha256sum` på Linux. Sammenlign hele værdien for det præcise filnavn. SHA-256 verificerer bytes, ikke udgiveridentitet. [Alle offentliggjorte hashværdier og kommandoer](docs/DOWNLOADS.md).
 
 GitHub ændrede DEB-downloadnavnet fra `~rc.1` til `.rc.1`. Pakkens bytes og indholdshash er uændrede.
 
@@ -139,7 +138,7 @@ Den bevarede rc.2-dokumentationsbaseline er VERIFIED/PASS: 35 PDF'er på syv spr
 | Oversigt | [System og arbejdsgang](docs/da/ChromaNeural-Overview-DA.md) | [Oversigt](docs/pdf/ChromaNeural-Overview.pdf) |
 | Brugervejledning | [Brug klienten](docs/da/ChromaNeural-User-Guide-DA.md) | [Brugervejledning](docs/pdf/ChromaNeural-User-Guide.pdf) |
 | Privatliv og lagring | [Data, stier og identitet](docs/da/ChromaNeural-Privacy-and-Storage-DA.md) | [Privatliv og lagring](docs/pdf/ChromaNeural-Privacy-and-Storage.pdf) |
-| Installation | [Windows, Linux og macOS](docs/da/ChromaNeural-Installation-DA.md) | [Installation](docs/pdf/ChromaNeural-Installation.pdf) |
+| Installation | [Windows, Linux](INSTALLATION.md) | [Installation](docs/pdf/ChromaNeural-Installation.pdf) |
 | Verificerede funktioner | [Evidens og begrænsninger](docs/da/ChromaNeural-Verified-Capabilities-DA.md) | [Verificerede funktioner](docs/pdf/ChromaNeural-Verified-Capabilities.pdf) |
 
 Til udviklere: [reproduktion og evidens](VERIFICATION.md), [bidrag](CONTRIBUTING.md), [ændringslog](CHANGELOG.md), [licensgrænser](docs/LICENSING.md).

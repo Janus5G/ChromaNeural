@@ -3,8 +3,8 @@ from pathlib import Path
 import argparse,hashlib,json,os,platform,shutil,subprocess,sys
 parser=argparse.ArgumentParser()
 parser.add_argument("--delta",action="store_true")
-parser.add_argument("--mac-deadline",action="store_true")
 args=parser.parse_args()
+if platform.system() not in ("Windows","Linux"):raise SystemExit("RC4 supports Windows x64 and Linux amd64 only")
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"build/mcp-acceptance"
 OUT.mkdir(parents=True,exist_ok=False)
@@ -29,9 +29,6 @@ tests=["Acceptance.test_01_standalone_and_settings","Acceptance.test_02_stdio_re
        "Acceptance.test_08_queue_and_speech_minimal_regression","Acceptance.test_09_deadline_cleans_local_server"]
 if args.delta:
  tests=["Acceptance.test_09_deadline_cleans_local_server","Acceptance.test_10_redirect_cannot_change_target"]
-if args.mac_deadline:
- args.delta=True
- tests=["Acceptance.test_11_ready_server_deadline_cleans_local_server"]
 with (OUT/"acceptance.log").open("wb") as log:
  result=subprocess.run([python,"-I","-B",str(ROOT/"packaging/test_mcp.py"),*tests],
                        env=env,stdout=log,stderr=subprocess.STDOUT,timeout=180)
@@ -43,7 +40,7 @@ if not args.delta or platform.system()!="Windows":
  subprocess.run([python,"-I","-B","-c",gui,str(ROOT/"client"),str(OUT/"gui-state")],env=env,check=True,timeout=30)
 validate(payload)
 receipt={"status":"PASS","scope":"MCP-specific native staging/runtime, real stdio/HTTP tool calls, trust/credentials, controlled provider task fixture, minimal queue/speech/GUI regression",
-         "tests":tests,"delta":args.delta,"macDeadlineOnly":args.mac_deadline,"platform":platform.platform(),"python":python,"sdk":"mcp==2.3.0","cryptography":"46.0.5",
+         "tests":tests,"delta":args.delta,"platform":platform.platform(),"python":python,"sdk":"mcp==2.3.0","cryptography":"46.0.5",
          "payloadManifestSha256":hashlib.sha256((payload/"SHA256SUMS.txt").read_bytes()).hexdigest(),
          "sourceCommit":os.environ.get("GITHUB_SHA"),"realModelInference":"NOT VERIFIED",
          "fullReleaseInstallerRebuild":"NOT RUN; frozen native baseline reused; final candidate packages remain a later gate",

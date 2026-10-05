@@ -1,14 +1,14 @@
 <p align="center"><img src="docs/images/chroma-neural-hero.png" alt="ChromaNeural — स्थानीय बुद्धिमत्ता। स्पष्ट स्वीकृति से सहयोग।" width="1000"></p>
 <p align="center"><strong>ChromaNeural 0.2.21-rc.4</strong><br>रिलीज़ उम्मीदवार / प्रीरिलीज़</p>
-<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="docs/hi-IN/ChromaNeural-Installation.md">स्थापना</a> · <a href="docs/README.md">दस्तावेज़ और अंग्रेज़ी PDF</a> · <a href="VERIFICATION.md">सत्यापित क्षमताएँ</a> · <a href="KNOWN_LIMITATIONS.md">सीमाएँ</a></p>
+<p align="center"><a href="RELEASE_NOTES.md">RC4</a> · <a href="INSTALLATION.md">स्थापना</a> · <a href="docs/README.md">दस्तावेज़ और अंग्रेज़ी PDF</a> · <a href="VERIFICATION.md">सत्यापित क्षमताएँ</a> · <a href="KNOWN_LIMITATIONS.md">सीमाएँ</a></p>
 
 # ChromaNeural
 
-**RC4 केवल Windows x64 और Linux amd64 के लिए है। macOS, Android और iOS इस रिलीज़ के दायरे में नहीं हैं।**
+**RC4 केवल Windows x64 और Linux amd64 का समर्थन करता है।**
 
 [English](README.md) · [Dansk](README-DK.md) · [Deutsch](README-DE.md) · [Français](README-FR.md) · [日本語](README-JA.md) · [简体中文](README-ZH-CN.md) · [हिन्दी](README-HI-IN.md)
 
-**RC4 स्थानीय उम्मीदवार: प्रकाशित नहीं।** नए पैकेज और सुरक्षा स्वीकृति अभी लंबित हैं। पुराने कार्यात्मक प्रमाण केवल अपरिवर्तित स्रोत हैश के आधार पर दोबारा उपयोग किए जाते हैं। [स्थिति और सीमाएँ](RELEASE_NOTES.md)।
+**RC4 प्रकाशित प्रीरिलीज़: VERIFIED/PASS।** Windows/Linux पैकेज, साफ़ स्थिति में पहली शुरुआत और स्वामी की मैन्युअल जाँच सफल हैं। [स्थिति और सीमाएँ](RELEASE_NOTES.md)।
 
 **स्थानीय AI काम, प्रमाणित साथी सहयोग, और निजी काम व साझा परिणामों के बीच स्पष्ट सीमा।**
 
@@ -67,7 +67,7 @@ GUI में स्पष्ट चयन केवल संस्करण �
 | क्षमता | उपलब्ध दायरा |
 |---|---|
 | पृष्ठभूमि काम | पहले स्वीकृत स्थानीय काम मौजूदा स्थायी कतार में लीज़, विराम, रद्द, रोक, पुनः आरंभ सहित। |
-| स्थानीय AI | Windows/Linux में CPU/Qwen; स्पष्ट स्थानीय Ollama अडैप्टर और मॉडल। छिपा फ़ॉलबैक नहीं। macOS में बंडल अनुमान रनटाइम नहीं। |
+| स्थानीय AI | Windows/Linux में CPU/Qwen; स्पष्ट स्थानीय Ollama अडैप्टर और मॉडल। छिपा फ़ॉलबैक नहीं।  |
 | साथी सहयोग | स्वीकृत प्रश्न/उत्तर मौजूदा TLS और SQLite इनबॉक्स से मूल कोड प्रस्ताव कार्य से जुड़े रहते हैं। |
 | संसाधन नियंत्रण | वर्णित Windows CPU प्रोफ़ाइल CPU शेड्यूलिंग, अनुमान थ्रेड, प्रतिबद्ध मेमोरी और जीवनचक्र नियंत्रित करती है। कुल भौतिक RAM गारंटी नहीं। अन्य नियंत्रित प्रदाता/OS प्रोफ़ाइल सुरक्षित रूप से अस्वीकार होती हैं। |
 | परिणाम | स्थानीय/साथी मूल और समीक्षा स्थिति बनी रहती है। मौजूदा प्रामाणिक सत्यापन स्वीकारने तक असत्यापित। |
@@ -101,7 +101,7 @@ GUI में स्पष्ट चयन केवल संस्करण �
 | स्थान | डिफ़ॉल्ट |
 |---|---|
 | Windows स्थिति | `%LOCALAPPDATA%\ChromaNeural\client` |
-| Linux/macOS स्थिति | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
+| Linux स्थिति | `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client` |
 | काम की फ़ाइलें | स्पष्ट चुना फ़ोल्डर, पूरे फ़ोल्डर का स्वतः अपलोड नहीं |
 | ब्राउज़र का निजी डेटा | प्रमाणित Internet Identity कॉलर के तहत मौजूदा वेब ऐप |
 
@@ -109,7 +109,7 @@ GUI में स्पष्ट चयन केवल संस्करण �
 
 **Private II storage** सूचनात्मक है। ब्राउज़र स्वामी अधिकार से मूल निजी अपलोड/डाउनलोड नहीं बना। वेब ऐप उपयोग उसका सत्र नोड को नहीं देता। स्थानीय गोपनीयता/पहुँच जाँच लाइव सेवा पर सुधार तैनाती सिद्ध नहीं करती।
 
-## पुराने rc.1 प्लेटफ़ॉर्म और डाउनलोड
+## RC4 प्लेटफ़ॉर्म और डाउनलोड
 
 | आधिकारिक पूर्व-रिलीज़ प्लेटफ़ॉर्म | डाउनलोड | सत्यापित दायरा |
 |---|---|---|
@@ -117,15 +117,14 @@ GUI में स्पष्ट चयन केवल संस्करण �
 | Linux amd64 | [Debian पैकेज](RELEASE_NOTES.md) | मूल Ubuntu 24.04 बिल्ड, खोलना, SDK/CLI, Xvfb/Tk; पूरा स्थापना/हटाना नहीं |
 | स्रोत | [स्वीकृत स्रोत ZIP](RELEASE_NOTES.md) | स्वीकृत रिलीज़ स्रोत; वर्तमान दस्तावेज़ नया हो सकता है |
 
-**ज़रूरतें:** Windows: Python 3.14/Tk, `py`/`pyw`, Node.js 24। Linux: Python 3.11+, Tk, cryptography, Node.js 20+, libgomp1। macOS: 15+, Python 3.14/Tk, Node.js 24, निश्चित Python crypto निर्भरताएँ। डाउनलोड से पहले [स्थापना](docs/hi-IN/ChromaNeural-Installation.md) पढ़ें।
+**ज़रूरतें:** Windows: Python 3.14/Tk, `py`/`pyw`, Node.js 24। Linux: Python 3.11+, Tk, cryptography, Node.js 20+, libgomp1।  डाउनलोड से पहले [स्थापना](INSTALLATION.md) पढ़ें।
 
-पैकेज **अहस्ताक्षरित**, macOS **गैर-नोटरीकृत** हैं। Universal 2 नहीं। OS चेतावनी आ सकती है। Linux/macOS लॉन्चर और Windows इंस्टॉलर आइकन की सीमाएँ [ब्रांड स्थिति](docs/BRANDING.md) में हैं।
+पैकेज **अहस्ताक्षरित** हैं। OS चेतावनी आ सकती है। [ब्रांड स्थिति](docs/BRANDING.md) देखें।
 
-आधिकारिक Android/iOS समर्थन स्थगित है।
 
 ### डाउनलोड सत्यापित करें
 
-पैकेज के साथ [SHA256SUMS.txt](RELEASE_NOTES.md) लें। Windows: `Get-FileHash -Algorithm SHA256`; Linux: `sha256sum`; macOS: `shasum -a 256`। सटीक नाम की पूरी राशि मिलाएँ। SHA-256 बाइट जाँचता है, प्रकाशक पहचान नहीं। [सभी प्रकाशित हैश और आदेश](docs/DOWNLOADS.md)।
+पैकेज के साथ [SHA256SUMS.txt](RELEASE_NOTES.md) लें। Windows: `Get-FileHash -Algorithm SHA256`; Linux: `sha256sum`। सटीक नाम की पूरी राशि मिलाएँ। SHA-256 बाइट जाँचता है, प्रकाशक पहचान नहीं। [सभी प्रकाशित हैश और आदेश](docs/DOWNLOADS.md)।
 
 GitHub ने DEB नाम `~rc.1` से `.rc.1` किया; बाइट और सामग्री हैश नहीं बदले।
 
@@ -138,7 +137,7 @@ GitHub ने DEB नाम `~rc.1` से `.rc.1` किया; बाइट �
 | अवलोकन | [प्रणाली और प्रवाह](docs/hi-IN/ChromaNeural-Overview.md) | [अवलोकन](docs/pdf/ChromaNeural-Overview.pdf) |
 | उपयोगकर्ता | [क्लाइंट उपयोग](docs/hi-IN/ChromaNeural-User-Guide.md) | [उपयोगकर्ता](docs/pdf/ChromaNeural-User-Guide.pdf) |
 | गोपनीयता और संग्रह | [डेटा, पथ, पहचान](docs/hi-IN/ChromaNeural-Privacy-and-Storage.md) | [गोपनीयता और संग्रह](docs/pdf/ChromaNeural-Privacy-and-Storage.pdf) |
-| स्थापना | [Windows, Linux, macOS](docs/hi-IN/ChromaNeural-Installation.md) | [स्थापना](docs/pdf/ChromaNeural-Installation.pdf) |
+| स्थापना | [Windows, Linux](INSTALLATION.md) | [स्थापना](docs/pdf/ChromaNeural-Installation.pdf) |
 | सत्यापित क्षमताएँ | [प्रमाण और सीमाएँ](docs/hi-IN/ChromaNeural-Verified-Capabilities.md) | [सत्यापित क्षमताएँ](docs/pdf/ChromaNeural-Verified-Capabilities.pdf) |
 
 विकासकर्ता: [पुनरुत्पादन और प्रमाण](VERIFICATION.md), [योगदान](CONTRIBUTING.md), [बदलाव](CHANGELOG.md), [लाइसेंस सीमाएँ](docs/LICENSING.md)।

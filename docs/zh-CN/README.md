@@ -2,7 +2,9 @@
 
 [English](../en/README.md) · [Dansk](../da/README.md) · [Deutsch](../de/README.md) · [Français](../fr/README.md) · [日本語](../ja/README.md) · [简体中文](README.md) · [हिन्दी](../hi-IN/README.md)
 
-**rc.3 验证状态：VERIFIED/PASS。** Windows x64、Linux amd64 和 macOS Intel 的原生安装程序／软件包验收已在文档所述范围内通过。本地化、可扩展 i18n、截图和 PDF 已验证。MCP 和配置向导（包括真实模型工具调用）也已通过。[当前 rc.3 发布说明（英文）](../../RELEASE_NOTES.md)列出了构建提交和限制。下方 rc.1 下载及旧证据仍为历史记录。
+**RC4已发布预发行版：VERIFIED/PASS。** Windows/Linux软件包、首次干净启动及所有者手动验收均已通过。[状态与限制](../../RELEASE_NOTES.md)。
+
+以下为历史rc.2指南，平台说明仅代表当时范围。当前RC4安装：[Windows x64 / Linux amd64](../../INSTALLATION.md)。
 
 [README](../../README-ZH-CN.md)
 

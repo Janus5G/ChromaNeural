@@ -3,9 +3,6 @@ on:
   workflow_dispatch:
   workflow_call:
     inputs:
-      mac_deadline:
-        type: boolean
-        default: false
       delta:
         type: boolean
         default: false
@@ -16,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ${{ fromJSON(inputs.mac_deadline && '["macos-15-intel"]' || '["windows-2025","ubuntu-24.04","macos-15-intel"]') }}
+        os: [windows-2025, ubuntu-24.04]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     env:
@@ -34,14 +31,14 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y python3-tk python3-pip xvfb
       - name: Native Linux MCP staging and acceptance
         if: runner.os == 'Linux'
-        run: xvfb-run -a /usr/bin/python3 -B packaging/mcp_native.py ${{ inputs.mac_deadline && '--mac-deadline' || inputs.delta && '--delta' || '' }}
-      - name: Native Windows/macOS MCP staging and acceptance
-        if: runner.os != 'Linux'
-        run: python -B packaging/mcp_native.py ${{ inputs.mac_deadline && '--mac-deadline' || inputs.delta && '--delta' || '' }}
+        run: xvfb-run -a /usr/bin/python3 -B packaging/mcp_native.py ${{ inputs.delta && '--delta' || '' }}
+      - name: Native Windows MCP staging and acceptance
+        if: runner.os == 'Windows'
+        run: python -B packaging/mcp_native.py ${{ inputs.delta && '--delta' || '' }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: MCP-0.2.21-rc.3-${{ matrix.os }}
+          name: MCP-0.2.21-rc.4-${{ matrix.os }}
           path: |
             build/mcp-acceptance/STARTUP.json
             build/mcp-acceptance/RESULT.json
