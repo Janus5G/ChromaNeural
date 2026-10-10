@@ -51,7 +51,8 @@
     "installer/fr.json",
     "installer/hi-IN.json",
     "installer/ja.json",
-    "installer/zh-CN.json"
+    "installer/zh-CN.json",
+    "docs/SCREENSHOT_MANIFEST.json"
   ],
   "publicDependencyFiles": {
     "client/services/node_modules/@icp-sdk/core/lib/cjs/agent/actor.d.ts": "3c1e3284ff82ddb4128a39e3533f38552a0405d62490ca7c56b72efcc1ae5203",

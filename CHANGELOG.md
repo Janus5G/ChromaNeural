@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.21-rc.5 - in preparation
+
+Preserves the working RC4 application. New English/Danish documentation and genuine localized screenshots, Inno Setup packaging, a manual clean-build workflow and fail-closed test-signing preparation. Native CI execution and production signing are not yet verified.
+
 ## 0.2.21-rc.1 — release candidate
 
 Curated public documentation, Apache-2.0 for ChromaNeural-authored code, native package profiles and manual CI artifact generation. Based on unchanged accepted v0.2.20 application source. Native Windows/Linux/macOS package checks passed. Windows bootstrap/module discovery and guarded cleanup were corrected; final public documentation now reflects that evidence. No application behavior or dependency version changed. Publication requires separate approval.

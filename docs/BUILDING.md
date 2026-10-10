@@ -1,9 +1,13 @@
-# Native builds
+# RC5 clean candidate builds
 
-Use a clean checkout on the target OS. The workflow pins Actions by full commit SHA and requests Windows 2025 x64 and Ubuntu 24.04 amd64 only. Official runner reference: https://docs.github.com/en/actions/reference/runners/github-hosted-runners
+Only Windows x64 and Linux amd64 are release targets. Application source is bound to the working RC4 baseline; packaging and documentation are a separate RC5 generation.
 
-Run `python packaging/build.py`, then `python packaging/smoke.py` with the documented platform prerequisites. Existing output is preserved; use a fresh checkout for a new build. `assets.lock.json` contains exact accepted model/runtime hashes. A supplied `--asset-cache` may avoid redownloading but every byte stream is still hash checked. SDK packaging uses the unchanged npm lock. No private II credentials or production network calls are used.
+Run `python -B packaging/validate_rc5.py` in a clean checkout, then `python -B packaging/build.py` and `python -B packaging/rc5_smoke.py` on Windows, or `xvfb-run -a /usr/bin/python3 -B packaging/rc5_smoke.py` on Linux. The native builder retains the existing explicit hash-bound input allowlist, locked SDK/models and private-state rejection. It never copies developer HOME/state. Unknown source files fail closed. Build output must not exist before a fresh build.
 
-Windows uses the native OS IExpress packaging tool around the existing verified PowerShell installer. Linux uses dpkg-deb. Only these two platform targets are accepted by the package builder and native workflows. No signing identity or cloud release permission is requested.
+Windows requires Python 3.14/Tk/py/pyw, Node.js 24 and the verified Inno Setup 7.1.0 compiler. Set `CHROMA_ISCC` to its ISCC.exe. The workflow downloads the official hash-bound tool, validates its Authenticode publisher and installs it into the runner's temporary directory. The compiler uses an explicit file list derived from the verified payload manifest, not an arbitrary directory wildcard. Linux retains the existing DEB builder.
 
-RC4 Windows x64 and Linux amd64 package acceptance and owner manual checks passed. See [verification](../VERIFICATION.md) for current scope and explicitly historical native results. The final source archive adds reviewed documentation only; accepted native artifacts are preserved, not rebuilt. Future workflow runs still require their own successful evidence.
+Inno manages per-user program files, Start Menu and uninstall registration. It does not start the app, create a desktop shortcut, import profiles, delete separate user state, or install prerequisites. Same-version reinstall is supported; numeric downgrade is rejected. Old RC4 installation directories remain separate.
+
+The manually dispatched GitHub workflow uses read-only repository permissions and pinned actions. No Actions run, push, signing request or public release has been performed by local preparation. [Signing setup and external blockers](SIGNING.md). Controlled inputs aid reproducibility; cross-run binary byte identity is NOT VERIFIED.
+
+[English installation](en/installation.md) · [Dansk installation](da/installation.md)

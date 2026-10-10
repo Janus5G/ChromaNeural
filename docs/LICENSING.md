@@ -1,6 +1,6 @@
 # License and code boundaries
 
-**ChromaNeural: Apache-2.0. Refract Editor component: MIT. Source-license decision cleared; 0.2.21-rc.1 is published as a prerelease.**
+**ChromaNeural: Apache-2.0. Refract Editor component: MIT. Historical source-license decision retained. RC5 release signing and Foundation eligibility are separate, unverified gates.**
 
 Copyright (c) 2026 Janus Rokkjær applies to Janus-owned ChromaNeural code, not to upstream authors' work. The unmodified Apache license text is in `LICENSE`. `LICENSE_SCOPE.json` identifies the accepted source files by path/hash and their separate licenses. Release documentation and new packaging scripts are ChromaNeural-authored. Existing notices are preserved; there is no bulk source-header rewrite.
 

@@ -1,5 +1,5 @@
 {
-  "version": "0.2.21-rc.4",
+  "version": "0.2.21-rc.5",
   "files": {
     ".gitattributes": {
       "sha256": "d66543c2d13999398fc152dcf0acec998069f243b8ff6d7183d073629437a0c1",
@@ -10,7 +10,7 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     ".github/workflows/native-packages.yml": {
-      "sha256": "3d7d68510001bdb3b899e5c3245788d847f567f10dd475200fa796ad6f98dc3f",
+      "sha256": "8c3817997b64ac1d01831886b05cc1319aa95361b43e3c75d510cea3937b99d2",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     ".gitignore": {
@@ -18,7 +18,7 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "CHANGELOG.md": {
-      "sha256": "82aa9fe37599d7fe839f84ab4dc61c9c6ebb9a0c978d0e8e1970e2cfa03053bf",
+      "sha256": "b58657fbb2ec549ecbb963f37297970d6327bf2c7808377fd74e86bb25b56c00",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "CHANGELOG.md"
     },
@@ -38,7 +38,7 @@
       "payload": "ChromaSpeech-WSL.ps1"
     },
     "INSTALLATION.md": {
-      "sha256": "ded32e972c50611571b9642531d8327f05b0c4878111c4418027498b67e1cc79",
+      "sha256": "b94b88e3c2151f6369ab3d9a00aedf24e68fbd2e49d68991c34c1b4d06fa2f87",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "INSTALLATION.md"
     },
@@ -48,7 +48,7 @@
       "payload": "Install-ChromaNeural.ps1"
     },
     "KNOWN_LIMITATIONS.md": {
-      "sha256": "ad46807526c56c17e3ae9b1e3dd585774be7e81253112a43df9a126103227ff8",
+      "sha256": "d3eae3f70d668ea893510db438306169da3a157ae57ef24c820b2c589a5f52a2",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "KNOWN_LIMITATIONS.md"
     },
@@ -62,43 +62,18 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "NOTICE"
     },
-    "README-DE.md": {
-      "sha256": "4fe4cbacb4c6b3ee315b4a8daea3edcf91ce3dab0ffe0e2e48024eff5ca74a5d",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "README-DE.md"
-    },
     "README-DK.md": {
-      "sha256": "a12e032875944b40b29232d12d13a0cccd320abd435bcd970205b0af2089605d",
+      "sha256": "c99b0a297296a207f703ea2eb91c43e878941c5555e23af55599b9015bffd6b6",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "README-DK.md"
     },
-    "README-FR.md": {
-      "sha256": "b13cce3b8268719a01fec87f4b1fa9e22ae0a0e09327d3c20cb4ec401732698f",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "README-FR.md"
-    },
-    "README-HI-IN.md": {
-      "sha256": "ebadf905599de74e4eb59493b75c4164129dd5e431ec426d094e5f418b237ddf",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "README-HI-IN.md"
-    },
-    "README-JA.md": {
-      "sha256": "82c1da1bbf3294a90104b083fa9b99f45ee4237200e21c418e6e83e65e31118d",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "README-JA.md"
-    },
-    "README-ZH-CN.md": {
-      "sha256": "ef82655c98d427143048e12f417027ed913f014b7a91f702166a817ee1020c30",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "README-ZH-CN.md"
-    },
     "README.md": {
-      "sha256": "a9fb4cf099bba42081033a8087fee3a8e89de3228a29d1303ef9f6e14ee111be",
+      "sha256": "c178838793b976d739170f17608fe79230e5c1b02bba0c640ea66e78cd71fd3d",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "README.md"
     },
     "RELEASE_NOTES.md": {
-      "sha256": "f3658fd54d23e285f5572c4b4d9bc06ba2233e504ccda1dd9fcd88aa3746690a",
+      "sha256": "4c34b9b134e66e715a6e1cdca048422593544cece9276583e3c30e0aa350bd12",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "RELEASE_NOTES.md"
     },
@@ -123,12 +98,12 @@
       "payload": "THIRD_PARTY_NOTICES.md"
     },
     "VERIFICATION.md": {
-      "sha256": "4f914821c293790e6ee6a4a77666ecb2735560cad88118c510aab611d14b5142",
+      "sha256": "8ce547861ea58cd3d899a2d1d9c5da042007f44413e4486baa1e89df4fedd4c6",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "VERIFICATION.md"
     },
     "VERSION": {
-      "sha256": "f28ddbf701936d1409008971132d475474f6984e7383ebd72b4a1afc4907a97f",
+      "sha256": "73bac203e612bba13ccff191c7c60049a4a5f00c6e7fedda8bd705a4b75ac5af",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "VERSION"
     },
@@ -588,24 +563,29 @@
       "payload": "client/vendor/chromaplex-toolchain/chromaplex_os/vm.py"
     },
     "docs/ARCHITECTURE.md": {
-      "sha256": "f5dd4e8b85bbb57c08f713d1a4d9b95eed98bd7ad15cd05449ab07eee243ba01",
+      "sha256": "d43fc3dac238287a495128efdcbd152db81212676e3777582fe3d45dd91c0cd2",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/ARCHITECTURE.md"
     },
     "docs/BRANDING.md": {
-      "sha256": "7ed88b372c9bdf8e6f57b5027d674ece782db793473cd9ade78696e3c13c2327",
+      "sha256": "44c4370db184b9dbe031a7d16fe5340b88c2403765bfe39095e165a5f1dda13f",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/BRANDING.md"
     },
     "docs/BUILDING.md": {
-      "sha256": "6210c5fe002f9e0ea61d7b400f0bc2e884ffa51279e8e65139026c1aa1daab8c",
+      "sha256": "14a4e66d6851f6a2a742d37511a95842dcc3bd3020e40605225076eddb949e10",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/BUILDING.md"
     },
     "docs/DOWNLOADS.md": {
-      "sha256": "87e7eee503111f3ab459abc5f2b8511dc8915391687e9f2cad55af8da8c5d617",
+      "sha256": "2f656d50361dfc4753c336ed968d85bc1c06fc9f6b92904a2913d4899a6b9083",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/DOWNLOADS.md"
+    },
+    "docs/LAN_API_STATUS.md": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "payload": "docs/LAN_API_STATUS.md",
+      "sha256": "7f54ec33a4dd8e6bf18f5a3ec8897e825e3576bb1c1e082d371cf0285ff66069"
     },
     "docs/LICENSE_SCOPE.json": {
       "sha256": "f512ee4396cf15a39b4e8e4c73b0f2500612241652102cbb796ab2af95e90b19",
@@ -613,7 +593,7 @@
       "payload": "docs/LICENSE_SCOPE.json"
     },
     "docs/LICENSING.md": {
-      "sha256": "567e783bc397c20d33a787b851e9d218e1f188d9f6287e730cdee49e42960892",
+      "sha256": "c54a868930cc8e56228cd31857a3c0813ca44135f615cb8f742df4a57c01ca3d",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/LICENSING.md"
     },
@@ -623,384 +603,129 @@
       "payload": "docs/MCP_DEPENDENCIES.json"
     },
     "docs/MCP_ONBOARDING.md": {
-      "sha256": "0bf34ed038b4c442e3460f4a315587dc84c2ba4e1c65e375953be114cc7fc267",
+      "sha256": "3f04a0fc1ce78c22e935d06ee70d0459b93603a86688c91f747b1d97ef1217e5",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/MCP_ONBOARDING.md"
     },
     "docs/README.md": {
-      "sha256": "3424cf04f03cfba1c3b4c9bb390f2b4afa01970d1e92c923fc470c37ae4eb896",
+      "sha256": "2ae5da49f242c8c1659ef41d6d966c54217cc856129d9130f52077d4b068fb20",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/README.md"
     },
     "docs/SCREENSHOTS.md": {
-      "sha256": "340c4afab6fb0a589c0ecfefbc3b522d8e187b20a2a3397b04abf6e5dd8eb25d",
+      "sha256": "1eda7eccc1b399415d56db3f1680269eb7a77e855f9803c4fad2a4b0fb14ae7b",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/SCREENSHOTS.md"
     },
-    "docs/da/ChromaNeural-Installation-DA.md": {
-      "sha256": "da7c1121a13150c9b9b88d661e474e290dfeed517cacdab5a38481863974293d",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/da/ChromaNeural-Installation-DA.md"
+    "docs/SCREENSHOT_MANIFEST.json": {
+      "classification": "PUBLIC_PRODUCT_JSON",
+      "payload": "docs/SCREENSHOT_MANIFEST.json",
+      "sha256": "634fdcb16d6cfda9d366363c5b682fde2db83580a71ae7aa5785f9f985f32397"
     },
-    "docs/da/ChromaNeural-Overview-DA.md": {
-      "sha256": "d2a8cdda366c8dbfadda134ab61706bf3435e9de5092fbbb38292989668e336b",
+    "docs/SIGNING.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/da/ChromaNeural-Overview-DA.md"
+      "payload": "docs/SIGNING.md",
+      "sha256": "438f8f97f94f9e1a96a6d73eeb10cd6af35892d0193a50138241bc685da8029f"
     },
-    "docs/da/ChromaNeural-Privacy-and-Storage-DA.md": {
-      "sha256": "2e79c0f83a91173f6c16dc5f22c4423c4f8a9478c82c3a3868250c54b6824f31",
+    "docs/da/guide.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/da/ChromaNeural-Privacy-and-Storage-DA.md"
+      "payload": "docs/da/guide.md",
+      "sha256": "ff300b880538e3ba2f84e8ad62bedc43e6b32bc71b1c9de32de0dcacbdeeb8e9"
     },
-    "docs/da/ChromaNeural-User-Guide-DA.md": {
-      "sha256": "9d1923b9af955d5991131d0364acdb4270f9ab95ad1e5369af8a619f19c85ba4",
+    "docs/da/images/activity.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/da/ChromaNeural-User-Guide-DA.md"
+      "payload": "docs/da/images/activity.png",
+      "sha256": "d3bc29886344c3977993dea5f00796c7cb05341523704cc89543b28d45d31092"
     },
-    "docs/da/ChromaNeural-Verified-Capabilities-DA.md": {
-      "sha256": "3ea8b37acac72399d5ac855834c5d8946211fb9ab574778daf2a20af759a83fb",
+    "docs/da/images/ai-setup.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/da/ChromaNeural-Verified-Capabilities-DA.md"
+      "payload": "docs/da/images/ai-setup.png",
+      "sha256": "271d905ac6400e1f1e104f2b47242a286be141321cc80f29226f08e315d07d8c"
     },
-    "docs/da/README.md": {
-      "sha256": "585751e9bc2a92996e2ebc92c2b9a8021d8f61a599fb389a90269ab7e0e70e25",
+    "docs/da/images/connection.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/da/README.md"
+      "payload": "docs/da/images/connection.png",
+      "sha256": "d9d99ffddf20b4f3636e1c638679f037342ab4f20c55c89f2e2bf0f9f328eaae"
     },
-    "docs/de/ChromaNeural-Installation.md": {
-      "sha256": "5a47a9a8817ddf665558313658f2a2043916c84a77b5efb58864044a0f8c690f",
+    "docs/da/images/mcp.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/de/ChromaNeural-Installation.md"
+      "payload": "docs/da/images/mcp.png",
+      "sha256": "7bb4ff68e6eb9ce7eced18eac3ea68939b4e79fc9bdb5a60979003f527e19a75"
     },
-    "docs/de/ChromaNeural-Overview.md": {
-      "sha256": "b3d8d33f1910637ff892cbd94992e1bf8dc004dca5e1e3f062b818fc27264129",
+    "docs/da/images/overview.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/de/ChromaNeural-Overview.md"
+      "payload": "docs/da/images/overview.png",
+      "sha256": "f5fe5c0d1ed70b5e0d6c5a1582c323792ccbc5e6c4bd16f499781800b177372e"
     },
-    "docs/de/ChromaNeural-Privacy-and-Storage.md": {
-      "sha256": "a6fdf358d2711a76cf67895d92c72a58e4f5f1795e317c58185b34a785523fcd",
+    "docs/da/images/resources.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/de/ChromaNeural-Privacy-and-Storage.md"
+      "payload": "docs/da/images/resources.png",
+      "sha256": "03057b777f758cc1c6651d6b43d8cd64e0350ee3acf11082331b37d13547fce8"
     },
-    "docs/de/ChromaNeural-User-Guide.md": {
-      "sha256": "8f05eeeb0ef642966901b0e9fc11c4c0601f71deda6e70d9e3024d34ce501d6c",
+    "docs/da/installation.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/de/ChromaNeural-User-Guide.md"
+      "payload": "docs/da/installation.md",
+      "sha256": "6943803beac4d58312dd28083fd478ec05e52b99feb549f3ddff96a4724f407d"
     },
-    "docs/de/ChromaNeural-Verified-Capabilities.md": {
-      "sha256": "55f9b548205f939bb98445ffdc26f1b190614c5e23129e87f446f3064622f291",
+    "docs/da/privacy.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/de/ChromaNeural-Verified-Capabilities.md"
+      "payload": "docs/da/privacy.md",
+      "sha256": "c06b485485460de0b008c8c3d5aac226573d6b217c0d5ad570fd8e58d7906c24"
     },
-    "docs/de/README.md": {
-      "sha256": "f83cd0572e9b4210e49f518287f0c81060b80a0b392f749ba40d1f4274304a4e",
+    "docs/en/guide.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/de/README.md"
+      "payload": "docs/en/guide.md",
+      "sha256": "4a0b36cfed7151983af5eb2da685696626cc0dfb5df9602c8db56c859adb1e4c"
     },
-    "docs/en/ChromaNeural-Installation.md": {
-      "sha256": "84cfe3b5cb9aeaf9a0d95210b7b8023f35c391435861735a45ba6fe4008b204a",
+    "docs/en/images/activity.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/en/ChromaNeural-Installation.md"
+      "payload": "docs/en/images/activity.png",
+      "sha256": "5e1b0dd39045c3a71b700f54b3c394eb3d4904fb5bfa0f425625811a10d9342c"
     },
-    "docs/en/ChromaNeural-Overview.md": {
-      "sha256": "4f3b992efa3f720a3f49779d6251026fe17f349badd72bf0abdad4eb50199e20",
+    "docs/en/images/ai-setup.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/en/ChromaNeural-Overview.md"
+      "payload": "docs/en/images/ai-setup.png",
+      "sha256": "1ecd0c56ad7274448808a070bba1af1fc3def0b0a7ac5ed6ad176b8432b2b907"
     },
-    "docs/en/ChromaNeural-Privacy-and-Storage.md": {
-      "sha256": "84c3a92e3088eef529215f72840fa28734ab5ffddc90f43bb3494edfd7ed5d26",
+    "docs/en/images/connection.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/en/ChromaNeural-Privacy-and-Storage.md"
+      "payload": "docs/en/images/connection.png",
+      "sha256": "5b479c322808c25ff08e6ffdc74e7353102dba50c8719b016cd2a1fa2231114e"
     },
-    "docs/en/ChromaNeural-User-Guide.md": {
-      "sha256": "553acc9a4244bae1ce572208a5b8e273793fd5cd9a011a598e17843dc71cd082",
+    "docs/en/images/mcp.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/en/ChromaNeural-User-Guide.md"
+      "payload": "docs/en/images/mcp.png",
+      "sha256": "e0bfc7fcacd591b1a01063371f710b21876169ae1158ebbde0f7461faf2c2da6"
     },
-    "docs/en/ChromaNeural-Verified-Capabilities.md": {
-      "sha256": "d48d69ea5415f620ddca178298fad8bc5f7b0128c3f9e985c4b8ee3bd567f276",
+    "docs/en/images/overview.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/en/ChromaNeural-Verified-Capabilities.md"
+      "payload": "docs/en/images/overview.png",
+      "sha256": "55130e2a5e1bd1073f42a2aad557732b6fec9a79fabbb968d0b3b2585a72f7b4"
     },
-    "docs/en/README.md": {
-      "sha256": "3cb172063cc4bb32dd7b7ed30e0f892a279c012035490449e4c92224fd8816e5",
+    "docs/en/images/resources.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/en/README.md"
+      "payload": "docs/en/images/resources.png",
+      "sha256": "a3bf5841e6dd8a6df39628493a6dcaaadcab2f5523d1a3bb978bd2d68682061b"
     },
-    "docs/fr/ChromaNeural-Installation.md": {
-      "sha256": "b13d2cdc378e2140c72ab54bb9601b1835e74539c0857f987a9c3500a31b752c",
+    "docs/en/installation.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/fr/ChromaNeural-Installation.md"
+      "payload": "docs/en/installation.md",
+      "sha256": "765d4223e830a96d455e75c3bdce91520b33bc9298eb0d8a52bac7074e16d5ec"
     },
-    "docs/fr/ChromaNeural-Overview.md": {
-      "sha256": "0218bef8f25f65ad746989b1fcf458f860f88122960d0287c916f2edddd546ad",
+    "docs/en/privacy.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/fr/ChromaNeural-Overview.md"
-    },
-    "docs/fr/ChromaNeural-Privacy-and-Storage.md": {
-      "sha256": "689df014e89e04ddd34585acf59e81030466d02e037e86f1d71cf095e79e16b7",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/fr/ChromaNeural-Privacy-and-Storage.md"
-    },
-    "docs/fr/ChromaNeural-User-Guide.md": {
-      "sha256": "d3f1ed3c9537fe9d7380faac4500a3371e41e742d17d63fac42409a9afa2c406",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/fr/ChromaNeural-User-Guide.md"
-    },
-    "docs/fr/ChromaNeural-Verified-Capabilities.md": {
-      "sha256": "147a32c9f23ab6e1fdc3364c8cd915de1a35071188dc6e5caf7ef1f73418c652",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/fr/ChromaNeural-Verified-Capabilities.md"
-    },
-    "docs/fr/README.md": {
-      "sha256": "ac190e5715d5c58b372935cb62f559f3a30efb5970d195070684da1be50528e2",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/fr/README.md"
-    },
-    "docs/hi-IN/ChromaNeural-Installation.md": {
-      "sha256": "b3eccf075407b7eda5c4ad19e8ec1b59d43270399b5f525527022e365cef3954",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/hi-IN/ChromaNeural-Installation.md"
-    },
-    "docs/hi-IN/ChromaNeural-Overview.md": {
-      "sha256": "eeb7cb0c75b3740b79d37701afed6fb99f68c727ad2ae4da1216c170135cfb63",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/hi-IN/ChromaNeural-Overview.md"
-    },
-    "docs/hi-IN/ChromaNeural-Privacy-and-Storage.md": {
-      "sha256": "f97b4586fbd93b218c2d91219285e6f28ce32276a9436ec397aabf492cef52e1",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/hi-IN/ChromaNeural-Privacy-and-Storage.md"
-    },
-    "docs/hi-IN/ChromaNeural-User-Guide.md": {
-      "sha256": "e66304ffdd4085004bc497ba8c1202329e2d049be6bb55440279f32fed057ebe",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/hi-IN/ChromaNeural-User-Guide.md"
-    },
-    "docs/hi-IN/ChromaNeural-Verified-Capabilities.md": {
-      "sha256": "38ad607935af0aec5f00c1572ee48fc302df543b7a6291b4d3ed9fea3499f681",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/hi-IN/ChromaNeural-Verified-Capabilities.md"
-    },
-    "docs/hi-IN/README.md": {
-      "sha256": "c17b2074b205112614cfc9433096bcc5618644db77f2f2042afe3c1a5bcd882e",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/hi-IN/README.md"
-    },
-    "docs/images/chroma-neural-activity.png": {
-      "sha256": "03a4bb48494363e6abba81301303b5eeb31fe4685ee8cf853158e525cca5537f",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/chroma-neural-activity.png"
-    },
-    "docs/images/chroma-neural-connection.png": {
-      "sha256": "c91f1cd4ee40866ee0859408c8682c4ee5702775e7c32ac77708d5d8de0d6484",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/chroma-neural-connection.png"
+      "payload": "docs/en/privacy.md",
+      "sha256": "7fd849333343951624f7f5cb38d6e7a10721bd8877843677f344cb1adb5e295a"
     },
     "docs/images/chroma-neural-hero.png": {
       "sha256": "4109ab1575d08d028cff0ca9781ad761891970738598cc6d86fca1f8258f0e41",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/images/chroma-neural-hero.png"
     },
-    "docs/images/chroma-neural-overview.png": {
-      "sha256": "2e38f2827f0cf263ec3b48452df074a51ce118a8076ddb0be1a01fc33291f349",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/chroma-neural-overview.png"
-    },
-    "docs/images/chroma-neural-resources.png": {
-      "sha256": "1c2fc4bd13b7cc9950413b564488dc9f1e49b0f8d75f0e5f04cba51dd32fd72e",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/chroma-neural-resources.png"
-    },
     "docs/images/chroma-neural-social-preview.png": {
       "sha256": "a0fc964da8aed534f856c1f02796d231a7b2f9def6a9e476b03e149cdd28e6fe",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/images/chroma-neural-social-preview.png"
-    },
-    "docs/images/rc2/MANIFEST.json": {
-      "sha256": "90e6b4f16286f1170d6839d192cc01f1115ccdcca76333c7eae5a47598057bf0",
-      "classification": "PUBLIC_PRODUCT_JSON",
-      "payload": "docs/images/rc2/MANIFEST.json"
-    },
-    "docs/images/rc2/README.md": {
-      "sha256": "a676c906af87a9ba847d7f7a69564dc131590d1cf3c7320bf54db32615831191",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/README.md"
-    },
-    "docs/images/rc2/contact-sheet.png": {
-      "sha256": "0ad3e510ae412be22e74d414bc6c230f976d821e5544f113b7a8488131ac5397",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/contact-sheet.png"
-    },
-    "docs/images/rc2/da-activity.png": {
-      "sha256": "2217adc5f8d8c282a7476dc8ee0b13a5897406a62baf7e419a26d5443ef00fcb",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/da-activity.png"
-    },
-    "docs/images/rc2/da-connection.png": {
-      "sha256": "6c9ae072c7c12b5a2b4ad10dcb23343e91247dd8c19b9262dcc682eaf7f88542",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/da-connection.png"
-    },
-    "docs/images/rc2/da-overview.png": {
-      "sha256": "c1e17e0dd3d8e67e48de1a54665bce9fc13987af4a93a3bef6ac30d09d5fc5ef",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/da-overview.png"
-    },
-    "docs/images/rc2/da-resources.png": {
-      "sha256": "514b3843e2a5f0d66bca91246b0db28ef84079f153125d574a30191c0ba29160",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/da-resources.png"
-    },
-    "docs/images/rc2/de-activity.png": {
-      "sha256": "5e1042631875541ea1f696dc6c0fb7248b5d00e18884f610a8d98221cf201682",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/de-activity.png"
-    },
-    "docs/images/rc2/de-connection.png": {
-      "sha256": "cb5c1adf24087b5cf79556a2a52e81d048ffaf649cc22f23521a5e0797fba98c",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/de-connection.png"
-    },
-    "docs/images/rc2/de-overview.png": {
-      "sha256": "1ce7942dc28237b6df5aa34e33bcece622e05ba31cd68fc0d4e9844062e26afb",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/de-overview.png"
-    },
-    "docs/images/rc2/de-resources.png": {
-      "sha256": "12142c60b7d83d8b731f62ea32665fa93d304d3a8a9e7eed6997c2767012fabe",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/de-resources.png"
-    },
-    "docs/images/rc2/en-activity.png": {
-      "sha256": "530c6d8bb34425a2699497952294c023a0c83c9191fa6dd668114ea72c8b98bc",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/en-activity.png"
-    },
-    "docs/images/rc2/en-connection.png": {
-      "sha256": "251bd3157514d913e820f3750fc3e002ed8cf52528514892a56392a3b660e88b",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/en-connection.png"
-    },
-    "docs/images/rc2/en-overview.png": {
-      "sha256": "43bc9fda65fa0316d7761cdbf0e66b84e468791111b162f432c36348027e44d3",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/en-overview.png"
-    },
-    "docs/images/rc2/en-resources.png": {
-      "sha256": "eb09fba2809706822cd28eb3c1bdaed6753f65f72488cd7ea81ee08438f9f7aa",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/en-resources.png"
-    },
-    "docs/images/rc2/fr-activity.png": {
-      "sha256": "33d4f4a7946f6777c9c13d405810630c93473a688827ef834683a8ac495ad28d",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/fr-activity.png"
-    },
-    "docs/images/rc2/fr-connection.png": {
-      "sha256": "463ada0cbc614c5421532eedbf23e296b8e5dab46d4fbffdda60778c1daeccb8",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/fr-connection.png"
-    },
-    "docs/images/rc2/fr-overview.png": {
-      "sha256": "fe3de1bb4b3292ae8accf8162e9d92c341b9d8f1f5c097e53cc379623759ea83",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/fr-overview.png"
-    },
-    "docs/images/rc2/fr-resources.png": {
-      "sha256": "fac7ec5c608328cfb98ee7b9cb745da99b1f1f1ea575a8f04f42cbc534b1d087",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/fr-resources.png"
-    },
-    "docs/images/rc2/hi-IN-activity.png": {
-      "sha256": "f42f7cf37b1d9e9384817a8c289828906c04694fec4c174e4f9880484bb4fca4",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/hi-IN-activity.png"
-    },
-    "docs/images/rc2/hi-IN-connection.png": {
-      "sha256": "2e81c6e839ef5a1fc8482e8e8e460f8af6abd1389e489e4a45270c827bff4e1e",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/hi-IN-connection.png"
-    },
-    "docs/images/rc2/hi-IN-overview.png": {
-      "sha256": "de757550e396ca415f1477c6588e42497189428f1bd3792f10e278a6c6439e78",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/hi-IN-overview.png"
-    },
-    "docs/images/rc2/hi-IN-resources.png": {
-      "sha256": "40dd19ec1e8e9070d80c801d7b3a0d7589bfa886cbb08f761bfa7f25f27fba36",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/hi-IN-resources.png"
-    },
-    "docs/images/rc2/ja-activity.png": {
-      "sha256": "557f7f5177674020b25d41a4025d2871003013f4c45e365105dfb9f8d1b8d372",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/ja-activity.png"
-    },
-    "docs/images/rc2/ja-connection.png": {
-      "sha256": "dbfdcc461d5d4ad5b92cdb72ab6d81686abc32cb595c9e36ac5203800920ed12",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/ja-connection.png"
-    },
-    "docs/images/rc2/ja-overview.png": {
-      "sha256": "099e4082584040af5513db6b5ea53e663cb06aee4c04efbf38f57670cf1a2847",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/ja-overview.png"
-    },
-    "docs/images/rc2/ja-resources.png": {
-      "sha256": "cda84ad9a7c21063cc47319657ef1e905799bf46c5768aece471dc94eb5be473",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/ja-resources.png"
-    },
-    "docs/images/rc2/zh-CN-activity.png": {
-      "sha256": "bf02f3d6f1ccf93f8cd3525162701882d8fd0e726a922b6ad648ee22f7559031",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/zh-CN-activity.png"
-    },
-    "docs/images/rc2/zh-CN-connection.png": {
-      "sha256": "1030edaf58b278022cd4f58b050162170fedd992291fcafc59600ef146b1d3f3",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/zh-CN-connection.png"
-    },
-    "docs/images/rc2/zh-CN-overview.png": {
-      "sha256": "014fd5d5a7626b02ed0917317016ffe61a07ac403b46e3300e2cfe6b1eb95953",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/zh-CN-overview.png"
-    },
-    "docs/images/rc2/zh-CN-resources.png": {
-      "sha256": "41b4fb7490500eac69b1cc3df7ab582c62e522d740a18301c0a4f7e2844e2235",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/rc2/zh-CN-resources.png"
-    },
-    "docs/ja/ChromaNeural-Installation.md": {
-      "sha256": "b20fb77263cf36b5be7dd67897d84e57efb4fa387ae8df4429badf9ebff6d5fa",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/ja/ChromaNeural-Installation.md"
-    },
-    "docs/ja/ChromaNeural-Overview.md": {
-      "sha256": "0e31f9389d10831aebb037a6cd915f93d29d8403630c70cf6bef5ad7b7b172b4",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/ja/ChromaNeural-Overview.md"
-    },
-    "docs/ja/ChromaNeural-Privacy-and-Storage.md": {
-      "sha256": "27d7ecea678b243092611b76e1b1b5f3475a4df7dcfd96226cca772c8f064c8f",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/ja/ChromaNeural-Privacy-and-Storage.md"
-    },
-    "docs/ja/ChromaNeural-User-Guide.md": {
-      "sha256": "744751e2709bf6d889401623d3bd163dab6483e5f1f93904a3fa063c20ccefcd",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/ja/ChromaNeural-User-Guide.md"
-    },
-    "docs/ja/ChromaNeural-Verified-Capabilities.md": {
-      "sha256": "c81497abd112a4ad6b2c15f9a5bc608a420fceb1fb5daa0b7cde86a383e0243f",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/ja/ChromaNeural-Verified-Capabilities.md"
-    },
-    "docs/ja/README.md": {
-      "sha256": "f02de48c199cbebb1e1ddb258d0916e66eed4d0d68beaa6a2aed3f5b1bfd8a18",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/ja/README.md"
     },
     "docs/licenses/LLVM-OpenMP.txt": {
       "sha256": "fdad1758a9e1f9d5a81e18879b3406772115edc92c24bfa36b70c654f325e8e4",
@@ -1092,256 +817,6 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/licenses/npm/tslib/LICENSE.txt"
     },
-    "docs/pdf/ChromaNeural-Installation.pdf": {
-      "sha256": "04e9472f395eca5fc5d758353c87df47f6ce8660d2d0564c4832d49240db3cd7",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/ChromaNeural-Installation.pdf"
-    },
-    "docs/pdf/ChromaNeural-Overview.pdf": {
-      "sha256": "98cf74ad73265f585dc9d2c81cf57eecff41b1ddc15da25d3045fcdb99ec84cb",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/ChromaNeural-Overview.pdf"
-    },
-    "docs/pdf/ChromaNeural-Privacy-and-Storage.pdf": {
-      "sha256": "bec9d6f7c4ace77915f10ccfb29e89c33b5b8b4123c6e056914c1779522109e3",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/ChromaNeural-Privacy-and-Storage.pdf"
-    },
-    "docs/pdf/ChromaNeural-User-Guide.pdf": {
-      "sha256": "566ca0592f80052b09325ebe247c1a57d28e47e6309ae9d4c7a424efc183b28e",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/ChromaNeural-User-Guide.pdf"
-    },
-    "docs/pdf/ChromaNeural-Verified-Capabilities.pdf": {
-      "sha256": "f81ee3e9eb7dc18dc91f4b1347cb6d7fa89dd1876c8e27ee6a070a9562b087e1",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/ChromaNeural-Verified-Capabilities.pdf"
-    },
-    "docs/pdf/rc2/FONT-LICENSES/Noto-CJK-OFL.txt": {
-      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/FONT-LICENSES/Noto-CJK-OFL.txt"
-    },
-    "docs/pdf/rc2/FONT-LICENSES/Noto-OFL.txt": {
-      "sha256": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/FONT-LICENSES/Noto-OFL.txt"
-    },
-    "docs/pdf/rc2/MANIFEST.json": {
-      "sha256": "64e762764257c42857ed2afc68dce61fcc497fb28dffc84f3441ab6e3579eaa8",
-      "classification": "PUBLIC_PRODUCT_JSON",
-      "payload": "docs/pdf/rc2/MANIFEST.json"
-    },
-    "docs/pdf/rc2/README.md": {
-      "sha256": "5e0cc806d9cb649820cbffe13010cb83cb867f9a5b5695292007840f1b63d971",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/README.md"
-    },
-    "docs/pdf/rc2/da/ChromaNeural-Installation.pdf": {
-      "sha256": "25dcf53590dc52a79ce5762465a5f72450126fa1496b24959a81865b5a06d91e",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/da/ChromaNeural-Installation.pdf"
-    },
-    "docs/pdf/rc2/da/ChromaNeural-Overview.pdf": {
-      "sha256": "3849c02ecaaa43f1c4694349ee0693112f86bac93ee7b3ac66665760d782517a",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/da/ChromaNeural-Overview.pdf"
-    },
-    "docs/pdf/rc2/da/ChromaNeural-Privacy-and-Storage.pdf": {
-      "sha256": "5fd21ee7baf57159a72d31a5075071c4b3f1093a133d9685e9f5a4cfba240d28",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/da/ChromaNeural-Privacy-and-Storage.pdf"
-    },
-    "docs/pdf/rc2/da/ChromaNeural-User-Guide.pdf": {
-      "sha256": "411f94a763b69806185ee0794a3af2bad63084dba8d362665f862a1c9bf06a95",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/da/ChromaNeural-User-Guide.pdf"
-    },
-    "docs/pdf/rc2/da/ChromaNeural-Verified-Capabilities.pdf": {
-      "sha256": "be3b45030dfd0865f70b0d4cbdd5ff9491969aa61186ab49c59f7e21ae685d41",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/da/ChromaNeural-Verified-Capabilities.pdf"
-    },
-    "docs/pdf/rc2/de/ChromaNeural-Installation.pdf": {
-      "sha256": "b3b441c4060691cf129eb1400081b57ad9893907d4f74b9c873822a6a4e1eb5a",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/de/ChromaNeural-Installation.pdf"
-    },
-    "docs/pdf/rc2/de/ChromaNeural-Overview.pdf": {
-      "sha256": "19eeeb828bf1dfca7256f7f49e449dc0ec7a2eb627072b22f6652599e65acc18",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/de/ChromaNeural-Overview.pdf"
-    },
-    "docs/pdf/rc2/de/ChromaNeural-Privacy-and-Storage.pdf": {
-      "sha256": "64b1b53b009b866b16e77906f99249c4239361144d5a8be19658ed5674ff0867",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/de/ChromaNeural-Privacy-and-Storage.pdf"
-    },
-    "docs/pdf/rc2/de/ChromaNeural-User-Guide.pdf": {
-      "sha256": "e6a7b3818853a8c903c2b7fa6aae8ff0747e3d56d1dadb70aab8009d6628f8f4",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/de/ChromaNeural-User-Guide.pdf"
-    },
-    "docs/pdf/rc2/de/ChromaNeural-Verified-Capabilities.pdf": {
-      "sha256": "fce6ff6ca42b411ee95b82e890355a6aadd58fb47c7a8dfa4eef628e79ba2d78",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/de/ChromaNeural-Verified-Capabilities.pdf"
-    },
-    "docs/pdf/rc2/en/ChromaNeural-Installation.pdf": {
-      "sha256": "e948017978b657ad386229262b673836556b93d42a6f7e71b35510339926f202",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/en/ChromaNeural-Installation.pdf"
-    },
-    "docs/pdf/rc2/en/ChromaNeural-Overview.pdf": {
-      "sha256": "507b35a9e426ad9a59386db0027e3637ab3088a678d552fd2da288a5e173814d",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/en/ChromaNeural-Overview.pdf"
-    },
-    "docs/pdf/rc2/en/ChromaNeural-Privacy-and-Storage.pdf": {
-      "sha256": "0342de77144070f889b6097043c35de137d5308fc0b851dff347fbde905709da",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/en/ChromaNeural-Privacy-and-Storage.pdf"
-    },
-    "docs/pdf/rc2/en/ChromaNeural-User-Guide.pdf": {
-      "sha256": "369cf01378b4db1109d9631c2f8eea4fd5bbc9c18480b431381de8cb04ed68e7",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/en/ChromaNeural-User-Guide.pdf"
-    },
-    "docs/pdf/rc2/en/ChromaNeural-Verified-Capabilities.pdf": {
-      "sha256": "242ed814a426d172509dfec523a0bc1eb9b5964d90447f8a341d7890c5980253",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/en/ChromaNeural-Verified-Capabilities.pdf"
-    },
-    "docs/pdf/rc2/fr/ChromaNeural-Installation.pdf": {
-      "sha256": "555ffbbe5ac266158fe18ce1102346f4e3405efee0a4a86bebf3a87922ac1647",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/fr/ChromaNeural-Installation.pdf"
-    },
-    "docs/pdf/rc2/fr/ChromaNeural-Overview.pdf": {
-      "sha256": "4cecb43f0c748a08fff6471cc20e025a8f932d622ab5f99c20adccf137dfc402",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/fr/ChromaNeural-Overview.pdf"
-    },
-    "docs/pdf/rc2/fr/ChromaNeural-Privacy-and-Storage.pdf": {
-      "sha256": "f2e882c169207a695e0c607f35c43e6f789341e3d70be6179977be6185bc479e",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/fr/ChromaNeural-Privacy-and-Storage.pdf"
-    },
-    "docs/pdf/rc2/fr/ChromaNeural-User-Guide.pdf": {
-      "sha256": "5a82e48b741c573fdc814cf851c9f71bf9d9c9e6fada5b93985b6471cd781dae",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/fr/ChromaNeural-User-Guide.pdf"
-    },
-    "docs/pdf/rc2/fr/ChromaNeural-Verified-Capabilities.pdf": {
-      "sha256": "227fc709719360a59804fefbe03345135b9f2d03d231d217565a36ec04a852eb",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/fr/ChromaNeural-Verified-Capabilities.pdf"
-    },
-    "docs/pdf/rc2/hi-IN/ChromaNeural-Installation.pdf": {
-      "sha256": "096b1e958cdde5198d3622c20739f3980958d56b6ea8b9c7213c4264fda46118",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/hi-IN/ChromaNeural-Installation.pdf"
-    },
-    "docs/pdf/rc2/hi-IN/ChromaNeural-Overview.pdf": {
-      "sha256": "14fee8a328dd9b4235889d5efaf9fdddc71c4449d3b5a8d2b6a186656583c48e",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/hi-IN/ChromaNeural-Overview.pdf"
-    },
-    "docs/pdf/rc2/hi-IN/ChromaNeural-Privacy-and-Storage.pdf": {
-      "sha256": "0cc822e577f819ea236f5b9e45978f4ec95e9cbfb246c4c0cce19ac62aa0d2e3",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/hi-IN/ChromaNeural-Privacy-and-Storage.pdf"
-    },
-    "docs/pdf/rc2/hi-IN/ChromaNeural-User-Guide.pdf": {
-      "sha256": "090a6c0ae588a21450d5bf9eaa2abc8017782f5107f1229fcbb0f11f497fb4cd",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/hi-IN/ChromaNeural-User-Guide.pdf"
-    },
-    "docs/pdf/rc2/hi-IN/ChromaNeural-Verified-Capabilities.pdf": {
-      "sha256": "527c03135b0f6c3aed2cb94dde8645ac0e26cf31702f7bed27fbbc08f8fbf372",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/hi-IN/ChromaNeural-Verified-Capabilities.pdf"
-    },
-    "docs/pdf/rc2/ja/ChromaNeural-Installation.pdf": {
-      "sha256": "c64ae7f586cf030eda5d5aef94bf6a659b4b91bd2e9eccb7d144a5c83222467b",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/ja/ChromaNeural-Installation.pdf"
-    },
-    "docs/pdf/rc2/ja/ChromaNeural-Overview.pdf": {
-      "sha256": "84e0e3cef9ac5549dcb0fbf428a4e83c990b61d34f5b38c2e7ea4f94daa97454",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/ja/ChromaNeural-Overview.pdf"
-    },
-    "docs/pdf/rc2/ja/ChromaNeural-Privacy-and-Storage.pdf": {
-      "sha256": "51a86b19c862029bb90258285d722573c8ad2d2b37be0ab131ce0519f1295aa3",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/ja/ChromaNeural-Privacy-and-Storage.pdf"
-    },
-    "docs/pdf/rc2/ja/ChromaNeural-User-Guide.pdf": {
-      "sha256": "9e1b2f0dc782c9ff57ce7c5ed2e133a746187f6b3b45c7498bcb3a8a41d54d3a",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/ja/ChromaNeural-User-Guide.pdf"
-    },
-    "docs/pdf/rc2/ja/ChromaNeural-Verified-Capabilities.pdf": {
-      "sha256": "169001cecb117eaffea541ef8cd296b0bde93f071e75668240f8f620fdf4e91a",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/ja/ChromaNeural-Verified-Capabilities.pdf"
-    },
-    "docs/pdf/rc2/zh-CN/ChromaNeural-Installation.pdf": {
-      "sha256": "c8d3e9c865c4d68ed5c740504a591c07a424210a433483ac462df62bdb85ffa5",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/zh-CN/ChromaNeural-Installation.pdf"
-    },
-    "docs/pdf/rc2/zh-CN/ChromaNeural-Overview.pdf": {
-      "sha256": "209594984d0d73850861c65d781421d6f10793abecea8133e98fb5468183c5bf",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/zh-CN/ChromaNeural-Overview.pdf"
-    },
-    "docs/pdf/rc2/zh-CN/ChromaNeural-Privacy-and-Storage.pdf": {
-      "sha256": "3f1c98b543e5cd2da232d03116dd701da6f2aea63c6be91c7b5adf01f3c5d2f3",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/zh-CN/ChromaNeural-Privacy-and-Storage.pdf"
-    },
-    "docs/pdf/rc2/zh-CN/ChromaNeural-User-Guide.pdf": {
-      "sha256": "6eb1b00177815162f39f3f7e560f170068f70352392e9e935a9d5b112fa6ca3a",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/zh-CN/ChromaNeural-User-Guide.pdf"
-    },
-    "docs/pdf/rc2/zh-CN/ChromaNeural-Verified-Capabilities.pdf": {
-      "sha256": "8e98ab911e3be2422d3316ba49b06689675fe23376903fab1ca895709bfc9db1",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/pdf/rc2/zh-CN/ChromaNeural-Verified-Capabilities.pdf"
-    },
-    "docs/zh-CN/ChromaNeural-Installation.md": {
-      "sha256": "11a0a263eb89499b509ef47227732554c99f0fb54ab7af556283874e3dbd5de8",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/zh-CN/ChromaNeural-Installation.md"
-    },
-    "docs/zh-CN/ChromaNeural-Overview.md": {
-      "sha256": "3bb9025048545966411f8fdcdc343157da066f1bd8f2f15516388cc98f7a9824",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/zh-CN/ChromaNeural-Overview.md"
-    },
-    "docs/zh-CN/ChromaNeural-Privacy-and-Storage.md": {
-      "sha256": "e3be487a03b7f30018bff235d4be8258fc3f1a36a806e61e3835bd3898e9eefb",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/zh-CN/ChromaNeural-Privacy-and-Storage.md"
-    },
-    "docs/zh-CN/ChromaNeural-User-Guide.md": {
-      "sha256": "79632572155da962fbf8f2e784af7e6f83fa651e3e86130c06f52d1898804b04",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/zh-CN/ChromaNeural-User-Guide.md"
-    },
-    "docs/zh-CN/ChromaNeural-Verified-Capabilities.md": {
-      "sha256": "8a553958f27810867fcce580105f64de1b8cb80ae34c9f0e5ab63c48fdf33f40",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/zh-CN/ChromaNeural-Verified-Capabilities.md"
-    },
-    "docs/zh-CN/README.md": {
-      "sha256": "ac0c2a4da51ce704cf3bce99b5c2e1464d3783fedce6d3f5af9ee875b414fbf1",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/zh-CN/README.md"
-    },
     "packaging/accepted-source.json": {
       "sha256": "58bd46df0482780bd7e61152c3d060465b9eac2d71d18193d4744f1b6f72cea6",
       "classification": "PUBLIC_PRODUCT_JSON"
@@ -1375,12 +850,20 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "packaging/build.py": {
-      "sha256": "77fe4e4f3f3b51f8d58db4783da78889013d1d5b0dcbc13ea33133350d870979",
+      "sha256": "815f8d81466df19fc055de8c863bbe1dc404ffaeb6e5a10eafc8d64a24e4d53b",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
+    },
+    "packaging/capture_docs.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "3d00189a1bc9a9fbd658b0fc081d9a9eaa5051b17070df9ff3576faed02b113e"
     },
     "packaging/check_release.py": {
       "sha256": "985443989bb96f5757ae5e5ccaf47f31598f484167c4ba10ba8eb664d4576e80",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
+    },
+    "packaging/inno.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "26daf3692ab30099e9a9a1f415cd1c42489011dbb775d58f0bcd49ffe5856226"
     },
     "packaging/installer/da.json": {
       "sha256": "7a8930c05509019a0b4a6365ae2064e4502db1d3922136e5255bdc389d8284b5",
@@ -1442,8 +925,16 @@
       "sha256": "2b6f5e8388dba7f52f5f6cc28e674aad814356695fa75cda5f8e3bf6f3baaf8c",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
+    "packaging/rc4-application.json": {
+      "classification": "PUBLIC_PRODUCT_JSON",
+      "sha256": "a601f7fd15d24d690fb4bcde505dfca9ebf1ab6135a93ce640090806885cc5d6"
+    },
+    "packaging/rc5_smoke.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "7a790ce0c7324e42da2e762af8669f16ee7cbafd5d01a5f6a9e6b96729399bdd"
+    },
     "packaging/release-policy.json": {
-      "sha256": "195ba6430e2ae3028e81eaf768970a8f5668730955485241125eec166d039d74",
+      "sha256": "97ebdb604407c19be2925479752711882d2700661a25118ae675fe5bfc3b6cfb",
       "classification": "PUBLIC_PRODUCT_JSON"
     },
     "packaging/release_guard.py": {
@@ -1486,9 +977,25 @@
       "sha256": "f1d629ab749663a23c2b0830f4fced3d14addab78553a5e0a8a1bae9ea15b346",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
-    "packaging/windows/install.ps1": {
-      "sha256": "c7d45e1743759380f824602cdb02a245b5e1edcdf1a4a4b6b0d82a42b7579d29",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE"
+    "packaging/validate_rc5.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "a170d049a1f9c43e5e868aea0de7c051655454df2525808af11dcb45f72825c4"
+    },
+    "packaging/windows/ChromaNeural.iss": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "9a2f8f506a9168e4b28d9faa481eab00fbfb3da4786f66533f617b802dadca78"
+    },
+    "packaging/windows/install-inno-tool.ps1": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "da6d48ab37f00244d62dd7639906088726bc7a1d0bcc0ff2bd067aa4efda0126"
+    },
+    "packaging/windows/prerequisites.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "8669e979209b832a7a9499e924c46bc8571ba16d5531d243480385e97a5e80fd"
+    },
+    "packaging/windows/verify-signature.ps1": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "0ccfaa64d9bd7f2c1b3dc3c9acf7a8210a6cbce478a16e8593fa0daef222c268"
     },
     "packaging/windows_icon.py": {
       "sha256": "62ff39dfb8bda7949039648e76a37461dc49d26a16fd1ddd4db6934372729583",
@@ -1508,6 +1015,10 @@
       "sha256": "92610c2ae83c753b16a6a8cbbc201ba8f67ff7bac6a03e7a8978b3fc50341991",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "scripts/prepare_node_runtime.py"
+    },
+    "packaging/finalize_candidate.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "1d84095c09bba9075657e384d2e3739655976536513717ba6a3d85b8c67fd89e"
     }
   }
 }

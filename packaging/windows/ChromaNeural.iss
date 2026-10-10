@@ -1,4 +1,4 @@
-#ifndef AppVersion
+﻿#ifndef AppVersion
   #error AppVersion is required
 #endif
 #ifndef PayloadFiles
@@ -11,7 +11,7 @@
 AppId={{9D0B957A-B430-4AB9-B27E-32B553503F95}
 AppName=ChromaNeural
 AppVersion={#AppVersion}
-AppPublisher=Janus RokkjÃ¦r
+AppPublisher=Janus Rokkjær
 AppPublisherURL=https://github.com/Janus5G/ChromaNeural
 DefaultDirName={localappdata}\Programs\ChromaNeural\App
 DefaultGroupName=ChromaNeural
@@ -33,7 +33,7 @@ CloseApplications=yes
 RestartApplications=no
 SetupLogging=yes
 VersionInfoVersion=0.2.21.5
-VersionInfoProductVersion={#AppVersion}
+VersionInfoProductTextVersion={#AppVersion}
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "da"; MessagesFile: "compiler:Languages\Danish.isl"
@@ -41,12 +41,12 @@ Name: "da"; MessagesFile: "compiler:Languages\Danish.isl"
 #include PayloadFiles
 Source: "prerequisites.py"; Flags: dontcopy
 [Icons]
-Name: "{userprograms}\ChromaNeural"; Filename: "{sys}\WindowsPowerShell\v1.0\powershell.exe"; Parameters: "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File ""{app}\Start-ChromaNeural.ps1"""; WorkingDir: "{app}"; IconFilename: "{app}\client\assets\chroma.ico"
+Name: "{group}\ChromaNeural"; Filename: "{sys}\WindowsPowerShell\v1.0\powershell.exe"; Parameters: "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File ""{app}\Start-ChromaNeural.ps1"""; WorkingDir: "{app}"; IconFilename: "{app}\client\assets\chroma.ico"
 [CustomMessages]
 en.Prerequisites=Install Python 3.14 or newer with Tk and the py/pyw launchers, and Node.js 24 or newer. No software will be downloaded automatically.
 da.Prerequisites=Installer Python 3.14 eller nyere med Tk og py/pyw-launcherne samt Node.js 24 eller nyere. Ingen software bliver hentet automatisk.
 en.OlderVersion=A newer ChromaNeural version is installed. Remove it explicitly before installing an older version. Your separate user data is not removed.
-da.OlderVersion=En nyere ChromaNeural-version er installeret. Afinstaller den eksplicit fÃ¸r installation af en Ã¦ldre version. Dine separate brugerdata fjernes ikke.
+da.OlderVersion=En nyere ChromaNeural-version er installeret. Afinstaller den eksplicit før installation af en ældre version. Dine separate brugerdata fjernes ikke.
 [Code]
 function InitializeSetup(): Boolean;
 var Existing, Candidate: String; OldVersion, NewVersion: Int64;
