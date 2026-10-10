@@ -53,7 +53,7 @@ def assets(target,cache):
      with stream,dest.open('wb') as out:shutil.copyfileobj(stream,out)
      dest.chmod(member.mode & 0o777)
 def stage(kind,cache):
- if kind not in ('windows','linux'):raise SystemExit('RC4 supports Windows x64 and Linux amd64 only')
+ if kind not in ('windows','linux'):raise SystemExit('This release supports Windows x64 and Linux amd64 only')
  target=BUILD/'payload';target.mkdir(parents=True)
  from release_guard import stage_source
  stage_source(ROOT,target,kind)
@@ -74,53 +74,9 @@ def stage(kind,cache):
  inspect_payload(target,policy['jsonPaths'],policy['publicDependencyFiles'],json.loads((ROOT/'packaging/binaries.lock.json').read_text()))
  manifest(target);validate(target);return target
 def windows(payload):
- folder=BUILD/'iexpress';folder.mkdir();archive(payload,folder/'payload.zip')
- shutil.copyfile(ROOT/'packaging/windows/install.ps1',folder/'install.ps1')
- # Bootstrap presentation resources are available before payload extraction.
- bootstrap=[ROOT/'client/locale-registry.json',*files(ROOT/'packaging/installer')]
- for resource in bootstrap:shutil.copyfile(resource,folder/resource.name)
- (folder/'install.cmd').write_text('@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0install.ps1" %*\r\nexit /b %errorlevel%\r\n')
- name='ChromaNeural-'+VERSION+'-windows-x64.exe'
- sed='''[Version]
-Class=IEXPRESS
-SEDVersion=3
-[Options]
-PackagePurpose=InstallApp
-ShowInstallProgramWindow=0
-HideExtractAnimation=0
-UseLongFileName=1
-InsideCompressed=0
-CAB_FixedSize=0
-CAB_ResvCodeSigning=0
-RebootMode=N
-InstallPrompt=
-DisplayLicense=
-FinishMessage=
-TargetName='''+str(DIST/name)+'''
-FriendlyName=ChromaNeural '''+VERSION+'''
-AppLaunched=cmd.exe /c install.cmd
-PostInstallCmd=<None>
-AdminQuietInstCmd=cmd.exe /c install.cmd -Quiet
-UserQuietInstCmd=cmd.exe /c install.cmd -Quiet
-SourceFiles=SourceFiles
-[SourceFiles]
-SourceFiles0='''+str(folder)+os.sep+'''
-[SourceFiles0]
-%FILE0%=
-%FILE1%=
-%FILE2%=
-[Strings]
-FILE0="payload.zip"
-FILE1="install.ps1"
-FILE2="install.cmd"
-'''
- sed=sed.replace('[Strings]\n',''.join('%FILE'+str(i)+'%=\n' for i,_ in enumerate(bootstrap,3))+'[Strings]\n')
- sed+=''.join('FILE'+str(i)+'="'+p.name+'"\n' for i,p in enumerate(bootstrap,3))
- config=folder/'package.sed';config.write_text(sed,encoding='utf-8')
- run([Path(os.environ['SystemRoot'])/'System32/iexpress.exe','/N','/Q',config],timeout=900)
- if not (DIST/name).is_file():raise RuntimeError('IExpress did not produce the EXE')
- from windows_icon import brand
- brand(DIST/name,ROOT/'packaging/branding/ChromaNeural.ico',BUILD/'windows-icon-evidence')
+ from inno import compile_installer
+ compile_installer(ROOT,payload,BUILD,DIST,VERSION)
+
 def linux(payload):
  deb=BUILD/'deb';app=deb/'opt/chromaneural';app.parent.mkdir(parents=True);shutil.copytree(payload,app)
  control=deb/'DEBIAN';control.mkdir()
@@ -139,7 +95,7 @@ def require_license_clearance():
   raise SystemExit('LICENSE BLOCKED: documented source-license clearance is required before packaging')
 
 def main():
- if platform.system() not in ('Windows','Linux'):raise SystemExit('RC4 supports Windows x64 and Linux amd64 only')
+ if platform.system() not in ('Windows','Linux'):raise SystemExit('This release supports Windows x64 and Linux amd64 only')
  require_license_clearance()
  parser=argparse.ArgumentParser();parser.add_argument('--asset-cache',type=Path,default=BUILD/'asset-cache');args=parser.parse_args()
  kind={'Windows':'windows','Linux':'linux'}[platform.system()]
