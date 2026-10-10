@@ -1,5 +1,7 @@
 name: RC5 clean candidate build and optional TEST signing
 on:
+  push:
+    branches: [rc5/preparation]
   workflow_dispatch:
     inputs:
       test_sign:

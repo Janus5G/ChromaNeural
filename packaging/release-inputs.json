@@ -10,7 +10,7 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     ".github/workflows/native-packages.yml": {
-      "sha256": "8c3817997b64ac1d01831886b05cc1319aa95361b43e3c75d510cea3937b99d2",
+      "sha256": "cea27586bd88acbdc51ac86d514c0161e0d6b27d10455a2eeb169740be03b4ba",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     ".gitignore": {
