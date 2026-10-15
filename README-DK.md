@@ -2,31 +2,72 @@
 
 Lokalt AI-arbejde. Eksplicit samarbejde. Dit valg.
 
-**0.2.21-rc.5 - udviklingskandidat, endnu ikke offentliggjort.**
-[English](README.md) · [Brugervejledning](docs/da/guide.md) · [Installation](docs/da/installation.md) · [Privatliv](docs/da/privacy.md)
+<p align="center">
+  <img src="docs/images/readme/hero-da.png" alt="Konceptillustration af ChromaNeural-visionen" width="1200">
+</p>
+<p align="center"><sub>Konceptoversigt over ChromaNeural-visionen. Aktuelt RC5-release-scope og verificerede funktioner fremgår nedenfor.</sub></p>
 
-ChromaNeural er en desktopklient til Windows/Linux til godkendt lokalt AI-arbejde og autentificeret samarbejde mellem noder. Engelsk er standardsproget; applikationen beholder alle syv eksisterende UI-sprog. RC5-dokumentationen vedligeholdes på engelsk og dansk.
+## Hurtig navigation
 
-<img src="docs/da/images/overview.png" alt="Dansk RC5-oversigt uden konto og uden tilgængelige ChromaPoints" width="960" height="600">
+[English](README.md) · [Brugervejledning](docs/da/guide.md) · [Installation](docs/da/installation.md) · [Privatliv](docs/da/privacy.md) · [Releasenoter](RELEASE_NOTES.md) · [Verificering](VERIFICATION.md)
 
-## Hvad klienten kan
+## Hvad ChromaNeural er
 
-- Gemme ressourceindstillinger og vise bekræftet regnskabsstatus. En tankestreg betyder utilgængelig, ikke nul indtjening.
-- Foreslå lokale AI-ændringer gennem den eksisterende medfølgende CPU-provider eller en eksplicit valgt Ollama-provider. Gennemgå forslaget før anvendelse.
-- Bevare godkendte opgaver i den eksisterende WorkQueue. ChromaSpeechAI håndterer kommunikation fra node til node.
-- Tilbyde valgfri MCP-adgang fra node til værktøj gennem særskilt godkendte forbindelser og værktøjer. Almindeligt lokalt arbejde fungerer uden MCP.
-- Holde browserens Internet Identity-login adskilt fra desktopklientens kontrol af det offentlige API.
+ChromaNeural er en desktopklient til Windows/Linux til godkendt lokalt AI-arbejde og autentificeret samarbejde mellem noder. Den samler lokale AI-forslag, ressourceindstillinger og bekræftet regnskabsstatus i én brugerflade med eksplicit brugerkontrol over forbindelser og værktøjer.
 
-Generel ressourcedeling er fortsat deaktiveret. Lokale handlinger kan ikke tildele ChromaPoints. Fjernudførelse er deaktiveret. Private filer uploades ikke automatisk; netværksadgang og global publicering sker heller ikke automatisk.
+Engelsk er dokumentationens autoritative standardsprog; dansk er det sekundære dokumentationssprog. Applikationen beholder alle syv eksisterende UI-sprog. ChromaSpeechAI håndterer kommunikation fra node til node; valgfrie MCP-forbindelser giver adgang fra node til værktøj.
 
-## RC5-distribution
+## Hvorfor ChromaNeural
 
-Releaseplatformene er Windows x64 og Linux amd64. Windows-kandidaten bruger Inno Setup. Rene GitHub-hostede builds og grundlæggende pakketests bestod for begge platforme i [GitHub Actions-kørsel 38047651276](https://github.com/Janus5G/ChromaNeural/actions/runs/38047651276). Separat SignPath-TEST-signering bestod ifølge ejerens verificering. Integreret CI-signering er fortsat BLOCKED, fordi Trusted Build System ikke er tilgængeligt; produktionssignering afventer eksternt svar fra SignPath. Et selvsigneret testcertifikat er **ikke** betroet signering til en offentlig release.
+- Lokalt AI-arbejde med forslag, som du gennemgår før anvendelse.
+- Autentificeret nodesamarbejde gennem særskilt godkendte forbindelser.
+- ChromaSpeechAI til kommunikation fra node til node.
+- Valgfri MCP-adgang til særskilt godkendte eksterne værktøjer.
+- Eksplicit brugergodkendelse og kontrol over providere, forbindelser og værktøjer.
+- Privat lokalt arbejde holdes adskilt fra delte resultater og publicering.
 
-Der annonceres ingen RC5-download eller PASS for produktionssignering her. Tilbagetrukne RC4-guides og screenshots genbruges ikke. Se [releasestatus](RELEASE_NOTES.md), [build- og signing-gates](docs/BUILDING.md) og [politik for kodesignering](docs/SIGNING.md).
+## Centrale funktioner
 
-## Begrænsninger og licenser
+- **Lokale AI-forslag:** brug den eksisterende medfølgende CPU-provider eller en eksplicit valgt Ollama-provider, og gennemgå foreslåede ændringer før anvendelse.
+- **Opgaver og værktøjer:** behold godkendte opgaver i den eksisterende WorkQueue, og brug godkendte MCP-værktøjer, hvor det understøttes. Almindeligt lokalt arbejde fungerer uden MCP.
+- **Ressourcer og regnskab:** gem ressourceindstillinger, og se bekræftede ChromaPoints, forbrug og netværksstatus. En tankestreg betyder utilgængelig, ikke nul indtjening; lokale handlinger kan ikke tildele point.
+- **Forbindelseskontrol:** hold browserens Internet Identity-login adskilt fra desktopklientens kontrol af det offentlige API.
 
-Live Internet Identity fra ende til ende, live nodeadgang, live migration og samspil mellem LAN Build05 og hovedapplikationens API er NOT VERIFIED. Generel kontrolleret Linux-/Ollama-/GPU-deling understøttes ikke. Der fremsættes ingen påstand om fysisk optisk/GPU-ydeevne.
+## Maskot / projektidentitet
+
+<p align="center">
+  <img src="docs/images/readme/chromaneural-mascot.jpg" alt="ChromaNeurals krystalræv som maskot" width="343" height="511">
+</p>
+<p align="center">ChromaNeurals krystalræv — lokal intelligens med blik for netværket.</p>
+
+## Download / release-scope
+
+[ChromaNeural 0.2.21-rc.5-prerelease og SHA256SUMS](https://github.com/Janus5G/ChromaNeural/releases/tag/v0.2.21-rc.5)
+
+- **Windows x64:** Inno Setup-installer.
+- **Linux amd64:** DEB-pakke.
+
+RC5 er en prerelease, ikke en stabil release. Windows-EXE-filen er Authenticode-signeret med det eksisterende **selvsignerede TEST-certifikat**, ikke et offentligt betroet produktionscertifikat. SignPath Foundation/produktionssignering afventer fortsat eksternt svar.
+
+Den TEST-signerede Windows-kandidat, som ejeren har valgt, er fra før den sidste dokumentationskorrektion. Brug dette repository og den vedhæftede source-ZIP til den accepterede, aktuelle dokumentation. Releasebeskrivelsen angiver filernes præcise oprindelse og hashes.
+
+## Dokumentation & verificering
+
+Start med den [danske brugervejledning](docs/da/guide.md), [installationsvejledningen](docs/da/installation.md) og [privatlivsoplysningerne](docs/da/privacy.md), eller læs den autoritative [engelske guide](docs/en/guide.md). Vejledningerne bruger ægte RC5-screenshots på det tilsvarende sprog; tilbagetrukne RC4-guides og screenshots er fortsat udeladt.
+
+Rene GitHub-hostede Windows/Linux-builds og målrettede pakketests bestod i [CI-kørsel 38712274060](https://github.com/Janus5G/ChromaNeural/actions/runs/38712274060). Ejerens accept af dokumentation og screenshots er bestået. Den tidligere separate SignPath-TEST-signering er fortsat PASS; den fastslår ikke offentlig certifikattillid.
+
+[Verificeringens afgrænsning](VERIFICATION.md) · [Buildproces](docs/BUILDING.md) · [Politik for kodesignering](docs/SIGNING.md)
+
+## Aktuelle begrænsninger
+
+- Generel ressourcedeling og fjernudførelse er fortsat deaktiveret. Private filer uploades ikke automatisk; netværksadgang og global publicering sker heller ikke automatisk.
+- Live Internet Identity fra ende til ende, live nodeadgang, live migration og samspil mellem LAN Build05 og hovedapplikationens API er fortsat **NOT VERIFIED**.
+- Generel kontrolleret Linux-/Ollama-/GPU-deling understøttes ikke. Der fremsættes ingen påstand om fysisk optisk/GPU-ydeevne.
+- Integreret CI-signering er fortsat **BLOCKED**, fordi Trusted Build System ikke er tilgængeligt. Foundation/produktionssignering er fortsat **BLOCKED — EXTERNAL SIGNPATH RESPONSE PENDING**. Windows viser `UnknownError` for det selvsignerede TEST-certifikats ikke-betroede kæde; det er ikke offentlig produktionsbetroelse.
+
+Se [kendte begrænsninger](KNOWN_LIMITATIONS.md). Konceptillustrationen udvider ikke det aktuelle Windows/Linux-release-scope og verificerer ikke fremtidige funktioner.
+
+## Licenser
 
 ChromaNeural-koden bruger Apache-2.0; identificerede komponenter beholder deres egne vilkår. Se [licensgrænser](docs/LICENSING.md), [LICENSE](LICENSE), [NOTICE](NOTICE) og [tredjepartslicenser](THIRD_PARTY_LICENSES.md). Hovedlicensen alene fastslår ikke egnethed til SignPath Foundation.
