@@ -1,13 +1,21 @@
-# RC5 clean candidate builds
+# RC5 clean Linux builds
 
-Only Windows x64 and Linux amd64 are release targets. Application source is bound to the working RC4 baseline; packaging and documentation are a separate RC5 generation.
+Official release: Linux amd64 only. Portable Windows/macOS/mobile source is not official platform support. Inno Setup and SignPath are historical Windows tooling, not active release dependencies.
 
-Run `python -B packaging/validate_rc5.py` in a clean checkout, then `python -B packaging/build.py` and `python -B packaging/rc5_smoke.py` on Windows, or `xvfb-run -a /usr/bin/python3 -B packaging/rc5_smoke.py` on Linux. The native builder retains the existing explicit hash-bound input allowlist, locked SDK/models and private-state rejection. It never copies developer HOME/state. Unknown source files fail closed. Build output must not exist before a fresh build.
+The application baseline is preserved with the explicitly accepted AI/MCP wizard delta bound in `packaging/rc5-wizard-acceptance.json`. No provider, networking or MCP protocol backend was replaced.
 
-Windows requires Python 3.14/Tk/py/pyw, Node.js 24 and the verified Inno Setup 7.1.0 compiler. Set `CHROMA_ISCC` to its ISCC.exe. The workflow downloads the official hash-bound tool, validates its Authenticode publisher and installs it into the runner's temporary directory. The compiler uses an explicit file list derived from the verified payload manifest, not an arbitrary directory wildcard. Linux retains the existing DEB builder.
+In a fresh Linux amd64 checkout, run:
 
-Inno manages per-user program files, Start Menu and uninstall registration. It does not start the app, create a desktop shortcut, import profiles, delete separate user state, or install prerequisites. Same-version reinstall is supported; numeric downgrade is rejected. Old RC4 installation directories remain separate.
+```sh
+python -B packaging/validate_rc5.py
+python -B packaging/build.py
+xvfb-run -a /usr/bin/python3 -B packaging/rc5_smoke.py
+python -B packaging/source_archive.py
+python -B packaging/finalize_candidate.py
+```
 
-The GitHub workflow runs on pushes to `rc5/preparation` and also defines manual dispatch. It uses read-only repository permissions and pinned actions. [GitHub Actions run 38047651276](https://github.com/Janus5G/ChromaNeural/actions/runs/38047651276) passed the Windows/Linux clean builds and package checks at `0f7a69414556a5be2f46327e36f9740ab6f59a99`. Its integrated signing job was skipped and remains BLOCKED; the separate owner-verified TEST signing does not certify that CI integration. No public RC5 release has been made. [Signing setup and external blockers](SIGNING.md). Controlled inputs aid reproducibility; cross-run binary byte identity is NOT VERIFIED.
+Use the prerequisites and pinned tool versions in [the active workflow](../.github/workflows/native-packages.yml). Native smoke uses Ubuntu 24.04 system Python 3.12, Tk, cryptography, Node.js and libgomp1. Build directories must not already exist. The existing explicit hash-bound allowlist, locked SDK/model inputs and private-state rejection remain fail closed. Developer HOME/runtime state is never a build input.
 
-[English installation](en/installation.md) · [Dansk installation](da/installation.md)
+The workflow runs on the Linux release preparation branch or manual dispatch, never automatically publishes, and uses read-only permissions and pinned actions. The package is extracted and its actual bytes, source/document inclusion and offline Tk startup are verified. Final checksums cover only the DEB and source ZIP. CI evidence is uploaded separately from the public three-file asset set. Controlled inputs aid reproducibility; cross-run byte identity is NOT VERIFIED.
+
+Historical Windows/Linux CI and Windows signing evidence is retained in [verification](../VERIFICATION.md) and [signing history](SIGNING.md); it is not acceptance of this newly built Linux package.

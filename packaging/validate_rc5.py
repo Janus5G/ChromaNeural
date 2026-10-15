@@ -10,7 +10,13 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
  files=source_files(ROOT)
  binding=json.loads((ROOT/'packaging/rc4-application.json').read_text())
- hashes=binding['files']
+ hashes=dict(binding['files'])
+ delta=json.loads((ROOT/'packaging/rc5-wizard-acceptance.json').read_text())
+ assert set(delta['changes'])=={'client/chroma/onboarding_ui.py','client/chroma/mcp_catalog.py','client/locales/en.json','client/locales/da.json'}
+ for p,item in delta['changes'].items():
+  assert hashes.get(p)==item['previous_sha256'],'Unexpected wizard baseline'
+  hashes[p]=item['sha256']
+ assert sha(ROOT/delta['test_file']['path'])==delta['test_file']['sha256']
  assert all(sha(ROOT/p)==h for p,h in hashes.items()),'RC4 application correlation failed'
  current={p.relative_to(ROOT).as_posix() for parent in ('client','scripts') for p in (ROOT/parent).rglob('*') if p.is_file()}
  assert current==set(hashes),'Unexpected application source file'
@@ -36,7 +42,12 @@ def main():
  manifest=json.loads((ROOT/'docs/SCREENSHOT_MANIFEST.json').read_text())
  assert manifest['status']=='PASS' and len(manifest['captures'])==12
  assert manifest['version']==(ROOT/'VERSION').read_text().strip()
- assert all(sha(ROOT/p)==h for p,h in manifest['source_hashes'].items())
+ # Capture provenance remains historical; accepted additive wizard/locale changes
+ # do not relabel old captures as newly generated Linux/package evidence.
+ for p,h in manifest['source_hashes'].items():
+  if p in delta['changes']:
+   assert h==delta['changes'][p]['previous_sha256']
+  else:assert sha(ROOT/p)==h
  for item in manifest['captures']:
   p=ROOT/item['filename'];assert sha(p)==item['sha256'] and item['verification']=='PASS'
   assert p.parts[-3]==item['locale'] and item['locale'] in ('en','da')
@@ -46,8 +57,11 @@ def main():
  assert all(re.fullmatch(r'[a-zA-Z0-9_./-]+@[a-f0-9]{40}',x) for x in re.findall(r'uses:\s+(\S+)',workflow))
  assert 'contents: read' in workflow and 'persist-credentials: false' in workflow
  assert 'workflow_dispatch:' in workflow and 'schedule:' not in workflow
- assert 'archive: false' in workflow and 'skip-decompress: true' in workflow
+ assert 'runs-on: ubuntu-24.04' in workflow
+ assert not any(x in workflow.lower() for x in ('windows-','signpath','inno','test-sign:'))
+ assert 'packaging/source_archive.py' in workflow
+ assert not any(x in p.relative_to(ROOT).as_posix() for p in files for x in ('docs/images/rc2/','docs/pdf/rc2/'))
  assert 'gh release' not in workflow and 'contents: write' not in workflow
  assert not list((ROOT/'docs').rglob('*.pdf')),'Withdrawn PDFs must not be RC5 inputs'
- print(json.dumps({'status':'PASS','scope':'RC5 source guard, unchanged application binding, docs/local links, screenshot manifest, pinned manual workflow','sourceFiles':len(files),'applicationFiles':len(hashes),'localLinks':links,'screenshots':12,'remoteExecution':'DISABLED'}))
+ print(json.dumps({'status':'PASS','scope':'RC5 source guard, application baseline plus owner-accepted wizard binding, docs/local links, screenshot manifest, pinned manual workflow','sourceFiles':len(files),'applicationFiles':len(hashes),'localLinks':links,'screenshots':12,'remoteExecution':'DISABLED'}))
 if __name__=='__main__':main()

@@ -2,13 +2,13 @@
 
 [Dansk](../da/guide.md) · [README](../../README.md) · [Installation](installation.md) · [Privacy](privacy.md)
 
-Version 0.2.21-rc.5. Development candidate; see [current acceptance status](../../RELEASE_NOTES.md).
+Version 0.2.21-rc.5. Linux prerelease; see [current acceptance status](../../RELEASE_NOTES.md).
 
 ## First start and language
 
-Start ChromaNeural from the Start Menu on Windows or the application menu on Linux. First start opens **Resources**. Leave CPU contribution off for a private inspection, choose limits, then select **Save and continue**. The client opens **Overview**. Later visits use **Save changes**. Saving preferences grants no network admission.
+Start ChromaNeural from the application menu on Linux. First start opens **Resources**. Leave CPU contribution off for a private inspection, choose limits, then select **Save and continue**. The client opens **Overview**. Later visits use **Save changes**. Saving preferences grants no network admission.
 
-The sidebar **Language** selector changes application text and saves your choice. English is the default and fallback. A launch-only override is `--language en`; the Windows launcher accepts `-Language en`. The application also retains Danish, German, French, Japanese, Simplified Chinese and Hindi.
+The sidebar **Language** selector changes application text and saves your choice. English is the default and fallback. A launch-only override is `--language en`. The application also retains Danish, German, French, Japanese, Simplified Chinese and Hindi.
 
 ## Overview and accounting
 
@@ -16,7 +16,7 @@ The sidebar **Language** selector changes application text and saves your choice
 
 **Overview** shows ChromaPoints, **Your balance**, **Usage**, resources and network status. Only existing verified accounting data supplies these figures. A dash means no confirmed value is available. **Accounting details** opens the detailed view. The accounting view in **Developer tools** remains available. Local settings and tools cannot award points.
 
-**AI & tools setup** opens provider and MCP configuration. **Minimize to tray** hides the window where supported. Windows tray status uses the same accounting/sharing state; it does not calculate points.
+**AI & tools setup** opens provider and MCP configuration. **Minimize to tray** hides the window where supported. Tray integration is platform-dependent and is not a verified Linux feature.
 
 ## Resources
 
@@ -27,7 +27,7 @@ The sidebar **Language** selector changes application text and saves your choice
 3. Choose idle-only and battery behavior and, where supported, tray behavior.
 4. Select **Save changes**; the client returns to **Overview**.
 
-Limits do not reserve hardware. The accepted bundled Windows CPU profile constrains scheduling, threads and committed memory, not total physical RAM. General resource sharing is disabled; controlled Ollama/Linux/GPU contribution is unsupported. Do not interpret available hardware as income.
+Limits do not reserve hardware. Total physical RAM is not guaranteed. General resource sharing is disabled; controlled Ollama/Linux/GPU contribution is unsupported. Do not interpret available hardware as income.
 
 ## Login & connection
 
@@ -50,15 +50,23 @@ Select **Exit ChromaNeural** to close completely. The window close button can mi
 
 ## Local AI and optional MCP
 
-![English AI setup](images/ai-setup.png)
+Open **AI & tools setup**. The wizard finds local AI through the existing discovery mechanism. Choose an actually available AI and continue. External tools are optional: **Skip for now** completes setup without MCP. Otherwise choose a catalog profile, follow its setup help, review the target and select **Approve connection and test**. Approve only the tools you need; enabling is a separate choice before **Finish**.
 
-Open **AI & tools setup**, select **Discover local AI**, choose an available provider/model and select **Use selection**. **Test connection** requests consent before a small inference. Discovery does not install a runtime, download a model or start services. Configure unavailable software separately.
+OPC UA, NVIDIA Isaac Sim, Home Assistant and Siemens Xcelerator are **NOT VERIFIED end-to-end**. ROS 2, MQTT / EMQX and Arduino are **EXPERIMENTAL**. No profile is automatically approved or enabled, and no verified vendor integration is claimed. [Catalog boundaries](../MCP_ONBOARDING.md).
+
+### Advanced management
+
+The retained images below show the still-available **Advanced / Developer** management interface, not the new first-time wizard.
+
+![English advanced AI management](images/ai-setup.png)
+
+In advanced management, select **Discover local AI**, choose an available provider/model and select **Use selection**. **Test connection** requests consent before a small inference. Discovery does not install a runtime, download a model or start services. Configure unavailable software separately.
 
 The local editing workflow remains under **Developer tools**: choose a local workspace and text file, request a local AI proposal, then review before applying/saving it. Selecting a folder is not permission to share it. No provider/model fallback is silent.
 
 ![English MCP connections](images/mcp.png)
 
-In MCP setup, **Add** a named connection. Choose an installed local executable or a remote MCP endpoint. Save, inspect the target, then **Approve connection**. Use **Test connection** to discover tools, select only needed tools, then **Approve selected tools** and **Enable**. A discovered/configured server is not automatically trusted.
+In advanced MCP management, **Add** a named connection. Choose an installed local executable or a remote MCP endpoint. Save, inspect the target, then **Approve connection**. Use **Test connection** to discover tools, select only needed tools, then **Approve selected tools** and **Enable**. A discovered/configured server is not automatically trusted.
 
 **Disable** prevents subsequent calls; **Revoke** removes approvals/session credentials; **Remove** removes the connection. Editing the target invalidates its approvals and session-token association. Revocation cannot undo a call already sent.
 
@@ -72,4 +80,4 @@ ChromaSpeechAI is node-to-node. MCP is optional node-to-tool. Tool results are u
 
 Report a redacted problem description and application version. Never submit a connection profile, principal, token, identity directory, queue database or private file. See [privacy](privacy.md) and [known limitations](../../KNOWN_LIMITATIONS.md).
 
-All images above are fresh captures of the actual RC5 GUI with isolated empty account state. They show documentation interactions, not live network acceptance or income.
+All images above are accepted captures of the actual RC5 GUI with isolated empty account state. They show documentation interactions, not live network acceptance or income.

@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2025, ubuntu-24.04]
+        os: [ubuntu-24.04]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     env:
@@ -32,13 +32,10 @@ jobs:
       - name: Native Linux MCP staging and acceptance
         if: runner.os == 'Linux'
         run: xvfb-run -a /usr/bin/python3 -B packaging/mcp_native.py ${{ inputs.delta && '--delta' || '' }}
-      - name: Native Windows MCP staging and acceptance
-        if: runner.os == 'Windows'
-        run: python -B packaging/mcp_native.py ${{ inputs.delta && '--delta' || '' }}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: MCP-0.2.21-rc.4-${{ matrix.os }}
+          name: MCP-0.2.21-rc.5-${{ matrix.os }}
           path: |
             build/mcp-acceptance/STARTUP.json
             build/mcp-acceptance/RESULT.json

@@ -4,7 +4,7 @@
 
 Klienten, browseridentiteten og godkendte peer-/værktøjstjenester er separate tillidsgrænser. En kopieret API-profil er forbindelsesmetadata, ikke et browserlogin eller ejerskabsbevis. Brugerspecifikke forbindelsesmetadata er private releasedata, også uden adgangskode.
 
-Windows-tilstand ligger normalt i `%LOCALAPPDATA%\ChromaNeural\client`. Linux bruger `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client`. Eksplicit `--state-dir` har forrang frem for `CHROMA_STATE_DIR`. Indstillinger, gemt sprog, API-profiler, regnskabscache, kø og logs er brugertilstand og må aldrig være releaseinput.
+Linux bruger `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client`. Eksplicit `--state-dir` har forrang frem for `CHROMA_STATE_DIR`. Indstillinger, gemt sprog, API-profiler, regnskabscache, kø og logs er brugertilstand og må aldrig være releaseinput.
 
 Releasen starter uden profil. Tilstand kan gemmes efter eksplicit brugerhandling; geninstallation af programfiler sletter ikke eksisterende tilstand. Arbejdsmapper og nodeidentiteter kan ligge andre valgte steder. Luk klienten før sikkerhedskopiering, og beskyt nøgler, databaser og logs med operativsystemets konto-/diskbeskyttelse. Kryptering ved lagring og anonymitet på netværket er ikke garanteret.
 

@@ -1,0 +1,27 @@
+{
+  "baseline_commit": "65da06feda34c5152d3d48de54b9e33d1c69202c",
+  "owner_acceptance": "PASS - functional baseline accepted",
+  "tests": "24 distinct focused tests previously passed; no runtime files changed in Linux release gate",
+  "changes": {
+    "client/chroma/onboarding_ui.py": {
+      "previous_sha256": "fd1ca9c7fb5e9e039ec4eabc49b1dcd3983afb78995f0fd43bc676d3923a572c",
+      "sha256": "eeb4b4c998c5a7e872993e04faef7c94385be6ca81030f4da4b5a028b4830587"
+    },
+    "client/chroma/mcp_catalog.py": {
+      "previous_sha256": null,
+      "sha256": "b4f7979e5494d225cbacd50b4e6802d863f0dd46b34d31274a04a2bd42da8412"
+    },
+    "client/locales/en.json": {
+      "previous_sha256": "11be9b22625850e075a76aada28bc6a9851f51f6f3ed4da647fd4a45ae43552f",
+      "sha256": "17f0fd65f549c33df8cc8b69959b660327a106eda416873ddccb1b67f82d8434"
+    },
+    "client/locales/da.json": {
+      "previous_sha256": "4a870748b4217d51b5298d122bcfe723757953acc94a35f29aaa257a806590c8",
+      "sha256": "acd3698375d356ed5853b935548d9c1ef0a475e6192424c1634fa5bae614072a"
+    }
+  },
+  "test_file": {
+    "path": "packaging/test_onboarding_wizard.py",
+    "sha256": "b3ce1d5c82ef23f694c4fb37ef203739bccac8a6ea92bc06fc9fe51996072b86"
+  }
+}

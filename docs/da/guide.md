@@ -2,13 +2,13 @@
 
 [English](../en/guide.md) · [README](../../README-DK.md) · [Installation](installation.md) · [Privatliv](privacy.md)
 
-Version 0.2.21-rc.5. Udviklingskandidat; se [aktuel acceptstatus](../../RELEASE_NOTES.md).
+Version 0.2.21-rc.5. Linux-prerelease; se [aktuel acceptstatus](../../RELEASE_NOTES.md).
 
 ## Første start og sprog
 
-Start ChromaNeural fra Startmenuen i Windows eller programmenuen i Linux. Første start åbner **Ressourcer**. Lad CPU-bidrag være slået fra ved en privat gennemgang, vælg grænser, og tryk **Gem og fortsæt**. Klienten åbner **Oversigt**. Senere bruges **Gem ændringer**. Gemte indstillinger giver ikke adgang til netværket.
+Start ChromaNeural fra programmenuen i Linux. Første start åbner **Ressourcer**. Lad CPU-bidrag være slået fra ved en privat gennemgang, vælg grænser, og tryk **Gem og fortsæt**. Klienten åbner **Oversigt**. Senere bruges **Gem ændringer**. Gemte indstillinger giver ikke adgang til netværket.
 
-Vælg sprog i sidepanelets **Sprog**-vælger. Valget gemmes. Engelsk er standard og fallback. `--language da` gælder kun den aktuelle start; Windows-launcheren accepterer `-Language da`. Applikationen beholder også tysk, fransk, japansk, forenklet kinesisk og hindi.
+Vælg sprog i sidepanelets **Sprog**-vælger. Valget gemmes. Engelsk er standard og fallback. `--language da` gælder kun den aktuelle start. Applikationen beholder også tysk, fransk, japansk, forenklet kinesisk og hindi.
 
 ## Oversigt og regnskab
 
@@ -16,7 +16,7 @@ Vælg sprog i sidepanelets **Sprog**-vælger. Valget gemmes. Engelsk er standard
 
 **Oversigt** viser ChromaPoints, saldo, forbrug, ressourcer og netværksstatus. Tallene kommer kun fra den eksisterende verificerede regnskabstilstand. En tankestreg betyder, at en bekræftet værdi ikke er tilgængelig. Regnskabsdetaljerne åbner den detaljerede visning; regnskabet i **Udviklerværktøjer** er også bevaret. Lokale indstillinger og værktøjer kan ikke tildele point.
 
-**AI- og værktøjsopsætning** åbner provider- og MCP-konfiguration. Minimering til systembakken er tilgængelig, hvor platformen understøtter det. Windows-bakkens status bruger samme regnskabs- og delingstilstand og beregner ikke point.
+**AI- og værktøjsopsætning** åbner provider- og MCP-konfiguration. Minimering til systembakken er tilgængelig, hvor platformen understøtter det. Systembakkeintegration afhænger af platformen og er ikke en verificeret Linux-funktion.
 
 ## Ressourcer
 
@@ -27,7 +27,7 @@ Vælg sprog i sidepanelets **Sprog**-vælger. Valget gemmes. Engelsk er standard
 3. Vælg adfærd ved inaktivitet og batteridrift samt systembakke, hvor det understøttes.
 4. Vælg **Gem ændringer**; klienten vender tilbage til **Oversigt**.
 
-Grænser reserverer ikke hardware. Den accepterede Windows-profil med medfølgende CPU-runtime begrænser scheduling, tråde og committed memory, ikke samlet fysisk RAM. Generel ressourcedeling er deaktiveret; kontrolleret Ollama-/Linux-/GPU-bidrag understøttes ikke. Tilgængelig hardware er ikke indtjening.
+Grænser reserverer ikke hardware. Samlet fysisk RAM er ikke garanteret. Generel ressourcedeling er deaktiveret; kontrolleret Ollama-/Linux-/GPU-bidrag understøttes ikke. Tilgængelig hardware er ikke indtjening.
 
 ## Login & forbindelse
 
@@ -50,15 +50,23 @@ Vælg **Afslut ChromaNeural** for at lukke helt. Vinduets lukkeknap kan minimere
 
 ## Lokal AI og valgfri MCP
 
-![Dansk AI-opsætning](images/ai-setup.png)
+Åbn **AI- og værktøjsopsætning**. Guiden finder lokal AI med den eksisterende søgning. Vælg en faktisk tilgængelig AI, og fortsæt. Eksterne værktøjer er valgfrie: **Spring over for nu** afslutter opsætningen uden MCP. Vælg ellers en katalogprofil, følg dens vejledning, gennemgå målet og vælg **Godkend forbindelse og test**. Godkend derefter kun de ønskede værktøjer; aktivering er et separat valg før **Afslut**.
 
-Åbn **AI- og værktøjsopsætning**, vælg **Find lokal AI**, vælg en tilgængelig provider/model og tryk **Brug valget**. **Test forbindelse** beder om samtykke før en lille inferens. Søgningen installerer ingen runtime, henter ingen model og starter ingen tjenester. Manglende software konfigureres separat.
+OPC UA, NVIDIA Isaac Sim, Home Assistant og Siemens Xcelerator er **NOT VERIFIED end-to-end**. ROS 2, MQTT / EMQX og Arduino er **EXPERIMENTAL**. Ingen profil er automatisk godkendt eller aktiveret, og der hævdes ingen verificeret leverandørintegration. [Katalogets afgrænsning](../MCP_ONBOARDING.md).
+
+### Avanceret administration
+
+De bevarede billeder nedenfor viser den fortsat tilgængelige administration under **Avanceret / Udvikler**, ikke den nye guidede førstegangsopsætning.
+
+![Dansk avanceret AI-administration](images/ai-setup.png)
+
+I den avancerede administration vælges **Find lokal AI**, vælg en tilgængelig provider/model og tryk **Brug valget**. **Test forbindelse** beder om samtykke før en lille inferens. Søgningen installerer ingen runtime, henter ingen model og starter ingen tjenester. Manglende software konfigureres separat.
 
 Den lokale redigering findes fortsat under **Udviklerværktøjer**: vælg en lokal arbejdsmappe og tekstfil, bed om et lokalt AI-forslag, og gennemgå det før anvendelse og lagring. Valg af en mappe giver ikke delingstilladelse. Provider/model skiftes ikke tavst.
 
 ![Danske MCP-forbindelser](images/mcp.png)
 
-I MCP-opsætningen vælger du **Tilføj** og navngiver forbindelsen. Vælg et installeret lokalt program eller et eksternt MCP-endpoint. Gem, gennemgå målet og vælg **Godkend forbindelse**. Brug **Test forbindelse** til at finde værktøjer, vælg kun de nødvendige, og tryk **Godkend valgte værktøjer** og **Aktiver**. Fundne eller konfigurerede servere er ikke automatisk betroede.
+I den avancerede MCP-administration vælger du **Tilføj** og navngiver forbindelsen. Vælg et installeret lokalt program eller et eksternt MCP-endpoint. Gem, gennemgå målet og vælg **Godkend forbindelse**. Brug **Test forbindelse** til at finde værktøjer, vælg kun de nødvendige, og tryk **Godkend valgte værktøjer** og **Aktiver**. Fundne eller konfigurerede servere er ikke automatisk betroede.
 
 **Deaktiver** blokerer efterfølgende kald; **Tilbagekald** fjerner godkendelser og sessionsoplysninger; **Fjern** fjerner forbindelsen. En ændring af målet ophæver godkendelser og bindingen til sessionstokenet. Tilbagekaldelse kan ikke fortryde et allerede afsendt kald.
 
@@ -72,4 +80,4 @@ ChromaSpeechAI er node-til-node. MCP er valgfri node-til-værktøj. Værktøjsre
 
 Indsend en redigeret fejlbeskrivelse og applikationsversion. Del aldrig forbindelsesprofil, Principal, token, identitetsmappe, kødatabase eller private filer. Se [privatliv](privacy.md) og [kendte begrænsninger](../../KNOWN_LIMITATIONS.md).
 
-Alle billeder er nye optagelser af den faktiske RC5-GUI med isoleret, tom kontotilstand. De viser dokumentationshandlinger, ikke live netværksaccept eller indtjening.
+Alle billeder er accepterede optagelser af den faktiske RC5-GUI med isoleret, tom kontotilstand. De viser dokumentationshandlinger, ikke live netværksaccept eller indtjening.
