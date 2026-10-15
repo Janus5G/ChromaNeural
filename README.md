@@ -21,7 +21,7 @@ General resource sharing remains disabled. Local actions cannot award ChromaPoin
 
 ## RC5 distribution
 
-The release targets are Windows x64 and Linux amd64. The Windows candidate uses Inno Setup; the planned authoritative build runs from a clean GitHub Actions checkout. Test signing uses the owner's existing SignPath test policy only. A self-signed test certificate is **not** trusted public release signing.
+The release targets are Windows x64 and Linux amd64. The Windows candidate uses Inno Setup. Clean GitHub-hosted builds and package smoke checks passed for both platforms in [GitHub Actions run 38047651276](https://github.com/Janus5G/ChromaNeural/actions/runs/38047651276). Separate SignPath TEST signing passed according to the owner-provided verification. Integrated CI signing remains BLOCKED because the Trusted Build System is unavailable; production signing awaits the external SignPath response. A self-signed test certificate is **not** trusted public release signing.
 
 No RC5 download or production-signing PASS is claimed here. The withdrawn RC4 guides and screenshots are not reused. See [release status](RELEASE_NOTES.md), [build/signing gates](docs/BUILDING.md) and [code signing policy](docs/SIGNING.md).
 

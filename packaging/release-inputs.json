@@ -18,7 +18,7 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "CHANGELOG.md": {
-      "sha256": "b58657fbb2ec549ecbb963f37297970d6327bf2c7808377fd74e86bb25b56c00",
+      "sha256": "e64a5f02bdc62e52a12b0e2e24a5de0847e8a1cc809c563af68f770131f6f5da",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "CHANGELOG.md"
     },
@@ -63,17 +63,17 @@
       "payload": "NOTICE"
     },
     "README-DK.md": {
-      "sha256": "c99b0a297296a207f703ea2eb91c43e878941c5555e23af55599b9015bffd6b6",
+      "sha256": "4878600c53f9b7d6a846640c7709a692e06b9e469594bcdaaf4181f151f01de4",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "README-DK.md"
     },
     "README.md": {
-      "sha256": "c178838793b976d739170f17608fe79230e5c1b02bba0c640ea66e78cd71fd3d",
+      "sha256": "095c3f28e58231c928931a911810054a33ffc4c9cd8c8250620847d34fa3cce6",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "README.md"
     },
     "RELEASE_NOTES.md": {
-      "sha256": "4c34b9b134e66e715a6e1cdca048422593544cece9276583e3c30e0aa350bd12",
+      "sha256": "c500fa1c55b8674e4234617a9e52e51994fd8c894ab5d6ebaf0a1a9f17968e9a",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "RELEASE_NOTES.md"
     },
@@ -88,7 +88,7 @@
       "payload": "Start-ChromaNeural.ps1"
     },
     "THIRD_PARTY_LICENSES.md": {
-      "sha256": "005e886c648f5c0237b33f3b3c4e4957f50e4b28a11a2617e2ef1dec5af33fe3",
+      "sha256": "5db2a4109aca6e671b4e9bb9a48c43bed6759b0f6538d25207fee7d10eb51a10",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "THIRD_PARTY_LICENSES.md"
     },
@@ -98,7 +98,7 @@
       "payload": "THIRD_PARTY_NOTICES.md"
     },
     "VERIFICATION.md": {
-      "sha256": "8ce547861ea58cd3d899a2d1d9c5da042007f44413e4486baa1e89df4fedd4c6",
+      "sha256": "5c85e058b587e2857e3a07406b809999eee3ebbc576c747dcfc0b8e1ff69808e",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "VERIFICATION.md"
     },
@@ -568,12 +568,12 @@
       "payload": "docs/ARCHITECTURE.md"
     },
     "docs/BRANDING.md": {
-      "sha256": "44c4370db184b9dbe031a7d16fe5340b88c2403765bfe39095e165a5f1dda13f",
+      "sha256": "cfdc5c1a90808eda4bdf6bc52f2e37454bb9044f9783f16c50eec214f42b0368",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/BRANDING.md"
     },
     "docs/BUILDING.md": {
-      "sha256": "14a4e66d6851f6a2a742d37511a95842dcc3bd3020e40605225076eddb949e10",
+      "sha256": "cbf9d35e052412b53c50c1593d984a2ac2eeee50b376408b63764da02b3ee320",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/BUILDING.md"
     },
@@ -625,7 +625,7 @@
     "docs/SIGNING.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/SIGNING.md",
-      "sha256": "438f8f97f94f9e1a96a6d73eeb10cd6af35892d0193a50138241bc685da8029f"
+      "sha256": "25d728cce95d02231562d6eba16ecedb2808cafe768bc548172704899f9f6886"
     },
     "docs/da/guide.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
@@ -721,11 +721,6 @@
       "sha256": "4109ab1575d08d028cff0ca9781ad761891970738598cc6d86fca1f8258f0e41",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/images/chroma-neural-hero.png"
-    },
-    "docs/images/chroma-neural-social-preview.png": {
-      "sha256": "a0fc964da8aed534f856c1f02796d231a7b2f9def6a9e476b03e149cdd28e6fe",
-      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "payload": "docs/images/chroma-neural-social-preview.png"
     },
     "docs/licenses/LLVM-OpenMP.txt": {
       "sha256": "fdad1758a9e1f9d5a81e18879b3406772115edc92c24bfa36b70c654f325e8e4",
@@ -838,7 +833,7 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "packaging/branding/README.md": {
-      "sha256": "d0f77736514087b74e14feaba36d06cb43c669f8dfe124da2858ee908a7a6493",
+      "sha256": "9e4eaf23a0dff517d91f54745896ef6d326c54b1e0975ca7b2bb52c78e6fc18d",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "packaging/branding/chromaneural.png": {

@@ -21,7 +21,7 @@ Generel ressourcedeling er fortsat deaktiveret. Lokale handlinger kan ikke tilde
 
 ## RC5-distribution
 
-Releaseplatformene er Windows x64 og Linux amd64. Windows-kandidaten bruger Inno Setup; det planlagte autoritative build starter fra et rent GitHub Actions-checkout. Testsignering bruger kun ejerens eksisterende SignPath-testpolitik. Et selvsigneret testcertifikat er **ikke** betroet signering til en offentlig release.
+Releaseplatformene er Windows x64 og Linux amd64. Windows-kandidaten bruger Inno Setup. Rene GitHub-hostede builds og grundlæggende pakketests bestod for begge platforme i [GitHub Actions-kørsel 38047651276](https://github.com/Janus5G/ChromaNeural/actions/runs/38047651276). Separat SignPath-TEST-signering bestod ifølge ejerens verificering. Integreret CI-signering er fortsat BLOCKED, fordi Trusted Build System ikke er tilgængeligt; produktionssignering afventer eksternt svar fra SignPath. Et selvsigneret testcertifikat er **ikke** betroet signering til en offentlig release.
 
 Der annonceres ingen RC5-download eller PASS for produktionssignering her. Tilbagetrukne RC4-guides og screenshots genbruges ikke. Se [releasestatus](RELEASE_NOTES.md), [build- og signing-gates](docs/BUILDING.md) og [politik for kodesignering](docs/SIGNING.md).
 

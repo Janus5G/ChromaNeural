@@ -2,7 +2,7 @@
 
 ## 0.2.21-rc.5 - in preparation
 
-Preserves the working RC4 application. New English/Danish documentation and genuine localized screenshots, Inno Setup packaging, a manual clean-build workflow and fail-closed test-signing preparation. Native CI execution and production signing are not yet verified.
+Preserves the working RC4 application. New English/Danish documentation and genuine localized screenshots, Inno Setup packaging, a clean-build workflow and fail-closed test-signing preparation. Windows/Linux GitHub CI passed; separate TEST signing passed according to owner-provided evidence. Integrated CI signing and Foundation/production signing remain BLOCKED. RC5 is not published.
 
 ## 0.2.21-rc.1 — release candidate
 

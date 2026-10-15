@@ -42,7 +42,7 @@ Windows optional dependency directories become client/optional-deps in the insta
 
 MIT notices must remain with copies/substantial portions. BSD attribution/disclaimers must be retained for source and binary distributions; endorsement restrictions remain. Apache license text, applicable attribution/NOTICE and modification notices must be preserved. LLVM exceptions are not replaced by plain Apache text. Original copyright holders and authors remain credited by their retained texts. Model/native binaries have not been relabeled as ChromaNeural code.
 
-The audit checked shipped package-level license files and declared versions. It does not constitute a patent non-infringement opinion or a reconstruction of every statically linked upstream build input. No incompatible copyleft requirement was found in the inspected declared dependency licenses. Native package license-payload checks passed on all three platforms; source license boundaries are preserved. This document does not authorize publication.
+The audit checked shipped package-level license files and declared versions. It does not constitute a patent non-infringement opinion or a reconstruction of every statically linked upstream build input. No incompatible copyleft requirement was found in the inspected declared dependency licenses. Historical pre-RC5 native package license-payload checks passed on three platforms; this is not a current macOS support claim. RC5 targets Windows and Linux only; source license boundaries are preserved. This document does not authorize publication.
 
 
 ## Optional MCP client dependency payload
