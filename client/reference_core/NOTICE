@@ -1,0 +1,6 @@
+Refract Editor component
+Copyright (c) 2026 Janus Rokkjær
+
+The Refract-owned code in cpl_adapter.py, optical_bridge.py, prisme_isa.py and prisme_runner.py is first licensed under MIT by Janus Rokkjær on 2026-10-01. See LICENSE in this directory. Source bytes are unchanged.
+
+ChromaPlex dependencies retain their vendor MIT licenses. PRISME projects retain their separate terms and are not relicensed. The implementation adapts PRISME/OPTB formats; the historical Janus5G MIT reference notice is retained in docs/licenses/PRISME-reference-historical-MIT.txt. That notice is not a new grant for current PRISME repositories.

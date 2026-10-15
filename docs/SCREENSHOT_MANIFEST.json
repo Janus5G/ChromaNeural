@@ -1,0 +1,271 @@
+{
+  "status": "PASS",
+  "version": "0.2.21-rc.5",
+  "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+  "source_hashes": {
+    "client/launch.py": "eb1f57a67dcff041005d7ecf4a7626efa6db0b4bb297b6d9715ce458c54d6e09",
+    "client/locale-registry.json": "52d06e0cfd3a7a89c585a4bc72ae404576161fe17fa7089a2c45b0152ac90753",
+    "client/Start-ChromaNeural.ps1": "5030e57103f9a91b19599dc1b32f4f03d054147a5f7db3847b13618de268df6f",
+    "client/start-linux.sh": "11fee79812a0ad1da84a6151d22565ef57e39839bd5b3d97d12f15aca08a7034",
+    "client/assets/chroma.ico": "068b2af03ca5a6bd432d24410cc11d0fb0daa39a4beb439d5c414acde55eb0f5",
+    "client/chroma/ai_provider.py": "ed40d0af31e79b00780c53ebc438daa9faada6a1ece354cac4b9e7e1b8278d5b",
+    "client/chroma/ai_provider_worker.py": "76ff7f8f930b342d317276243e286fbd3a5af906f288ffadc5d28724e3ba0ec7",
+    "client/chroma/assistance.py": "256cee4308a990c02d798f47e748892ffd22a417762b40480a594bc39fb79e3c",
+    "client/chroma/collaboration.py": "b3cb4446b8df52da892c8593ffd500601ca69df6829a2528685048319a2ab9f0",
+    "client/chroma/connection_probe.py": "f4bea5318db271c4d26e00e87f36c37b08561d80747f79475285670553bde15b",
+    "client/chroma/connection_profile.py": "a54636ac6c1c7c6f0e78ea6d25c33762f471e33e5bf601f73472df25240887e3",
+    "client/chroma/connection_ui.py": "a28c145e8a2b0adca3e054a56f08f14159d6f14db78c7f56ed3f603040800a7a",
+    "client/chroma/dashboard.py": "702979afc87bbc7d0937153b22587876b6c5544e357e6f5da65b3eef7535bf63",
+    "client/chroma/engine.py": "8e8c6a624270de6a86b0f949ab8e5c99add527b2c63b88e55ef55b0dfc215980",
+    "client/chroma/formats.py": "5fdcaa8d0ae8a861b1e2ec6997ef21de00f33338e8e108ee717a7479e1b517a6",
+    "client/chroma/i18n.py": "d46dd8cb3b216056a45f6feed68fb0bfabd9d33e694922ab9e1856ed99d79d44",
+    "client/chroma/icp_client.py": "53da1254369d4c1b94be4f184cd20fd2c89b8ba09d10feab86555342781378e6",
+    "client/chroma/localized_dialogs.py": "4e8f8363376132e0d74b6660a9a48593f29fbc29c9a429d65e7de5ce6fd0927a",
+    "client/chroma/localized_views.py": "116099a0d51e4ae0b489d7da052d1f1802fd9e889288c214f8143a9fbc4a6299",
+    "client/chroma/local_ai.py": "af0bb5eb9f03807eba43c76a5bc2960dc368260b7c5069a203c12212d3ea2324",
+    "client/chroma/mcp_client.py": "f8cb8cd57c18fcc4611e57ab32170f6f0df1e454c1c8cf6bcfb09e0d4e743e3b",
+    "client/chroma/mcp_config.py": "9376edab04a5aa1df4551184cff16a1b65213b9e57296cfd540d084cc09c4ee2",
+    "client/chroma/mcp_provider.py": "732a961cf1cf68ce14e3e177df72b9c1f056165d57f05342b80561b280c3623d",
+    "client/chroma/mcp_worker.py": "1cf0569b6603a639dc9d4ebbcc8f13345fe4568c6dc1ac9b6a1ad669d10248cb",
+    "client/chroma/native_ai.py": "7a06fea2c8d3e670b49cdba1ae00cea82c1448b062a04be7e2b2ea6bb1108294",
+    "client/chroma/network_state.py": "4fa1e0bf82c7a392dd7288b5f9446b831ad6fe84bc965b6099d604b12d2ffad8",
+    "client/chroma/node_setup.py": "b489833f2321dbed06d5ef380861689be9cd6226ec0fc42df13a03426230a972",
+    "client/chroma/onboarding.py": "6a56ca1534a6d2b3312cea869ced55112602078a0bcd2a91ac8b15e3ab41c57a",
+    "client/chroma/onboarding_ui.py": "fd1ca9c7fb5e9e039ec4eabc49b1dcd3983afb78995f0fd43bc676d3923a572c",
+    "client/chroma/participation.py": "01a304a4baa4692db2c614a2cf52ae41a19551bb77d957c9581b21220d6ef6ae",
+    "client/chroma/policy.py": "a1ebc360ac48cd517c6dc87bacc69560ddef361ab830f6e6aea2af8213840396",
+    "client/chroma/process_lifetime.py": "9ccd0060c9b788083f4d42fbdc5ec54a1113930099037a4ddb973aece4a59733",
+    "client/chroma/publication.py": "74fdd17bcb1d6680aa494f95cc1db49a227b966c13f04e27f31e298f82eb9592",
+    "client/chroma/sandbox.py": "d5f5589dd7929083cb4b5937bc21826457a12bbafff44b62f6d9d92a7adbb369",
+    "client/chroma/settings.py": "be110375739a11182908db2c7817dda79af335d2bae183874385708c4f57bec2",
+    "client/chroma/speech.py": "50900f5558a5209c4ced4e623724b8d87ddfca69c21c610bb42926726372e563",
+    "client/chroma/speech_cli.py": "904412727770fc058c2328b7857491ecb962e3c7c7406d128eac53fcb8c6bc5f",
+    "client/chroma/speech_identity.py": "6d92ffc5a1e392ea4194dd76b99d1418dc7cc6855ba3c01071d4ed7e7a6666b0",
+    "client/chroma/storage.py": "5acc5dca0dfe8983b1423ab9036fafee40d6ba05f00f94d96223da529dce8385",
+    "client/chroma/targets.py": "1acff05ff27c6fdeab28598d3df58014d6e0a3b82d587bff116611c5a87a71ba",
+    "client/chroma/target_ui.py": "36521ade50b9e4b486394e592ebd59346dc7eb353e690bfeb38213367302d77a",
+    "client/chroma/theme.py": "0c17acda04cb0606df50d816bf4c8c2cdd36aa77a8692402ace49974eab133a4",
+    "client/chroma/transport.py": "2f280c0658d991e27e96ae467622e6094ab5e9435b70887b2ec6dc2a86f5a4a4",
+    "client/chroma/tray.py": "877405ac80acb93d62bf058d82bf5a23f5caef12016a3b74ee6b28a7bb927b5d",
+    "client/chroma/ui.py": "7086fb911dee47c7ef2a280295cfed5ffd5b47972614e26990a156ab7ce3904c",
+    "client/chroma/worker.py": "b4e71b7a45a2c2fbd7e10970facdb096d6588a522b906b0e0cc8318cc5cbff30",
+    "client/chroma/worker_resources.py": "52122745ef0d9b76e71b2b03ef4f1433bca8fc2f144c3682522eec62ab91215b",
+    "client/chroma/work_queue.py": "e83eb2bf4e497cc6d9a1cad84c761104d1f730255c12d8be19c4abf2c9805d21",
+    "client/chroma/__init__.py": "8ffda24c1993fd8d483ffae067730dda5ddc6145dab1e8f8c031311def4e65bd",
+    "client/docs/TARGETS.json": "e4b10c19a38a642461e98cecea4653033013ca9188604759b3d34c399efbe628",
+    "client/locales/da.json": "4a870748b4217d51b5298d122bcfe723757953acc94a35f29aaa257a806590c8",
+    "client/locales/de.json": "1033a2f5a4db6b7efed7a513d441634c73f83bdbbe665ab184b10750155f37f9",
+    "client/locales/en.json": "11be9b22625850e075a76aada28bc6a9851f51f6f3ed4da647fd4a45ae43552f",
+    "client/locales/fr.json": "d049b2c3bd4b3578d55dfe9b3e2c5a7566f74e86eeed077635af3ad45727a819",
+    "client/locales/hi-IN.json": "765c5d064eab6d4b1f6463ca0fc8a39a6d156b83b6456c27d5bc96dac8b77439",
+    "client/locales/ja.json": "196ddc3f2d9254d9976a87e07c202f6d4f01feedc4e8999342519e77c9157418",
+    "client/locales/zh-CN.json": "d0027c40ac6600a7326e2cf22c8657112ecd28cd40fd7fc554eb5d55c1cb9f44",
+    "client/reference_core/cpl_adapter.py": "80a61666d4dff31174987c10dc8bfa3e002e4a304eb9d200967c3cc4b860013e",
+    "client/reference_core/LICENSE": "1450404980c163e952128750672cf6e12ab12445fe0d58a7ed8613f65927ab7b",
+    "client/reference_core/NOTICE": "d12c00c03009a875280503fc3d313f345aec0c18c5632d123bb6dea5da3c9abb",
+    "client/reference_core/optical_bridge.py": "baf52ff453a04b433f077e6ff8f1e89679de4a917776e490cc35a668f9882bf3",
+    "client/reference_core/prisme_isa.py": "6f34c043a0a491b1efa6fbeb4b0e213b627842b8733ef3f5612d6bd5edd58108",
+    "client/reference_core/prisme_runner.py": "247bf52d14b9cd3936dd4a12caee3e04407568e3bf2f9ba12a821a3cfee3b432",
+    "client/reference_core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "client/scripts/dashboard_smoke.py": "64fc3a03864bead08e5f0051891c4d44f50ac7f6f914bea06f4760ec441d24cf",
+    "client/scripts/gui_smoke.py": "0688b71ed0f20272cea7d99bb71ad1ce2f1ed1180d0eeeb3d55da56a02aa7007",
+    "client/services/backend.did.js": "4805f8d641117de197081dc94fbd31905ec19150861fc944f7906be4657c3e9a",
+    "client/services/connection_probe.mjs": "8352a14bcfb8552cdb73460892e189f652ee7929bbb360d00856939fe8240510",
+    "client/services/icp_bridge.mjs": "e37b6908f806ab4046071c1739fa4731853cc3c36f057b6744e311c4278b12fb",
+    "client/services/node_connection.mjs": "050a460ffde1247419d3bb467bb18052520adc7d242084e3161545eaca2056b5",
+    "client/services/package-lock.json": "da604f671ec30ffa39787bce67bf696e9dcff65e0597dd26fc8d7339945cea6d",
+    "client/services/package.json": "9505b3792081ce5d342f0ea8ba4b5965a05f826a182f1cad2359de493989976a",
+    "client/services/publication.mjs": "6df820d3a582ba09730ead5f55e08f7a041deff1498121b57af52c50ee02ac87",
+    "client/vendor/chromaplex-main/LICENSE": "a083f710b6b919f99dd8811717f33e20954c2201ed531b1deca3cb6a1bc7582a",
+    "client/vendor/chromaplex-toolchain/LICENSE": "1450404980c163e952128750672cf6e12ab12445fe0d58a7ed8613f65927ab7b",
+    "client/vendor/chromaplex-toolchain/chromaplex_os/assembler.py": "0c965334a801de53efbd6c3ea7d56eb664dfd84923729a4ffccb11b0001a5a8b",
+    "client/vendor/chromaplex-toolchain/chromaplex_os/compiler.py": "e3e9cbf356af4273879bd779304e2f34f44a8975ca19f09d8581f6f627f06ed6",
+    "client/vendor/chromaplex-toolchain/chromaplex_os/hardware.py": "3985e5cfe2fab45af6dfc4bbc501536305a0c8220df02ff736adea0202e0c5a8",
+    "client/vendor/chromaplex-toolchain/chromaplex_os/spec.py": "25c73b7967cdfe3ea1f9b6598e13ad18bc631e93905e5f03eac575ef421e4988",
+    "client/vendor/chromaplex-toolchain/chromaplex_os/storage.py": "0be4abf15d9f8a886eedc3b7e471e1a4af2ed5ff67de3356f389b78c5b9ace8f",
+    "client/vendor/chromaplex-toolchain/chromaplex_os/vm.py": "32ac11d373f4bb619e334982a9f0bcc6be4c42f52f34ead816bfc94b50962e34",
+    "client/vendor/chromaplex-toolchain/chromaplex_os/__init__.py": "66b79a7c1e248abe94297bbb17bd04d1348508729047dec414c4f082f001bca0",
+    "client/vendor/chromaplex-main/chromaplex/cpa_assembler.py": "1108d530e00174b754553890af0aace7ae854dbae23e2cbfda483ef085ee11df",
+    "client/vendor/chromaplex-main/chromaplex/cpl_compiler.py": "3a8ee5b06a50f6fe7b1e36b295adab5c3ee8b318e3970fd51e74f457f035cad5",
+    "client/vendor/chromaplex-main/chromaplex/crystal_simulator.py": "b711c1d1f6bf306b190f498872740a366014ef4a429f12e44ea864ca2fca4c19",
+    "client/vendor/chromaplex-main/chromaplex/utils.py": "8c0c803f9736368aec4a02333641318af1dd0e2077a254f446a8f779558baea4",
+    "client/vendor/chromaplex-main/chromaplex/__init__.py": "9270ba1df54883b52e1b7fa242e473a5dcd367906a5fb098ab8d8ce6ca33626b",
+    "client/chroma/speech_wire/frame.py": "71addd4dcd8fee817ba228786b8f7067cdbb07b50d6afb7aaacbc2e2fbaa8a51",
+    "client/chroma/speech_wire/lan.py": "5339fd82ccffc2e1af454c8ffb6c2880d811a632efa32c61981b17f09bd72c47",
+    "client/chroma/speech_wire/LICENSE": "1450404980c163e952128750672cf6e12ab12445fe0d58a7ed8613f65927ab7b",
+    "client/chroma/speech_wire/__init__.py": "fb526df10d60187d228e8f868b8808858f3834ba4622b7db6956f1ffa23c6b97",
+    "VERSION": "73bac203e612bba13ccff191c7c60049a4a5f00c6e7fedda8bd705a4b75ac5af"
+  },
+  "state": "isolated empty account; actual preferences save; no network or browser action",
+  "captures": [
+    {
+      "document": "docs/en/guide.md",
+      "filename": "docs/en/images/overview.png",
+      "locale": "en",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "overview",
+      "sha256": "55130e2a5e1bd1073f42a2aad557732b6fec9a79fabbb968d0b3b2585a72f7b4",
+      "size": [
+        1600,
+        1000
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/en/guide.md",
+      "filename": "docs/en/images/resources.png",
+      "locale": "en",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "resources",
+      "sha256": "a3bf5841e6dd8a6df39628493a6dcaaadcab2f5523d1a3bb978bd2d68682061b",
+      "size": [
+        1600,
+        1000
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/en/guide.md",
+      "filename": "docs/en/images/activity.png",
+      "locale": "en",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "activity",
+      "sha256": "5e1b0dd39045c3a71b700f54b3c394eb3d4904fb5bfa0f425625811a10d9342c",
+      "size": [
+        1600,
+        1000
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/en/guide.md",
+      "filename": "docs/en/images/connection.png",
+      "locale": "en",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "connection",
+      "sha256": "5b479c322808c25ff08e6ffdc74e7353102dba50c8719b016cd2a1fa2231114e",
+      "size": [
+        1600,
+        1000
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/en/guide.md",
+      "filename": "docs/en/images/ai-setup.png",
+      "locale": "en",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "ai-setup",
+      "sha256": "1ecd0c56ad7274448808a070bba1af1fc3def0b0a7ac5ed6ad176b8432b2b907",
+      "size": [
+        1100,
+        760
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/en/guide.md",
+      "filename": "docs/en/images/mcp.png",
+      "locale": "en",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "mcp",
+      "sha256": "e0bfc7fcacd591b1a01063371f710b21876169ae1158ebbde0f7461faf2c2da6",
+      "size": [
+        1100,
+        760
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/da/guide.md",
+      "filename": "docs/da/images/overview.png",
+      "locale": "da",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "overview",
+      "sha256": "f5fe5c0d1ed70b5e0d6c5a1582c323792ccbc5e6c4bd16f499781800b177372e",
+      "size": [
+        1600,
+        1000
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/da/guide.md",
+      "filename": "docs/da/images/resources.png",
+      "locale": "da",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "resources",
+      "sha256": "03057b777f758cc1c6651d6b43d8cd64e0350ee3acf11082331b37d13547fce8",
+      "size": [
+        1600,
+        1000
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/da/guide.md",
+      "filename": "docs/da/images/activity.png",
+      "locale": "da",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "activity",
+      "sha256": "d3bc29886344c3977993dea5f00796c7cb05341523704cc89543b28d45d31092",
+      "size": [
+        1600,
+        1000
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/da/guide.md",
+      "filename": "docs/da/images/connection.png",
+      "locale": "da",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "connection",
+      "sha256": "d9d99ffddf20b4f3636e1c638679f037342ab4f20c55c89f2e2bf0f9f328eaae",
+      "size": [
+        1600,
+        1000
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/da/guide.md",
+      "filename": "docs/da/images/ai-setup.png",
+      "locale": "da",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "ai-setup",
+      "sha256": "271d905ac6400e1f1e104f2b47242a286be141321cc80f29226f08e315d07d8c",
+      "size": [
+        1100,
+        760
+      ],
+      "verification": "PASS"
+    },
+    {
+      "document": "docs/da/guide.md",
+      "filename": "docs/da/images/mcp.png",
+      "locale": "da",
+      "application_version": "0.2.21-rc.5",
+      "source_commit": "18e6f4eba47d2c81428e62480f1e4f47d638d6b0",
+      "ui_view": "mcp",
+      "sha256": "7bb4ff68e6eb9ce7eced18eac3ea68939b4e79fc9bdb5a60979003f527e19a75",
+      "size": [
+        1100,
+        760
+      ],
+      "verification": "PASS"
+    }
+  ],
+  "visual_review": "All 12 actual windows reviewed; matching EN/DA UI; no private account data or clipping observed."
+}

@@ -1,0 +1,11 @@
+{
+ "schemaVersion":1,
+ "targets":[
+  {"id":"cpl-legacy","architecture":"ChromaPlex virtual ISA","toolchain":"bundled original compiler + adapter","output":"CPA text","status":"LOCAL SOFTWARE TESTED","hardware":"NOT VERIFIED"},
+  {"id":"cpl-spec","architecture":"corrected ChromaPlex virtual ISA","toolchain":"bundled corrected scalar compiler/VM","output":"CPA text","status":"LOCAL SOFTWARE TESTED","hardware":"NOT VERIFIED"},
+  {"id":"prisme-asm","architecture":"256-byte PRISME virtual machine","toolchain":"bundled reference assembler/VM","output":"raw instruction bytes","status":"LOCAL SOFTWARE TESTED","hardware":"NOT VERIFIED"},
+  {"id":"esp32","architecture":"board-specific Xtensa or RISC-V","toolchain":"external ESP-IDF matching board","output":"ELF and firmware images","status":"NOT VERIFIED","cpl_native_backend":"NOT IMPLEMENTED","deployment":"manual approval; no flash adapter"},
+  {"id":"arduino","architecture":"selected board/FQBN","toolchain":"external arduino-cli plus board core","output":"board-specific firmware","status":"NOT VERIFIED","cpl_native_backend":"NOT IMPLEMENTED","deployment":"manual approval; no flash adapter"},
+  {"id":"raspberry-pi","architecture":"target OS arm64/armhf","toolchain":"target Python runtime or cross compiler","output":"source package or architecture-specific executable","status":"NOT VERIFIED","cpl_native_backend":"virtual interpreter only, not native code generation","deployment":"manual approval"}
+ ]
+}

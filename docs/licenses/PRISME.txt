@@ -1,0 +1,34 @@
+PRISME BINARY EXTENSION — ALL RIGHTS RESERVED
+
+Copyright © 2026 Janus5G. All rights reserved.
+
+This repository and all associated software, source code, specifications,
+binary formats, documentation, examples, test vectors, data structures and
+other materials are published solely for technical review, documentation and
+evaluation purposes.
+
+No licence is granted to use, copy, reproduce, modify, adapt, merge, publish,
+distribute, sublicense, sell, embed, deploy, manufacture from, commercially
+exploit or create derivative works based on any part of this repository
+without prior written permission from the copyright holder.
+
+No express or implied licence is granted under any patent, patent application,
+utility model, design right, trade secret or other intellectual property
+right.
+
+The materials are experimental and are not authorised for production,
+safety-critical, automotive, industrial-control, medical, autonomous-system
+or commercial deployment without a separate written agreement.
+
+The materials are provided “AS IS”, without warranty of any kind, express or
+implied, including but not limited to warranties of merchantability, fitness
+for a particular purpose, accuracy, security, non-infringement or availability.
+
+To the maximum extent permitted by applicable law, the copyright holder shall
+not be liable for any claim, damage, loss or other liability arising from or
+related to the materials or their use.
+
+All rights not expressly granted are reserved.
+
+Requests for permission, commercial licensing, research collaboration or other
+authorisation must be made directly to the copyright holder.

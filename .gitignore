@@ -1,0 +1,27 @@
+build/
+dist/
+__pycache__/
+*.pyc
+node_modules/
+.venv/
+*.pem
+*.key
+.env
+
+# Private runtime state must never enter source or release inputs.
+diagnostics/
+evidence/
+logs/
+*.log
+*.db
+*.sqlite*
+*.partial
+api-connection*.json
+preferences*.json
+ui-language.json
+identity.json
+credentials.json
+mcp-connections.json
+node-identity*
+*.pfx
+*.p12

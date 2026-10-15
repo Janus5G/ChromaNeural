@@ -1,0 +1,10 @@
+ChromaNeural
+Copyright (c) 2026 Janus Rokkjær
+
+Apache-2.0 covers only the identified ChromaNeural-authored work. See docs/LICENSE_SCOPE.json and docs/LICENSING.md.
+Refract Editor: MIT, Copyright (c) 2026 Janus Rokkjær.
+ChromaPlex/CPL/CPA and ChromaSpeechAI: existing separate MIT licenses.
+PRISME and PRISME Binary Extension: existing All Rights Reserved terms unchanged.
+Other dependencies retain their upstream licenses and notices.
+
+See THIRD_PARTY_LICENSES.md. This notice modifies no license and authorizes no GitHub, Caffeine or production publication.

@@ -1,0 +1,68 @@
+[
+  {
+    "path": "client/chroma/connection_ui.py",
+    "oldSha256": "2d48c03fcff731b3672ba7bb1f8d02059bae870a82bf314b038984de28584a11",
+    "newSha256": "a28c145e8a2b0adca3e054a56f08f14159d6f14db78c7f56ed3f603040800a7a",
+    "reason": "Previously verified Phase B/C/extensible-i18n presentation/localization change; exact old/new binding. Protocol/storage/identity/network contracts preserved."
+  },
+  {
+    "path": "client/chroma/dashboard.py",
+    "oldSha256": "263efb213d228eaad195b1a79e455a81b0fbcacb7a88be807600cf1e2c775d35",
+    "newSha256": "857857446f9d3e84958e815de5c3926b64c434fe7442c90a20b538664ba63350",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  },
+  {
+    "path": "client/chroma/target_ui.py",
+    "oldSha256": "09e65c9d0bdc16fed34ef05a10a64e9fe417172fa9ffa2cc8afbf77ddc282a36",
+    "newSha256": "36521ade50b9e4b486394e592ebd59346dc7eb353e690bfeb38213367302d77a",
+    "reason": "Previously verified Phase B/C/extensible-i18n presentation/localization change; exact old/new binding. Protocol/storage/identity/network contracts preserved."
+  },
+  {
+    "path": "client/chroma/tray.py",
+    "oldSha256": "8c9e7dc701cc878079a7fa25343e6f28668436e635b4c6c0cea063f7b8dc3ac0",
+    "newSha256": "877405ac80acb93d62bf058d82bf5a23f5caef12016a3b74ee6b28a7bb927b5d",
+    "reason": "Previously verified Phase B/C/extensible-i18n presentation/localization change; exact old/new binding. Protocol/storage/identity/network contracts preserved."
+  },
+  {
+    "path": "client/chroma/ui.py",
+    "oldSha256": "8d05f4699da40c0319031337e5d7581f15c27ab9a046ed0c6b86a3282d732f77",
+    "newSha256": "7086fb911dee47c7ef2a280295cfed5ffd5b47972614e26990a156ab7ce3904c",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  },
+  {
+    "path": "client/launch.py",
+    "oldSha256": "c4cb917cad69fb8640cf38446a46e6a426af56e035091f1ae93bfd455176090a",
+    "newSha256": "eb1f57a67dcff041005d7ecf4a7626efa6db0b4bb297b6d9715ce458c54d6e09",
+    "reason": "Previously verified Phase B/C/extensible-i18n presentation/localization change; exact old/new binding. Protocol/storage/identity/network contracts preserved."
+  },
+  {
+    "path": "client/Start-ChromaNeural.ps1",
+    "oldSha256": "b0f1515fa3c93432c62706f700191551300fea7aa737e77e39939e5434718484",
+    "newSha256": "5030e57103f9a91b19599dc1b32f4f03d054147a5f7db3847b13618de268df6f",
+    "reason": "Previously verified Phase B/C/extensible-i18n presentation/localization change; exact old/new binding. Protocol/storage/identity/network contracts preserved."
+  },
+  {
+    "path": "Start-ChromaNeural.ps1",
+    "oldSha256": "82cbd843d1ceb15ada4f8df333a61036b7e0bb561353b6a5b355a0e601461c08",
+    "newSha256": "133c24d536224f1ba7a532b9c667663db7224eb20b54eb5273f1c85b681c24a8",
+    "reason": "Previously verified Phase B/C/extensible-i18n presentation/localization change; exact old/new binding. Protocol/storage/identity/network contracts preserved."
+  },
+  {
+    "path": "Install-ChromaNeural.ps1",
+    "oldSha256": "b53c18684af2cc3d9e736c7d564405b7579d8e5149bcb8e62ba1609f22622738",
+    "newSha256": "f3fe0c19e61f92cb53126c4b75dab86a915cf59f8901860a92b53ec82fb68de2",
+    "reason": "Distribution-only documentation/license allowlist plus Phase H discovery of root translated READMEs; existing manifest, destination and state protections preserved. Installer-only catalogue lookup/presentation and copying of its resources; action/path/hash/state/exit contracts retained."
+  },
+  {
+    "path": "scripts/network_client.py",
+    "oldSha256": "b12f4a66a4139eeb70426db68ad7c089f2a9b474a9b0b79e4c00573abc46f218",
+    "newSha256": "bde6dece1ad9b86b566bd00c7c2f601fbce0c3a50d8d22041a2951a3c48e737e",
+    "reason": "Previously verified Phase B/C/extensible-i18n presentation/localization change; exact old/new binding. Protocol/storage/identity/network contracts preserved."
+  },
+  {
+    "path": "client/chroma/ai_provider.py",
+    "oldSha256": "b83a4231c2a9efb3820a41062970089a69ac038c930e3b53e2bc5585c016a303",
+    "newSha256": "ed40d0af31e79b00780c53ebc438daa9faada6a1ece354cac4b9e7e1b8278d5b",
+    "reason": "Optional MCP host/provider integration and in-app onboarding; frozen pre-MCP source separately preserved."
+  }
+]
