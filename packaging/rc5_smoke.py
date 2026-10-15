@@ -1,4 +1,4 @@
-"""Install the actual Inno executable; isolate state; never contact a backend."""
+"""Verify actual package bytes and isolated offline startup; historical Windows helper retained."""
 from pathlib import Path
 import argparse,hashlib,json,os,platform,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1]
@@ -65,6 +65,16 @@ def main():
   run(['dpkg-deb','--extract',next((ROOT/'dist').glob('*.deb')),test/'deb'])
   target=test/'deb/opt/chromaneural'
  validate(target)
+ if kind=='Linux':
+  from release_guard import entries,inspect_payload
+  policy=json.loads((ROOT/'packaging/release-policy.json').read_text())
+  inspect_payload(target,policy['jsonPaths'],policy['publicDependencyFiles'],json.loads((ROOT/'packaging/binaries.lock.json').read_text()))
+  for rel,item in entries(ROOT).items():
+   dest=item.get('payload')
+   if not dest or item.get('platform','linux')!='linux':continue
+   assert hashlib.sha256((target/dest).read_bytes()).hexdigest()==item['sha256'],'Installed source/document mismatch: '+rel
+  assert (target/'client/chroma/mcp_catalog.py').is_file()
+  assert not (target/'runtime/windows-x64').exists()
  expected={line.split('  ',1)[1] for line in (target/'SHA256SUMS.txt').read_text().splitlines()}
  actual={p.relative_to(target).as_posix() for p in target.rglob('*') if p.is_file()}
  extra=actual-expected-{'SHA256SUMS.txt'}

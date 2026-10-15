@@ -1,6 +1,7 @@
 # Known limits
 
-- RC5 release acceptance and trusted production signing are not complete.
+- Official release: Linux amd64. Other platforms are community-port possibilities, not officially supported or verified. Windows signing is not a Linux release dependency.
+- Curated catalog: OPC UA, NVIDIA Isaac Sim, Home Assistant and Siemens Xcelerator are NOT VERIFIED end-to-end; ROS 2, MQTT / EMQX and Arduino are EXPERIMENTAL.
 - Live Internet Identity end-to-end, live admission and live migration: NOT VERIFIED.
 - General resource sharing is disabled. Controlled Linux/Ollama/GPU contribution is unsupported; total physical RAM is not guaranteed.
 - Native private-file browser/desktop integration and direct private owner-result retrieval before optional global sharing are not delivered.

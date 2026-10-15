@@ -1,11 +1,20 @@
 # ChromaNeural 0.2.21-rc.5
 
-NOT VERIFIED as a release candidate. Not published.
+PUBLISHED PRERELEASE — Linux amd64 official distribution.
 
-RC5 preserves the RC4 application baseline and replaces the Windows container with Inno Setup. Release documentation is newly authored in English and Danish with fresh actual GUI captures. All seven application locales remain. Windows x64 and Linux amd64 are the release targets.
+**Official release: Linux amd64.** Source code remains available for community ports and experimentation on other platforms. Windows, macOS and mobile platforms are not currently officially supported or verified.
 
-Clean builds, installer lifecycle, screenshots, signing and manual acceptance are separate gates. Windows and Linux clean GitHub-hosted builds and package acceptance passed in [GitHub Actions run 38047651276](https://github.com/Janus5G/ChromaNeural/actions/runs/38047651276) at commit `0f7a69414556a5be2f46327e36f9740ab6f59a99`. Windows acceptance covered isolated install/startup/reinstall/uninstall; Linux acceptance included actual extracted Tk startup on Ubuntu 24.04.
+Windows binary distribution is no longer part of the official release. SignPath, Authenticode and Inno Setup are not dependencies of this Linux release. Historical Windows/signing evidence remains [historical](docs/SIGNING.md).
 
-Separate SignPath TEST signing, signature presence, expected test certificate and signed-artifact hash correlation passed according to owner-provided evidence. A self-signed TEST artifact is not trusted production signing. Integrated CI signing remains BLOCKED because the Trusted Build System is unavailable. Foundation/production signing is BLOCKED pending the external SignPath response. Final owner acceptance remains pending; no public RC5 release is authorized by these results.
+The guided AI/MCP setup is included; its functional baseline has been manually accepted by Janus. Existing Local AI discovery is preserved. MCP is optional and can be skipped completely. Connection approval and individual tool approval remain separate; session tokens remain memory-only. The curated catalog does not certify vendor interoperability:
 
-ChromaSpeechAI remains node-to-node; MCP remains optional node-to-tool; REMOTE_EXECUTION=DISABLED. No Internet Identity, Caffeine, backend or application behavior change is included. [Limitations](KNOWN_LIMITATIONS.md) · [Signing](docs/SIGNING.md).
+- OPC UA, NVIDIA Isaac Sim, Home Assistant and Siemens Xcelerator: **NOT VERIFIED end-to-end**.
+- ROS 2, MQTT / EMQX and Arduino: **EXPERIMENTAL**.
+
+All profiles are disabled by default. Discovery is not approval. Potential write/control capabilities require separate explicit consent; MCP is not a realtime machine safety/control loop. No live vendor connection acceptance is claimed.
+
+English is the default documentation language; Danish documentation and accepted language-matched captures are retained. All seven application UI languages remain available. Withdrawn RC4 documentation/screenshots are excluded.
+
+The Linux-only workflow builds the DEB and curated source ZIP from a clean checkout, verifies package startup, release inputs, privacy and hashes. The release description identifies the exact build commit and successful CI run for its attached files. SHA256SUMS.txt covers the final DEB and source ZIP only.
+
+ChromaSpeechAI remains node-to-node; MCP remains optional node-to-tool; REMOTE_EXECUTION=DISABLED. No Internet Identity, Caffeine, backend or network architecture change is included. [Scope and known limits](KNOWN_LIMITATIONS.md) · [Verification](VERIFICATION.md).

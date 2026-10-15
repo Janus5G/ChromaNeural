@@ -4,7 +4,7 @@
 
 The client, browser identity and approved peer/tool services are separate trust boundaries. A copied API profile is connection metadata, not a browser login or proof of ownership. User-specific connection metadata remains private release data even without a password.
 
-Windows state normally resides in `%LOCALAPPDATA%\ChromaNeural\client`. Linux uses `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client`. An explicit `--state-dir` takes precedence over `CHROMA_STATE_DIR`. Preferences, saved language, API profiles, accounting cache, queue and logs belong to user state, never to release inputs.
+Linux uses `${XDG_STATE_HOME:-$HOME/.local/state}/chroma-neural/client`. An explicit `--state-dir` takes precedence over `CHROMA_STATE_DIR`. Preferences, saved language, API profiles, accounting cache, queue and logs belong to user state, never to release inputs.
 
 The release starts without a profile. State can be saved after explicit user action; reinstalling program files does not delete existing state. Workspaces and node identities may use separately selected locations. Back up only after closing the client, and protect keys, databases and logs with your OS account/disk controls. Encryption at rest and network anonymity are not promised.
 

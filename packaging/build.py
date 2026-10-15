@@ -23,9 +23,10 @@ def archive(root,out):
   assert z.testzip() is None
   for p in files(root):
    with z.open(p.relative_to(root).as_posix()) as f:assert hashlib.file_digest(f,'sha256').hexdigest()==digest(p)
-def assets(target,cache):
+def assets(target,cache,kind):
  cache.mkdir(parents=True,exist_ok=True)
  for item in json.loads((ROOT/'packaging/assets.lock.json').read_text()):
+  if kind=='linux' and item['name'].endswith('.zip'):continue
   p=cache/item['name']
   if not p.exists():
    req=urllib.request.Request(item['url'],headers={'User-Agent':'ChromaNeural-release-builder'})
@@ -53,20 +54,21 @@ def assets(target,cache):
      with stream,dest.open('wb') as out:shutil.copyfileobj(stream,out)
      dest.chmod(member.mode & 0o777)
 def stage(kind,cache):
- if kind not in ('windows','linux'):raise SystemExit('This release supports Windows x64 and Linux amd64 only')
+ if kind!='linux':raise SystemExit('Official release platform: Linux amd64 only')
  target=BUILD/'payload';target.mkdir(parents=True)
  from release_guard import stage_source
  stage_source(ROOT,target,kind)
  # Lock-driven, release time only. No user state or live endpoint involved.
  run([sys.executable,'-B',target/'scripts/prepare_node_runtime.py','--prepare','--cache',BUILD/'npm-cache'])
- assets(target,cache)
+ assets(target,cache,kind)
  for name,dest in [('Qwen.txt','models/QWEN_LICENSE'),('llama.cpp.txt','runtime/windows-x64/LICENSE-llama.cpp'),('LLVM-OpenMP.txt','runtime/windows-x64/LICENSE-LLVM-OpenMP')]:
+  if kind=='linux' and dest.startswith('runtime/windows-x64/'):continue
   p=target/dest;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'docs/licenses'/name,p)
  # Verify every accepted model/runtime byte, not merely compressed archives.
  expected=json.loads((ROOT/'packaging/binaries.lock.json').read_text())
  for rel,h in expected.items():
+  if kind=='linux' and rel.startswith('runtime/windows-x64/'):continue
   if not (target/rel).is_file() or digest(target/rel)!=h:raise ValueError('Extracted runtime mismatch: '+rel)
- if kind=='linux':shutil.rmtree(target/'runtime/windows-x64')
  from mcp_package import stage as stage_mcp
  stage_mcp(ROOT,target)
  from release_guard import inspect_payload
@@ -95,7 +97,7 @@ def require_license_clearance():
   raise SystemExit('LICENSE BLOCKED: documented source-license clearance is required before packaging')
 
 def main():
- if platform.system() not in ('Windows','Linux'):raise SystemExit('This release supports Windows x64 and Linux amd64 only')
+ if platform.system()!='Linux':raise SystemExit('Official release platform: Linux amd64 only')
  require_license_clearance()
  parser=argparse.ArgumentParser();parser.add_argument('--asset-cache',type=Path,default=BUILD/'asset-cache');args=parser.parse_args()
  kind={'Windows':'windows','Linux':'linux'}[platform.system()]

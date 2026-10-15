@@ -1,25 +1,10 @@
-# Installer RC5-kandidaten
+# Installer RC5 på Linux
 
 [English](../en/installation.md) · [Brugervejledning](guide.md)
 
-RC5 er ikke offentliggjort. Brug kun den præcise kandidat til manuel accept og dens SHA256SUMS. Brug ikke en tilbagetrukket RC4-pakke som erstatning. Offentlig release kræver separat ejergodkendelse og vurdering af produktionssigneringen.
+**Officiel release: Linux amd64.** Kildekoden er fortsat tilgængelig til community-ports og tilpasning til andre platforme. Windows, macOS og mobile platforme er ikke aktuelt officielt supporteret eller verificeret.
 
-## Windows x64
-
-Installer Python 3.14 eller nyere med Tk og py/pyw-launcherne samt Node.js 24 eller nyere. Installeren henter ikke forudsætninger, modeller eller brugertilstand.
-
-```powershell
-Get-FileHash -Algorithm SHA256 -LiteralPath '.\ChromaNeural-0.2.21-rc.5-windows-x64.exe'
-Get-AuthenticodeSignature -LiteralPath '.\ChromaNeural-0.2.21-rc.5-windows-x64.exe'
-```
-
-Sammenlign hele hashen. Usignerede lokale builds og selvsignerede testbuilds er ikke betroet produktionssignering. Deaktiver ikke Windows' sikkerhedsbeskyttelse.
-
-Kør den grafiske Inno Setup-installer. Standardmappen pr. bruger er `%LOCALAPPDATA%\Programs\ChromaNeural\App`. Den tilføjer **ChromaNeural** i Startmenuen og Installerede apps. Den opretter ingen skrivebordsgenvej, starter ikke klienten automatisk og importerer ingen konto. Start selv klienten fra Startmenuen.
-
-Geninstallation af samme Inno-administrerede version erstatter programfilerne. En senere Inno-administreret version bruger samme installationsidentitet/mappe; nedgradering afvises. Den tidligere versionsopdelte RC4-installation fjernes eller migreres ikke tavst. Luk klienten før installation, opdatering eller fjernelse. Brugertilstand ligger separat og bevares ved afinstallation; eksisterende brugertilstand beviser ikke forurening af pakken. Brug en isoleret, tom `--state-dir` til første-start-accept.
-
-Afinstaller via **Installerede apps** i Windows. Registrerede programfiler og Startmenu-genvejen fjernes; brugerdata og arbejdsmapper bevares. Egne filer i programmappen er ikke installerens filer. Inno Setup logger installationen; en eksplicit log kan vælges med `/LOG="<valgt-logfil>"`.
+[RC5 prerelease / SHA256SUMS](https://github.com/Janus5G/ChromaNeural/releases/tag/v0.2.21-rc.5)
 
 ## Linux amd64
 
@@ -35,4 +20,4 @@ Pakkeplaceringerne er fortsat `/opt/chromaneural`, `/usr/bin/chromaneural` og de
 
 ## Ren første start
 
-Åbn Ressourcer, lad bidrag være slået fra, gem og åbn Login & forbindelse. Feltet skal være tomt, og ingen profil eller kontoidentitet må være indlæst. Brug ikke personlige forbindelsesdata under releaseaccept. Gennemgå engelsk og dansk GUI separat med sprogvælgeren. Faktiske RC5-resultater for installation, opstart, afinstallation og signering står i [releasestatus](../../RELEASE_NOTES.md); tidligere RC4-accept certificerer ikke den nye installer.
+Åbn Ressourcer, lad bidrag være slået fra, gem og åbn Login & forbindelse. Feltet skal være tomt, og ingen profil eller kontoidentitet må være indlæst. Brug ikke personlige forbindelsesdata under releaseaccept. Gennemgå engelsk og dansk GUI separat med sprogvælgeren. Linux-pakkens verificering og hashes står i [releasestatus](../../RELEASE_NOTES.md).

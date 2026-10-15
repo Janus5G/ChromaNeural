@@ -1,6 +1,8 @@
-# Code signing policy - RC5
+# Code signing policy
 
-## Current state
+Official RC5 distribution is Linux amd64 only. SignPath, Inno Setup and Authenticode are not active release requirements. No Windows executable is distributed. The following record preserves earlier Windows TEST evidence and deferred production work; it is historical, not an instruction to run the current workflow or a blocker for Linux.
+
+## Historical Windows state
 
 Separate SignPath TEST request, Authenticode signature presence, expected certificate and signed-artifact hash correlation: PASS according to the owner-provided Windows/SignPath evidence. This is not integrated CI signing or trusted production signing.
 
@@ -10,7 +12,7 @@ SIGNPATH CI INTEGRATION = BLOCKED — TRUSTED BUILD SYSTEM NOT AVAILABLE. The su
 
 The existing ChromaNeural project, PE artifact configuration, CI submitter, self-signed test certificate and TEST policy must be reused. Display names are not configuration slugs. The separate TEST result does not establish the GitHub secret/variable bindings or certificate fingerprint required by the integrated workflow; those bindings remain NOT VERIFIED here. No token value is recorded in this documentation.
 
-## Remaining integrated CI prerequisites
+## Historical integrated Windows CI prerequisites
 
 These are conditional prerequisites for the blocked integrated job, not instructions to repeat the completed separate TEST request.
 
@@ -27,7 +29,7 @@ A test certificate is not a trusted public certificate. The verifier accepts onl
 
 SignPath Foundation acceptance and production certificate: BLOCKED — EXTERNAL SIGNPATH RESPONSE PENDING. The completed scoped license inventory found Apache-2.0/MIT project runtime, unchanged third-party licenses and restrictive PRISME/Binary Extension material only as historical/provenance notices, not a restrictive runtime component. Foundation acceptance of the Inno Setup-generated installer remains NOT VERIFIED pending external confirmation. No license is changed or Foundation approval claimed. Do not purchase a certificate or submit an application without owner authorization.
 
-Public RC5 release additionally requires trusted production signing, signed-artifact verification and owner manual acceptance. This workflow's test artifact must never be labelled trusted release signing.
+The former Windows release plan required trusted production signing, signed-artifact verification and owner manual acceptance; that requirement does not apply to the Linux-only official release. This workflow's test artifact must never be labelled trusted release signing.
 
 ## Authoritative references
 
