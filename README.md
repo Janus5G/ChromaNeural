@@ -59,12 +59,13 @@ Clean GitHub-hosted Windows/Linux builds and focused package checks passed in [C
 
 [Verification boundaries](VERIFICATION.md) · [Build process](docs/BUILDING.md) · [Code signing policy](docs/SIGNING.md)
 
-## Current limits
+## RC5 scope and safety boundaries
 
-- General resource sharing and remote execution remain disabled. There is no automatic private-file upload, network admission or global publication.
-- Live Internet Identity end-to-end, live node admission, live migration and LAN Build05/main API interoperability remain **NOT VERIFIED**.
-- General controlled Linux/Ollama/GPU contribution is unsupported. No physical optical/GPU performance claim is made.
-- Integrated CI signing remains **BLOCKED** because the Trusted Build System is unavailable. Foundation/production signing remains **BLOCKED — EXTERNAL SIGNPATH RESPONSE PENDING**. Windows reports an untrusted-chain `UnknownError` for the self-signed TEST certificate; this is not public production trust.
+**Supported now:** RC5 supports local AI work, WorkQueue, authenticated ChromaSpeechAI node-to-node collaboration and optional, approved MCP node-to-tool access. Current release targets are Windows x64 and Linux amd64.
+
+**Safety by design:** private files and local work are not uploaded automatically. Sharing, network admission and publication require explicit approval and control. Remote execution is deliberately disabled.
+
+**Outside current scope / not yet verified:** general resource sharing remains disabled; general Linux/Ollama/GPU resource contribution is outside current RC5 scope. Live Internet Identity end-to-end, live node admission, live migration and LAN Build05 ↔ main API interoperability remain **NOT VERIFIED**. No physical optical/GPU performance claim is made.
 
 See [known limitations](KNOWN_LIMITATIONS.md). The conceptual artwork does not expand the current Windows/Linux release scope or certify future capabilities.
 

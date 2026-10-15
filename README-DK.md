@@ -59,12 +59,13 @@ Rene GitHub-hostede Windows/Linux-builds og målrettede pakketests bestod i [CI-
 
 [Verificeringens afgrænsning](VERIFICATION.md) · [Buildproces](docs/BUILDING.md) · [Politik for kodesignering](docs/SIGNING.md)
 
-## Aktuelle begrænsninger
+## RC5-scope og sikkerhedsgrænser
 
-- Generel ressourcedeling og fjernudførelse er fortsat deaktiveret. Private filer uploades ikke automatisk; netværksadgang og global publicering sker heller ikke automatisk.
-- Live Internet Identity fra ende til ende, live nodeadgang, live migration og samspil mellem LAN Build05 og hovedapplikationens API er fortsat **NOT VERIFIED**.
-- Generel kontrolleret Linux-/Ollama-/GPU-deling understøttes ikke. Der fremsættes ingen påstand om fysisk optisk/GPU-ydeevne.
-- Integreret CI-signering er fortsat **BLOCKED**, fordi Trusted Build System ikke er tilgængeligt. Foundation/produktionssignering er fortsat **BLOCKED — EXTERNAL SIGNPATH RESPONSE PENDING**. Windows viser `UnknownError` for det selvsignerede TEST-certifikats ikke-betroede kæde; det er ikke offentlig produktionsbetroelse.
+**Understøttet nu:** RC5 understøtter lokalt AI-arbejde, WorkQueue, autentificeret ChromaSpeechAI-samarbejde fra node til node og valgfri, godkendt MCP-adgang fra node til værktøj. Aktuelle releaseplatforme er Windows x64 og Linux amd64.
+
+**Bevidste sikkerhedsgrænser:** private filer og lokalt arbejde uploades ikke automatisk. Deling, netværksadgang og publicering kræver eksplicit godkendelse og kontrol. Fjernudførelse er bevidst deaktiveret.
+
+**Uden for aktuelt scope / endnu ikke verificeret:** generel ressourcedeling er fortsat deaktiveret; generelle Linux-/Ollama-/GPU-ressourcebidrag ligger uden for aktuelt RC5-scope. Live Internet Identity fra ende til ende, live nodeadgang, live migration og samspil mellem LAN Build05 og hovedapplikationens API er fortsat **NOT VERIFIED**. Der fremsættes ingen påstand om fysisk optisk/GPU-ydeevne.
 
 Se [kendte begrænsninger](KNOWN_LIMITATIONS.md). Konceptillustrationen udvider ikke det aktuelle Windows/Linux-release-scope og verificerer ikke fremtidige funktioner.
 
