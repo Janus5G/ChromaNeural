@@ -242,6 +242,7 @@ class ConnectionManager:
 from pathlib import Path
 import webbrowser
 from .mcp_catalog import PROFILES, candidates, installed_program, checked_connection, needs_extra_consent
+from . import mcp_rea
 
 
 class Wizard(ConnectionManager):
@@ -519,6 +520,9 @@ class Wizard(ConnectionManager):
             self.locale.widget(tk.Label, card, text=self.locale.msg("wizard.catalog.state",
                 maturity=profile.maturity, state=self.locale.msg(detection)), anchor="w", justify="left",
                 bg="white", fg="#506079", wraplength=340).pack(fill="x", pady=6)
+            if profile.id == "rea" and found:
+                self.locale.widget(tk.Label, card, text=self.locale.msg("wizard.rea.detected",
+                    version=found[0]["version"]), wraplength=340, bg="white").pack(fill="x")
             self.action(card, "wizard.configure" if profile.transport else "wizard.setup_help",
                         lambda p=profile: self.choose_profile(p), anchor="e")
         self.paragraph("wizard.realtime")
@@ -526,7 +530,7 @@ class Wizard(ConnectionManager):
 
     def choose_profile(self, profile):
         self.profile = profile
-        self.identifier = uuid.uuid4().hex
+        self.identifier = ("rea-" if profile.id == "rea" else "") + uuid.uuid4().hex
         self.tested = None
         self.tools = []
         self.tool_vars = {}
@@ -538,6 +542,8 @@ class Wizard(ConnectionManager):
         self.args = []
         self.detected = candidates(profile, self.config.load()["servers"])
         self.tooling_found = bool(installed_program(profile.tooling))
+        if profile.id == "rea":
+            self.rea_runtime = mcp_rea.runtime_status(self.detected[0]["command"] if self.detected else None)
         if len(self.detected) == 1:
             candidate = self.detected[0]
             self.target.set(candidate.get("command", candidate.get("endpoint", "")))
@@ -565,11 +571,35 @@ class Wizard(ConnectionManager):
             self.paragraph("wizard.tooling.detected" if self.tooling_found else "wizard.tooling.absent")
             self.back_next("catalog")
             return
-        self.paragraph("wizard.profile.unverified")
+        if p.id == "rea":
+            runtime = self.rea_runtime
+            self.paragraph("wizard.rea.node.ok" if runtime["compatible"] else "wizard.rea.node.missing",
+                           version=runtime["node"] or self.text("wizard.rea.unknown"))
+            if runtime["npm"]:
+                self.paragraph("wizard.rea.npm.ok", version=runtime["npm"])
+            else:
+                self.paragraph("wizard.rea.npm.missing")
+            self.paragraph("wizard.rea.compatibility")
+            self.paragraph("wizard.rea.optional_engines")
+            self.paragraph("wizard.rea.authorized")
+            self.paragraph("wizard.rea.untrusted")
+            if not self.detected and not self.target.get():
+                self.paragraph("wizard.rea.absent")
+                self.action(self.body, "wizard.setup_help", lambda: self.help("wizard.profile.rea.help"), anchor="w")
+                self.action(self.body, "wizard.scan", self.find_local, anchor="w")
+                self.action(self.body, "wizard.choose_application", self.browse, anchor="w")
+                self.back_next("catalog")
+                return
+            for item in self.detected:
+                self.paragraph("wizard.rea.detected", version=item["version"])
+        if self.profile_blocker():
+            self.paragraph(self.profile_blocker())
+        if p.id != "rea":
+            self.paragraph("wizard.profile.unverified")
         self.name_entry = self.field("wizard.name", self.name)
         self.paragraph("wizard.name.hint")
         self.target_entry = self.field("wizard.address" if p.transport == "http" else "wizard.application", self.target)
-        if p.endpoint:
+        if p.endpoint or p.id == "rea":
             self.target_entry.configure(state="readonly")
         row = tk.Frame(self.body); row.pack(fill="x", padx=5)
         if p.transport == "http":
@@ -588,7 +618,8 @@ class Wizard(ConnectionManager):
             self.paragraph("wizard.local.hint")
             self.action(row, "wizard.find", self.find_local, side="left")
             self.action(row, "wizard.choose_application", self.browse, side="left")
-            self.action(row, "wizard.help_find", lambda: self.help("wizard.local.help"), side="left")
+            self.action(row, "wizard.help_find", lambda: self.help(
+                "wizard.profile.rea.help" if p.id == "rea" else "wizard.local.help"), side="left")
             if not self.detected:
                 self.paragraph("wizard.local.none")
             for candidate in self.detected:
@@ -633,9 +664,21 @@ class Wizard(ConnectionManager):
         self.tool_vars = {}
         self.enable_at_finish.set(False)
 
+    def profile_blocker(self):
+        if self.profile.id == "rea":
+            from .rea_isolation import available
+            if not available():
+                return "wizard.rea.blocked"
+        return self.profile.connection_blocker
+
     def current_draft(self):
+        if self.profile_blocker():
+            raise ValueError("Optional integration execution gate is blocked")
         if self.profile.endpoint and self.target.get().strip() != self.profile.endpoint:
             raise ValueError("Profile target changed")
+        if self.profile.id == "rea" and (not self.rea_runtime["compatible"] or not mcp_rea.valid_launch(
+                self.target.get().strip(), [a.get() for a in self.args])):
+            raise ValueError("REA requires its installed official MCP entrypoint and compatible Node.js")
         if self.profile.executable and Path(self.target.get().strip()).stem.casefold() != self.profile.executable.casefold():
             raise ValueError("Choose the documented profile program")
         return checked_connection(self.identifier, self.name.get(), self.profile.transport,
@@ -648,14 +691,20 @@ class Wizard(ConnectionManager):
         except (ValueError, OSError):
             ok = False
             key = "wizard.error.address" if self.profile.transport == "http" else "wizard.error.program"
+            if self.profile.id == "rea":
+                key = "wizard.rea.invalid" if self.rea_runtime["compatible"] else "wizard.rea.runtime_required"
             if not self.name.get().strip() or len(self.name.get().strip()) > 80:
                 key = "wizard.error.name"
+        if self.profile_blocker():
+            ok, key = False, self.profile_blocker()
         self.validation.set(self.locale.msg(key))
         self.next_button.configure(state="normal" if ok and not self.busy else "disabled")
         return ok
 
     def find_local(self):
         self.detected = candidates(self.profile, self.config.load()["servers"])
+        if self.profile.id == "rea":
+            self.rea_runtime = mcp_rea.runtime_status(self.detected[0]["command"] if self.detected else None)
         if len(self.detected) == 1:
             self.pick_candidate(self.detected[0])
         else:
@@ -663,6 +712,8 @@ class Wizard(ConnectionManager):
 
     def pick_candidate(self, candidate):
         self.invalidate()
+        if self.profile.id == "rea":
+            self.rea_runtime = mcp_rea.runtime_status(candidate["command"])
         self.target.set(candidate["command"])
         self.args = [tk.StringVar(self.window, value=a) for a in candidate.get("args", [])]
         self.show("configure")
@@ -670,6 +721,14 @@ class Wizard(ConnectionManager):
     def browse(self):
         path = filedialog.askopenfilename(parent=self.window, title=self.text("wizard.choose_application"))
         if path:
+            if self.profile.id == "rea":
+                candidate = mcp_rea.candidate(path)
+                if not candidate:
+                    self.status.set(self.locale.msg("wizard.rea.invalid"))
+                    return
+                self.detected = [candidate]
+                self.pick_candidate(candidate)
+                return
             self.invalidate()
             self.target.set(path)
             self.args = []
@@ -725,6 +784,9 @@ class Wizard(ConnectionManager):
         self.back_next("configure", self.approve_and_test, "wizard.approve_test")
 
     def approve_and_test(self):
+        if self.profile_blocker():
+            self.status.set(self.locale.msg(self.profile_blocker()))
+            return
         s = self.current_draft()
         token = self.token.get()
         if token and (not s["endpoint"].startswith("https://") or len(token) > 8192
@@ -746,6 +808,8 @@ class Wizard(ConnectionManager):
             self.status.set(self.locale.msg("wizard.connection.ok"))
             self.show("tools")
         error = "wizard.error.remote" if s["transport"] == "http" else "wizard.error.local"
+        if self.profile.id == "rea":
+            error = "wizard.rea.test_failed"
         self.run(lambda: discover_mcp(self.config.directory, s["id"],
                  {s["id"]: self.secrets.get(s["id"], "")}), done, error)
 

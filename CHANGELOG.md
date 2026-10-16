@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.21-rc.6 — Linux amd64 prerelease
+
+Includes the tested local REA/MCP and resource-based Fair Use V2 infrastructure. Production accounting, production resource measurement and numeric settlement GUI are NOT TESTED and disabled. Controlled MCP tool execution remains paused; local-only AI flows were tested with synthetic responses in English and Danish. No live balance conversion, backend mutation or fixed per-call pricing. RC5 is preserved unchanged.
+
+The older entries below are historical development records; their original preparation/signing statements do not describe RC6.
+
 ## 0.2.21-rc.5 - in preparation
 
 Preserves the working RC4 application. New English/Danish documentation and genuine localized screenshots, Inno Setup packaging, a clean-build workflow and fail-closed test-signing preparation. Windows/Linux GitHub CI passed; separate TEST signing passed according to owner-provided evidence. Integrated CI signing and Foundation/production signing remain BLOCKED. RC5 is not published.

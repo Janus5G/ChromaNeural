@@ -1,4 +1,4 @@
-"""Focused RC5 input/documentation checks; does not rerun closed product gates."""
+"""Focused candidate input/documentation checks; no closed product gate reruns."""
 from pathlib import Path
 import ast,hashlib,json,re,struct,sys
 from urllib.parse import unquote,urlsplit
@@ -16,8 +16,18 @@ def main():
  for p,item in delta['changes'].items():
   assert hashes.get(p)==item['previous_sha256'],'Unexpected wizard baseline'
   hashes[p]=item['sha256']
- assert sha(ROOT/delta['test_file']['path'])==delta['test_file']['sha256']
- assert all(sha(ROOT/p)==h for p,h in hashes.items()),'RC4 application correlation failed'
+ # Layer the reviewed RC6 delta over the preserved RC4/RC5 evidence.
+ historical_hashes=dict(hashes)
+ test_path=delta['test_file']['path']
+ hashes[test_path]=delta['test_file']['sha256']
+ rc6=json.loads((ROOT/'packaging/rc6-acceptance.json').read_text())
+ assert rc6['version']==(ROOT/'VERSION').read_text().strip()=='0.2.21-rc.6'
+ for p,item in rc6['changes'].items():
+  assert p.startswith(('client/','scripts/')) or p==test_path
+  assert hashes.get(p)==item['previous_sha256'],'Unexpected RC6 baseline'
+  hashes[p]=item['sha256']
+ assert all(sha(ROOT/p)==h for p,h in hashes.items()),'Candidate source correlation failed'
+ hashes.pop(test_path)
  current={p.relative_to(ROOT).as_posix() for parent in ('client','scripts') for p in (ROOT/parent).rglob('*') if p.is_file()}
  assert current==set(hashes),'Unexpected application source file'
  for p in files:
@@ -41,13 +51,17 @@ def main():
   if locale=='en':assert not any(x in guide for x in ('Oversigt','Ressourcer','Gem og','forbindelse'))
  manifest=json.loads((ROOT/'docs/SCREENSHOT_MANIFEST.json').read_text())
  assert manifest['status']=='PASS' and len(manifest['captures'])==12
- assert manifest['version']==(ROOT/'VERSION').read_text().strip()
+ assert sha(ROOT/'docs/SCREENSHOT_MANIFEST.json')==rc6['screenshots']['manifest_sha256']
+ assert manifest['version']==rc6['screenshots']['version']=='0.2.21-rc.5'
  # Capture provenance remains historical; accepted additive wizard/locale changes
  # do not relabel old captures as newly generated Linux/package evidence.
  for p,h in manifest['source_hashes'].items():
   if p in delta['changes']:
    assert h==delta['changes'][p]['previous_sha256']
-  else:assert sha(ROOT/p)==h
+  elif p=='VERSION':
+   # Frozen RC5 capture input, including its original CRLF; not the RC6 version.
+   assert h=='73bac203e612bba13ccff191c7c60049a4a5f00c6e7fedda8bd705a4b75ac5af'
+  else:assert historical_hashes.get(p)==h
  for item in manifest['captures']:
   p=ROOT/item['filename'];assert sha(p)==item['sha256'] and item['verification']=='PASS'
   assert p.parts[-3]==item['locale'] and item['locale'] in ('en','da')
@@ -63,5 +77,5 @@ def main():
  assert not any(x in p.relative_to(ROOT).as_posix() for p in files for x in ('docs/images/rc2/','docs/pdf/rc2/'))
  assert 'gh release' not in workflow and 'contents: write' not in workflow
  assert not list((ROOT/'docs').rglob('*.pdf')),'Withdrawn PDFs must not be RC5 inputs'
- print(json.dumps({'status':'PASS','scope':'RC5 source guard, application baseline plus owner-accepted wizard binding, docs/local links, screenshot manifest, pinned manual workflow','sourceFiles':len(files),'applicationFiles':len(hashes),'localLinks':links,'screenshots':12,'remoteExecution':'DISABLED'}))
+ print(json.dumps({'status':'PASS','scope':'RC6 source guard and exact source delta, docs/local links, retained RC5 screenshot provenance, pinned Linux workflow','sourceFiles':len(files),'applicationFiles':len(hashes),'localLinks':links,'screenshots':12,'remoteExecution':'DISABLED'}))
 if __name__=='__main__':main()

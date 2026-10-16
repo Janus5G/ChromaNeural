@@ -1,20 +1,32 @@
-# ChromaNeural 0.2.21-rc.5
+# ChromaNeural 0.2.21-rc.6
 
-PUBLISHED PRERELEASE — Linux amd64 official distribution.
+Linux amd64 prerelease. RC5 is preserved unchanged.
 
-**Official release: Linux amd64.** Source code remains available for community ports and experimentation on other platforms. Windows, macOS and mobile platforms are not currently officially supported or verified.
+This candidate includes the current tested local REA/MCP integration and resource-based Fair Use V2 infrastructure. Fair Use is resource-based, not one point per tool call. Existing local AI discovery, guided optional-tool setup, connection/tool approval and untrusted-result boundaries are preserved.
 
-Windows binary distribution is no longer part of the official release. SignPath, Authenticode and Inno Setup are not dependencies of this Linux release. Historical Windows/signing evidence remains [historical](docs/SIGNING.md).
+## Production status
 
-The guided AI/MCP setup is included; its functional baseline has been manually accepted by Janus. Existing Local AI discovery is preserved. MCP is optional and can be skipped completely. Connection approval and individual tool approval remain separate; session tokens remain memory-only. The curated catalog does not certify vendor interoperability:
+- Production accounting: **NOT TESTED — disabled**.
+- Production resource measurement: **NOT TESTED — disabled**.
+- Numeric settlement GUI: **NOT TESTED — disabled**.
 
-- OPC UA, NVIDIA Isaac Sim, Home Assistant and Siemens Xcelerator: **NOT VERIFIED end-to-end**.
-- ROS 2, MQTT / EMQX and Arduino: **EXPERIMENTAL**.
+The end-to-end production adapters and numeric settlement display are not connected. Controlled MCP execution therefore remains paused; this is a deliberate safe default, not a failed production test. Setup, discovery and approvals remain free. Users can explicitly continue without external tools. No live ChromaPoints, historical balance conversion or live backend changes are included. RAM×time and GPU settlement remain disabled.
 
-All profiles are disabled by default. Discovery is not approval. Potential write/control capabilities require separate explicit consent; MCP is not a realtime machine safety/control loop. No live vendor connection acceptance is claimed.
+## Existing software evidence
 
-English is the default documentation language; Danish documentation and accepted language-matched captures are retained. All seven application UI languages remain available. Withdrawn RC4 documentation/screenshots are excluded.
+- 68 affected Python tests PASS; 1 explicit live integration test skipped.
+- Local RoboForge gateway/compiler MCP protocol acceptance PASS with synthetic allowance and resource meter; production settlement is NOT TESTED.
+- 10/10 new actual Linux GUI checks PASS across English and Danish, using simulated AI responses: startup, cancellation, explicit local-only continuation, proposal review/application and shutdown.
+- Existing mathematical, Motoko, Linux CPU-counter, REA and wizard evidence is retained for its original scope. These suites were not rerun for this release.
 
-The Linux-only workflow builds the DEB and curated source ZIP from a clean checkout, verifies package startup, release inputs, privacy and hashes. The release description identifies the exact build commit and successful CI run for its attached files. SHA256SUMS.txt covers the final DEB and source ZIP only.
+The clean GitHub-hosted Linux build checks the new package bytes, documentation inclusion, privacy, extracted offline startup and final hashes. Its exact commit/run and artifact hashes appear in the GitHub release description.
 
-ChromaSpeechAI remains node-to-node; MCP remains optional node-to-tool; REMOTE_EXECUTION=DISABLED. No Internet Identity, Caffeine, backend or network architecture change is included. [Scope and known limits](KNOWN_LIMITATIONS.md) · [Verification](VERIFICATION.md).
+## Platform and scope
+
+Official release: **Linux amd64 only**. Source remains available for community ports. Windows, macOS and mobile platforms are not officially supported or verified. No Windows binary or signing dependency is part of RC6.
+
+English is the default documentation language; Danish documentation is retained. Existing genuine RC5 screenshots retain their original provenance; no new screenshot campaign or production Fair Use screenshot acceptance is claimed. Withdrawn RC4 documentation/screenshots remain excluded.
+
+OPC UA, NVIDIA Isaac Sim, Home Assistant and Siemens Xcelerator remain NOT VERIFIED end-to-end; ROS 2, MQTT / EMQX and Arduino remain EXPERIMENTAL. REA's previous local isolated tests do not enable production Fair Use or certify other vendor connections. RoboForge has no points balance or pricing system.
+
+Remote execution remains disabled. [Resource Fair Use](docs/en/mcp-usage.md) · [Dansk](docs/da/mcp-usage.md) · [Verification](VERIFICATION.md) · [Downloads](docs/DOWNLOADS.md).

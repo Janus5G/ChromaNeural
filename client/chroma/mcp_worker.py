@@ -36,7 +36,7 @@ def main():
     if req.get("operation") == "discover" and set(req) == {"operation", "directory", "identifier", "secrets"}:
         from chroma.mcp_client import Host
         value = run_operation(Host(req["directory"], req["secrets"]).discover(req["identifier"]))
-    elif req.get("operation") == "infer" and set(req) == {"operation", "directory", "identifiers", "secrets", "model", "source", "instruction"}:
+    elif req.get("operation") == "infer" and set(req) == {"operation", "directory", "identifiers", "secrets", "model", "source", "instruction", "usage_task"}:
         from chroma.ai_provider import selection
         selection("ollama", req["model"])
         if not isinstance(req["source"], str) or len(req["source"].encode()) > 8192:
@@ -44,8 +44,12 @@ def main():
         if not isinstance(req["instruction"], str) or not 0 < len(req["instruction"]) <= 2000:
             raise ValueError("Instruction limit")
         from chroma.mcp_provider import infer
-        value = {"proposal": run_operation(infer(req["source"], req["instruction"], req["model"],
-                   req["directory"], req["identifiers"], req["secrets"]))}
+        from chroma.mcp_usage import Usage
+        try:
+            value = {"proposal": run_operation(infer(req["source"], req["instruction"], req["model"],
+                       req["directory"], req["identifiers"], req["secrets"], req["usage_task"]))}
+        finally:
+            Usage(req["directory"]).finish(req["usage_task"])
     else:
         raise ValueError("Invalid MCP operation")
     body = json.dumps(value, ensure_ascii=True)
@@ -56,6 +60,10 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except BaseException:
-        sys.stderr.write("MCP operation failed\n")
+    except BaseException as error:
+        from chroma.mcp_usage import UsageBlocked
+        if isinstance(error, UsageBlocked):
+            sys.stdout.write('{"usage_blocked":true}')
+        else:
+            sys.stderr.write("MCP operation failed\n")
         raise SystemExit(1)

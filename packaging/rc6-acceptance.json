@@ -1,0 +1,96 @@
+{
+  "version": "0.2.21-rc.6",
+  "baseline_commit": "33c2d056b3e769d4a410869d818a3888c87e8479",
+  "owner_release_authorization": "Publish current tested local state as RC6; preserve RC5; production features NOT TESTED and disabled",
+  "production_accounting": "NOT TESTED — disabled",
+  "production_resource_measurement": "NOT TESTED — disabled",
+  "numeric_settlement_gui": "NOT TESTED — disabled",
+  "existing_evidence": {
+    "affected_python": "68 PASS; 1 explicit live SKIP",
+    "local_roboforge_protocol": "PASS with synthetic meter/allowance",
+    "actual_linux_gui": "10/10 PASS; EN/DA; simulated AI responses"
+  },
+  "screenshots": {
+    "version": "0.2.21-rc.5",
+    "manifest_sha256": "634fdcb16d6cfda9d366363c5b682fde2db83580a71ae7aa5785f9f985f32397",
+    "scope": "retained accepted captures; no new capture or production Fair Use acceptance"
+  },
+  "changes": {
+    "client/chroma/ai_provider.py": {
+      "previous_sha256": "ed40d0af31e79b00780c53ebc438daa9faada6a1ece354cac4b9e7e1b8278d5b",
+      "sha256": "78ba31392bed6434d3cfd56d7f0ebc5cfb9eb6502b40fae8211d0e9a399a99bd"
+    },
+    "client/chroma/mcp_catalog.py": {
+      "previous_sha256": "b4f7979e5494d225cbacd50b4e6802d863f0dd46b34d31274a04a2bd42da8412",
+      "sha256": "ba33dfecfa7b31fe1e1f79f6621e8eaf5594e91f26076b10b86aedbe7ec2885d"
+    },
+    "client/chroma/mcp_client.py": {
+      "previous_sha256": "f8cb8cd57c18fcc4611e57ab32170f6f0df1e454c1c8cf6bcfb09e0d4e743e3b",
+      "sha256": "8b9a7849a1c51d1e529fdf06ae1492d3188319eb068e057d0bb72f25cbc0e62f"
+    },
+    "client/chroma/mcp_provider.py": {
+      "previous_sha256": "732a961cf1cf68ce14e3e177df72b9c1f056165d57f05342b80561b280c3623d",
+      "sha256": "ed88b687f588485f3044abf4a3ce18f2ab9eca538e87bb9f1069e3741087b605"
+    },
+    "client/chroma/mcp_rea.py": {
+      "previous_sha256": null,
+      "sha256": "b6faad35577ed16d62a9e96ac20bef26a0736c32da0de4999b90746c49e08568"
+    },
+    "client/chroma/mcp_usage.py": {
+      "previous_sha256": null,
+      "sha256": "81198cb728fbcded0b9c2dc302d5a264fc85781b984dd4e9c75b2b0ec7b41b9c"
+    },
+    "client/chroma/mcp_usage_ui.py": {
+      "previous_sha256": null,
+      "sha256": "121597240937081e150dd341d3c9622cbe941480f7cb655ee24b4c5d658e7b95"
+    },
+    "client/chroma/mcp_worker.py": {
+      "previous_sha256": "1cf0569b6603a639dc9d4ebbcc8f13345fe4568c6dc1ac9b6a1ad669d10248cb",
+      "sha256": "f45f2e00ad44561512a0dd561a26419b5e2feb9221322094972470061ecd6835"
+    },
+    "client/chroma/network_state.py": {
+      "previous_sha256": "4fa1e0bf82c7a392dd7288b5f9446b831ad6fe84bc965b6099d604b12d2ffad8",
+      "sha256": "6e813bd10421473348a60841bf591a9ab8cfed19bdd6ee2e01681b49f40b3f56"
+    },
+    "client/chroma/onboarding.py": {
+      "previous_sha256": "6a56ca1534a6d2b3312cea869ced55112602078a0bcd2a91ac8b15e3ab41c57a",
+      "sha256": "b9356f7c245aee2bfa21fee301aefabdeea923084c0fca3875e75e8fe67e78a1"
+    },
+    "client/chroma/onboarding_ui.py": {
+      "previous_sha256": "eeb4b4c998c5a7e872993e04faef7c94385be6ca81030f4da4b5a028b4830587",
+      "sha256": "e0b5c20fd81d784c99a888d8e0eb4780450acd44f85c1979f97a92d12c7e955f"
+    },
+    "client/chroma/rea_isolation.py": {
+      "previous_sha256": null,
+      "sha256": "22cdb3bc60e1a0523c8f8814116d517c97f02af94002e34f8dada7fd588a5f82"
+    },
+    "client/chroma/resource_execution.py": {
+      "previous_sha256": null,
+      "sha256": "ef8a0e151c034906cc60c482bc250ec459b43ae33781af168eb3cd4bca3ad2e8"
+    },
+    "client/chroma/resource_policy.py": {
+      "previous_sha256": null,
+      "sha256": "ae47e4f5d06f3a898ecc21a6a579a56b2b3711b35b26c9a298a134b29f6c99b4"
+    },
+    "client/chroma/roboforge_authorization.py": {
+      "previous_sha256": null,
+      "sha256": "05945602e5b8a818bb31159ba0d9e040dbbe7bb773d41a47236fc723cf050cf2"
+    },
+    "client/chroma/ui.py": {
+      "previous_sha256": "7086fb911dee47c7ef2a280295cfed5ffd5b47972614e26990a156ab7ce3904c",
+      "sha256": "0f5aa22ba2417740f3b9a22f286aed4011bd75563001de21f215812341ec3afe"
+    },
+    "client/locales/da.json": {
+      "previous_sha256": "acd3698375d356ed5853b935548d9c1ef0a475e6192424c1634fa5bae614072a",
+      "sha256": "86cb388b4b7c17c2ebbbd92282a2c121d4d5e9fd55198d6030f5d0755286f051"
+    },
+    "client/locales/en.json": {
+      "previous_sha256": "17f0fd65f549c33df8cc8b69959b660327a106eda416873ddccb1b67f82d8434",
+      "sha256": "6b9a85b6000b7d3a44158e15e9fd0727fa3063383ac102a320f388209534583a"
+    },
+    "packaging/test_onboarding_wizard.py": {
+      "previous_sha256": "b3ce1d5c82ef23f694c4fb37ef203739bccac8a6ea92bc06fc9fe51996072b86",
+      "sha256": "b332c214c53bae5c2637894adca73d845946a6abeb4642cb3a27063e9a40aa0a"
+    }
+  }
+}

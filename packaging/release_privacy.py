@@ -3,7 +3,9 @@ import base64,binascii,json,re
 from pathlib import PurePosixPath
 PRIVATE_NAMES={'api-connection-v1.json','preferences.json','ui-language.json',
  'identity.json','credentials.json','mcp-connections.json','mcp.json',
- 'ai-tools.json','service-state.json','.env'}
+ 'ai-tools.json','service-state.json','.env',
+ 'mcp-usage.sqlite3','.mcp-usage-v1.key','.mcp-usage-v1.seal','.mcp-usage.lock',
+ '.mcp-usage-v2.key','.mcp-usage-v2.seal'}
 BAD_SUFFIX={'.db','.sqlite','.sqlite3','.log','.partial','.pem','.key','.pfx','.p12'}
 PROFILE={'principal','backend_canister_id','frontend_canister_id',
  'identity_provider','ii_derivation_origin'}
@@ -13,7 +15,7 @@ def check_name(path):
  p=PurePosixPath(path)
  if p.is_absolute() or '..' in p.parts or ':' in path or '\\' in path:fail(path,'UNSAFE_PATH')
  if p.name.lower() in PRIVATE_NAMES or p.suffix.lower() in BAD_SUFFIX:fail(path,'PRIVATE_STATE_FILENAME')
- if p.name.lower().startswith(('api-connection.','preferences.invalid.')):fail(path,'PRIVATE_STATE_FILENAME')
+ if p.name.lower().startswith(('api-connection.','preferences.invalid.','.mcp-seal-','mcp-usage.sqlite3-')):fail(path,'PRIVATE_STATE_FILENAME')
  if any(x.lower() in {'diagnostics','evidence','logs','private-state'} for x in p.parts):fail(path,'PRIVATE_DIRECTORY')
 def check_object(path,value):
  if isinstance(value,dict):

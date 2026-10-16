@@ -25,3 +25,8 @@ mcp-connections.json
 node-identity*
 *.pfx
 *.p12
+
+# Private local MCP usage enforcement; never release or commit.
+mcp-usage.sqlite3*
+.mcp-usage*
+.mcp-seal-*

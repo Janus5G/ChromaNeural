@@ -1,4 +1,12 @@
-# RC5 verification boundaries
+# RC6 verification boundaries
+
+RC6 includes the tested local REA/MCP/Fair Use V2 candidate. Production accounting, production resource measurement and the numeric settlement GUI are **NOT TESTED — disabled**, not failed tests. No live points or backend mutation occurred. Controlled MCP execution stays paused.
+
+Existing focused evidence: 68 affected Python tests PASS with 1 explicit live-test skip; one real local RoboForge gateway/compiler protocol run PASS using a synthetic allowance and meter; 10/10 actual Linux GUI checks PASS (EN/DA, simulated AI responses). Earlier mathematical, Motoko and CPU-counter evidence retains its original scope and was not repeated. A CPU-counter experiment is not production measurement acceptance.
+
+The current source delta is exactly bound by [RC6 source acceptance](packaging/rc6-acceptance.json). Prior acceptance below is historical, scoped evidence rather than proof of completed production Fair Use. RC5 remains unchanged.
+
+## Retained RC5 evidence
 
 Official release: Linux amd64 only. Documentation and screenshot owner acceptance: PASS. Guided AI/MCP wizard human acceptance: PASS — functional baseline accepted. The existing focused evidence is 24 distinct wizard tests; unchanged backend gates remain closed. Vendor catalog connections are not end-to-end verified.
 

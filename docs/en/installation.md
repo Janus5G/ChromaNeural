@@ -1,18 +1,18 @@
-# Install RC5 on Linux
+# Install RC6 on Linux
 
 [Dansk](../da/installation.md) · [Guide](guide.md)
 
 **Official release: Linux amd64.** Source code remains available for community ports and experimentation on other platforms. Windows, macOS and mobile platforms are not currently officially supported or verified.
 
-[RC5 prerelease / SHA256SUMS](https://github.com/Janus5G/ChromaNeural/releases/tag/v0.2.21-rc.5)
+[RC6 prerelease / SHA256SUMS](https://github.com/Janus5G/ChromaNeural/releases/tag/v0.2.21-rc.6)
 
 ## Linux amd64
 
 Use the native Ubuntu 24.04 amd64 acceptance profile. Dependencies: Python 3.11+ (including Python 3.12 compatibility), Tk, distribution cryptography, Node.js 20+ and libgomp1.
 
 ```sh
-sha256sum chromaneural_0.2.21.rc.5_amd64.deb
-sudo apt install ./chromaneural_0.2.21.rc.5_amd64.deb
+sha256sum chromaneural_0.2.21.rc.6_amd64.deb
+sudo apt install ./chromaneural_0.2.21.rc.6_amd64.deb
 chromaneural
 ```
 

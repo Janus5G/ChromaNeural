@@ -1,8 +1,8 @@
-# ChromaNeural RC5 - brugervejledning
+# ChromaNeural RC6 - brugervejledning
 
 [English](../en/guide.md) · [README](../../README-DK.md) · [Installation](installation.md) · [Privatliv](privacy.md)
 
-Version 0.2.21-rc.5. Linux-prerelease; se [aktuel acceptstatus](../../RELEASE_NOTES.md).
+Version 0.2.21-rc.6. Linux-prerelease; se [aktuel acceptstatus](../../RELEASE_NOTES.md).
 
 ## Første start og sprog
 
@@ -50,6 +50,8 @@ Vælg **Afslut ChromaNeural** for at lukke helt. Vinduets lukkeknap kan minimere
 
 ## Lokal AI og valgfri MCP
 
+**RC6: kontrolleret MCP-udførelse er deaktiveret.** Produktionsregnskab, produktionsmåling og den numeriske afregnings-GUI er **NOT TESTED** og deaktiveret. Opsætning, søgning og godkendelser er fortsat tilgængelige uden pointforbrug. Vælg eksplicit at fortsætte uden eksterne værktøjer for at bruge lokal AI. [Detaljer](mcp-usage.md).
+
 Åbn **AI- og værktøjsopsætning**. Guiden finder lokal AI med den eksisterende søgning. Vælg en faktisk tilgængelig AI, og fortsæt. Eksterne værktøjer er valgfrie: **Spring over for nu** afslutter opsætningen uden MCP. Vælg ellers en katalogprofil, følg dens vejledning, gennemgå målet og vælg **Godkend forbindelse og test**. Godkend derefter kun de ønskede værktøjer; aktivering er et separat valg før **Afslut**.
 
 OPC UA, NVIDIA Isaac Sim, Home Assistant og Siemens Xcelerator er **NOT VERIFIED end-to-end**. ROS 2, MQTT / EMQX og Arduino er **EXPERIMENTAL**. Ingen profil er automatisk godkendt eller aktiveret, og der hævdes ingen verificeret leverandørintegration. [Katalogets afgrænsning](../MCP_ONBOARDING.md).
@@ -81,3 +83,6 @@ ChromaSpeechAI er node-til-node. MCP er valgfri node-til-værktøj. Værktøjsre
 Indsend en redigeret fejlbeskrivelse og applikationsversion. Del aldrig forbindelsesprofil, Principal, token, identitetsmappe, kødatabase eller private filer. Se [privatliv](privacy.md) og [kendte begrænsninger](../../KNOWN_LIMITATIONS.md).
 
 Alle billeder er accepterede optagelser af den faktiske RC5-GUI med isoleret, tom kontotilstand. De viser dokumentationshandlinger, ikke live netværksaccept eller indtjening.
+
+
+[Ressourcebaseret Fair Use: status og lokal forbrugsjournal](mcp-usage.md)

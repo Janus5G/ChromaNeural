@@ -1,5 +1,7 @@
 # Known limits
 
+- RC6 production accounting, production resource measurement and numeric settlement GUI: **NOT TESTED — disabled**. Controlled MCP execution remains paused. Local AI remains available through an explicit local-only choice; discovery and approvals remain free.
+
 - Official release: Linux amd64. Other platforms are community-port possibilities, not officially supported or verified. Windows signing is not a Linux release dependency.
 - Curated catalog: OPC UA, NVIDIA Isaac Sim, Home Assistant and Siemens Xcelerator are NOT VERIFIED end-to-end; ROS 2, MQTT / EMQX and Arduino are EXPERIMENTAL.
 - Live Internet Identity end-to-end, live admission and live migration: NOT VERIFIED.
@@ -8,4 +10,4 @@
 - SHA-256 proves byte integrity, not AI correctness or permission to publish. Local actions cannot award ChromaPoints.
 - The separate LAN Build05 bridge and main health API interoperability are NOT VERIFIED. No synchronization or remote execution is introduced.
 - No specialised physical optical/GPU performance is certified.
-- RC4 was withdrawn; its former documentation/screenshots are not RC5 release material.
+- RC4 was withdrawn; its former documentation/screenshots are not current release material.
