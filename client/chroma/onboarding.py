@@ -43,6 +43,9 @@ def worker(request, timeout=90):
                                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, **options)
     try:
         output, _ = process.communicate(body, timeout=timeout)
+        if output == b'{"usage_blocked":true}' and process.returncode:
+            from .mcp_usage import UsageBlocked
+            raise UsageBlocked("MCP points unavailable; local features remain available")
         if process.returncode or len(output) > 524288:
             raise RuntimeError("MCP operation failed")
         return json.loads(output)

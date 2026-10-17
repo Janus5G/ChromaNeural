@@ -2,6 +2,7 @@
 import asyncio, contextlib, json, os, sys
 from pathlib import Path
 from .mcp_config import Config, IDENT, canonical, fingerprint, connection_key
+from .mcp_rea import is_rea_target
 
 def sdk_path():
     """Release-built native dependencies only; never install anything at runtime."""
@@ -41,8 +42,12 @@ async def connect(server, token=""):
                 raise ValueError("MCP executable unavailable")
             # No inherited API tokens; SDK supplies only its documented minimal environment.
             errlog = stack.enter_context(open(os.devnull, "w"))
-            transport = stdio_client(StdioServerParameters(command=server["command"], args=server["args"],
-                                                          env={}), errlog=errlog)
+            if is_rea_target(server):
+                from .rea_isolation import transport as isolated_rea_transport
+                transport = isolated_rea_transport(server)
+            else:
+                transport = stdio_client(StdioServerParameters(command=server["command"], args=server["args"],
+                                                              env={}), errlog=errlog)
         else:
             import httpx2
             headers = {}
@@ -63,9 +68,13 @@ async def connect(server, token=""):
                 event_hooks={"request": [exact_target]}))
             transport = streamable_http_client(server["endpoint"], http_client=http, max_sse_event_size=131072)
         client = await stack.enter_async_context(Client(transport, read_timeout_seconds=10, cache=None))
+        client.chroma_rea = is_rea_target(server)
         yield client
 
 async def tools(client):
+    if getattr(client, "chroma_rea", False):
+        from .mcp_rea import curated_tools
+        return await curated_tools(client)
     if client.server_capabilities.tools is None:
         return []
     result, cursor, cursors = [], None, set()
@@ -85,9 +94,13 @@ async def tools(client):
     raise ValueError("MCP pagination limit")
 
 class Host:
-    def __init__(self, directory=None, secrets=None):
+    def __init__(self, directory=None, secrets=None, usage_task=None, *, resource_execution=None,
+                 roboforge_authorization=None):
         self.config = Config(directory)
         self.secrets = dict(secrets or {})
+        self.usage_task = usage_task
+        self.resource_execution = resource_execution
+        self.roboforge_authorization = roboforge_authorization
 
     def credential(self, server):
         value = self.secrets.get(server["id"])
@@ -105,7 +118,7 @@ class Host:
 
     async def discover(self, identifier):
         server = self.check(identifier)
-        async with asyncio.timeout(15):
+        async with asyncio.timeout(25 if is_rea_target(server) else 15):
             async with connect(server, self.credential(server)) as client:
                 found = await tools(client)
                 resources = []
@@ -135,7 +148,7 @@ class Host:
             raise ValueError("MCP task tool limit")
         return found
 
-    async def call(self, entry, arguments):
+    async def call(self, entry, arguments, operation_id=None):
         identifier, server, tool = entry
         self.check(identifier, server, enabled=True)
         if server["tools"].get(tool["name"]) != fingerprint(tool):
@@ -147,13 +160,58 @@ class Host:
         from referencing import Registry
         # Empty registry and no retrieval callback: schemas cannot fetch external URLs.
         Draft202012Validator(tool["input_schema"], registry=Registry()).validate(arguments)
-        async with asyncio.timeout(15):
+        roboforge = None
+        if self.roboforge_authorization is not None:
+            from .roboforge_authorization import RoboForgeAuthorization
+            if (type(self.roboforge_authorization) is RoboForgeAuthorization
+                    and self.roboforge_authorization.target == connection_key(server)):
+                roboforge = self.roboforge_authorization
+        if tool['name'].startswith('roboforge_') and roboforge is None:
+            raise PermissionError('Managed RoboForge authorization adapter unavailable')
+        from .mcp_usage import require_resource_policy
+        if self.resource_execution is None:
+            require_resource_policy()  # No live adapter => no paid process/connection.
+        from .resource_execution import ControlledExecution
+        if type(self.resource_execution) is not ControlledExecution:
+            raise PermissionError('Trusted resource execution adapter required')
+        if self.resource_execution.usage.directory.resolve() != self.config.directory.resolve():
+            raise PermissionError('Resource allowance configuration binding differs')
+        async with asyncio.timeout(25 if is_rea_target(server) else 15):
             async with connect(server, self.credential(server)) as client:
                 actual = await tools(client)
                 if tool not in actual:
                     raise PermissionError("MCP tool changed; approval required")
                 self.check(identifier, server, enabled=True)
-                result = await client.call_tool(tool["name"], arguments)
+                from .mcp_usage import digest
+                def authority():
+                    current = self.check(identifier, server, enabled=True)
+                    if current["tools"].get(tool["name"]) != fingerprint(tool):
+                        raise PermissionError("MCP tool is not approved")
+                grant = None
+                if roboforge is not None:
+                    from .roboforge_authorization import GRANT_META
+                    if client.protocol_version not in ('2025-03-26', '2025-06-18', '2025-11-25'):
+                        raise PermissionError('RoboForge grant protocol has not been verified')
+                    grant = roboforge.prepare(server,tool['name'],arguments,operation_id)
+                # Durable DISPATCHING precedes the sole execution boundary.
+                # Ambiguous execution must remain reserved for reconciliation.
+                # No background debit survives cancellation before dispatch.
+                self.resource_execution.dispatch(self.usage_task, operation_id, identifier, tool["name"],
+                    fingerprint(tool), digest(arguments), authority)
+                outcome = "UNCERTAIN"
+                try:
+                    # The high-level SDK Client.call_tool may retry automatically
+                    # after schema/header/input negotiation. Controlled work is a
+                    # single dispatch: session.call_tool never drives those retries.
+                    options = {'meta': {GRANT_META: grant}} if grant is not None else {}
+                    result = await client.session.call_tool(tool["name"], arguments, **options)
+                    if grant is not None:
+                        roboforge.correlate(grant,result.meta)
+                    outcome = "ERROR" if result.is_error else "SUCCESS"
+                finally:
+                    # If cancellation/storage failure prevents finalization, the
+                    # existing DISPATCHING row requires reconciliation, not a refund.
+                    self.resource_execution.complete(operation_id, outcome)
                 self.check(identifier, server, enabled=True)
                 text = "\n".join(b.text for b in result.content if b.type == "text")
                 if len(text.encode()) > 32768 or "\x00" in text:

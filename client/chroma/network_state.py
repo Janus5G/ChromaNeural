@@ -6,7 +6,7 @@ class NetworkState:
         self.cache=Path(cache);self.snapshot=None;self.error="Not connected";self.confirmed_at=0
         self.sharing_enabled=False;self.network_enabled=False
         self._lock=threading.Lock()
-    def update(self,snapshot):
+    def update(self,snapshot,*,persist=True):
         if not isinstance(snapshot,dict) or snapshot.get("status") not in ("READY","DORMANT","UNKNOWN"):raise ValueError("Balance status")
         snapshot=dict(snapshot)
         # Candid optional fields preserve interoperability with the original ledger.
@@ -34,8 +34,9 @@ class NetworkState:
             if self.snapshot and (earned<int(self.snapshot["account"]["earned"]) or spent<int(self.snapshot["account"]["spent"]) or int(policy["epoch"])<int(self.snapshot["policy"]["epoch"])):
                 raise ValueError("Ledger rollback; reconciliation required")
             self.snapshot=snapshot;self.confirmed_at=time.monotonic();self.error=""
-            self.cache.parent.mkdir(parents=True,exist_ok=True)
-            temp=self.cache.with_suffix(".tmp");temp.write_text(json.dumps(snapshot),encoding="utf-8");temp.replace(self.cache)
+            if persist:
+                self.cache.parent.mkdir(parents=True,exist_ok=True)
+                temp=self.cache.with_suffix(".tmp");temp.write_text(json.dumps(snapshot),encoding="utf-8");temp.replace(self.cache)
     def unavailable(self,error):
         with self._lock:self.error=str(error);self.confirmed_at=0
     def status(self):

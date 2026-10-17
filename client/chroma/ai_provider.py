@@ -28,7 +28,7 @@ def request_digest(request):
     return hashlib.sha256(json.dumps(request,sort_keys=True,separators=(",",":"),ensure_ascii=True).encode()).hexdigest()
 
 
-def selected_inference(source,instruction,choice,*,bundled,timeout=90,mcp_servers=None,mcp_directory=None,mcp_secrets=None):
+def selected_inference(source,instruction,choice,*,bundled,timeout=90,mcp_servers=None,mcp_directory=None,mcp_secrets=None,mcp_usage_task=None):
     choice=validate_selection(choice)
     if mcp_servers and choice is None:raise ValueError("MCP tool use requires an explicitly selected Ollama model")
     if choice is None:return bundled(source,instruction,timeout=timeout)
@@ -39,9 +39,15 @@ def selected_inference(source,instruction,choice,*,bundled,timeout=90,mcp_server
     if mcp_servers:
         from .onboarding import worker
         started=time.monotonic()
-        response=worker({"operation":"infer","directory":str(mcp_directory) if mcp_directory is not None else None,
-                         "identifiers":mcp_servers,"secrets":dict(mcp_secrets or {}),"model":choice["model"],
-                         "source":source,"instruction":instruction},timeout=timeout)
+        from .mcp_usage import Usage, task_digest
+        usage=Usage(mcp_directory)
+        usage.validate_task(mcp_usage_task,task_digest(source,instruction,choice["model"],mcp_servers),mcp_servers)
+        try:
+            response=worker({"operation":"infer","directory":str(mcp_directory) if mcp_directory is not None else None,
+                             "identifiers":mcp_servers,"secrets":dict(mcp_secrets or {}),"model":choice["model"],
+                             "source":source,"instruction":instruction,"usage_task":mcp_usage_task},timeout=timeout)
+        finally:
+            usage.finish(mcp_usage_task)
         text=response.get("proposal")
         if not isinstance(text,str) or not text.strip() or "\x00" in text or len(text.encode())>65536:
             raise ValueError("Invalid or oversized provider proposal")

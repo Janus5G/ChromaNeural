@@ -3,10 +3,13 @@ import asyncio, json
 from .mcp_client import Host, sdk_path
 from .mcp_config import canonical
 
-async def infer(source, instruction, model, directory, identifiers, secrets=None):
+async def infer(source, instruction, model, directory, identifiers, secrets=None, usage_task=None):
     sdk_path()
     import httpx2
-    host = Host(directory, secrets)
+    from .mcp_usage import Usage, UsageBlocked, task_digest
+    usage = Usage(directory)
+    cap = usage.validate_task(usage_task, task_digest(source,instruction,model,identifiers), identifiers)
+    host = Host(directory, secrets, usage_task)
     async with asyncio.timeout(85):
         capabilities = await host.capabilities(identifiers)
         offered = [{"type": "function", "function": {"name": alias,
@@ -45,7 +48,7 @@ async def infer(source, instruction, model, directory, identifiers, secrets=None
                     if not isinstance(text, str) or not text.strip() or "\x00" in text or len(text.encode()) > 65536:
                         raise ValueError("Invalid provider proposal")
                     return text
-                if calls + len(requests) > 4:
+                if calls + len(requests) > cap:
                     raise ValueError("MCP task call limit")
                 messages.append({"role": "assistant", "content": message.get("content", ""),
                                  "tool_calls": requests})
@@ -56,7 +59,9 @@ async def infer(source, instruction, model, directory, identifiers, secrets=None
                         raise PermissionError("Unapproved MCP tool request")
                     calls += 1
                     try:
-                        data = await host.call(capabilities[name], arguments)
+                        data = await host.call(capabilities[name], arguments, usage_task + ":" + str(calls))
+                    except UsageBlocked:
+                        raise  # No silent local-only fallback or further paid attempts.
                     except Exception:
                         # No service exception, endpoint, credential or response body enters logs.
                         data = {"is_error": True, "text": "MCP tool unavailable or permission changed"}

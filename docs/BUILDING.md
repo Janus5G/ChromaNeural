@@ -1,8 +1,8 @@
-# RC5 clean Linux builds
+# RC6 clean Linux builds
 
 Official release: Linux amd64 only. Portable Windows/macOS/mobile source is not official platform support. Inno Setup and SignPath are historical Windows tooling, not active release dependencies.
 
-The application baseline is preserved with the explicitly accepted AI/MCP wizard delta bound in `packaging/rc5-wizard-acceptance.json`. No provider, networking or MCP protocol backend was replaced.
+The historical application/wizard baseline remains recorded. `packaging/rc6-acceptance.json` binds the tested local REA/MCP/Fair Use source changes and disabled production status to exact hashes. The validator filename is retained for compatibility; it validates the RC6 candidate. Existing passed feature suites are not rerun by the release workflow.
 
 In a fresh Linux amd64 checkout, run:
 

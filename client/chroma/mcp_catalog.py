@@ -27,6 +27,7 @@ class Profile:
     result_bytes: int = 32768
     concurrent_calls: int = 1
     task_calls: int = 4
+    connection_blocker: str = ""
 
 
 PROFILES = (
@@ -45,6 +46,8 @@ PROFILES = (
     Profile("siemens", "http", "NOT VERIFIED",
             "https://developer.siemens.com/ai-registry/developer-portal/developer-portal-mcp.html",
             endpoint="https://mcp.developer.xcelerator.rocks/mcp", read_tools=("askDeveloperPortal",)),
+    Profile("rea", "stdio", "SUPPORTED", "https://github.com/morluto/rea",
+            read_tools=('inspect_managed_artifact', 'inspect_managed_members', 'inspect_managed_native_boundaries', 'inspect_analysis_view', 'inspect_pe_resources', 'inspect_electron_fuses', 'analyze_javascript_application', 'get_evidence_bundle')),
     Profile("arduino", None, "EXPERIMENTAL",
             "https://blog.arduino.cc/2026/08/12/arduino-app-lab-0-10-meet-agentic-mode/",
             tooling="arduino-cli"),
@@ -94,6 +97,9 @@ def installed_program(name):
 
 def candidates(profile, servers):
     """Only own saved configurations plus one exact documented program name."""
+    if profile.id == "rea":
+        from .mcp_rea import discover
+        return discover(servers)
     found = []
     for server in servers[:16]:
         if profile.transport == "stdio" and server["transport"] == "stdio" and profile.executable:

@@ -1,5 +1,5 @@
 {
-  "version": "0.2.21-rc.5",
+  "version": "0.2.21-rc.6",
   "files": {
     ".gitattributes": {
       "sha256": "d66543c2d13999398fc152dcf0acec998069f243b8ff6d7183d073629437a0c1",
@@ -10,15 +10,15 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     ".github/workflows/native-packages.yml": {
-      "sha256": "0ecd777668a047b82a0e2eac7084363fa2d14e6b2eab8f99f0e2c546ed71693a",
+      "sha256": "8ec2c1115062f8456300cbeb69661ac57df9e86e29efe39127d3d847e018861f",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     ".gitignore": {
-      "sha256": "28a3ecb931be174bff53a8d521bd0575e1ef1dce18759a6b3dbe2d22b32f1471",
+      "sha256": "7683ac0f069126c5bfd639e89804e91bd5c09b1095b328c6d1fdcc1ba3249f34",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "CHANGELOG.md": {
-      "sha256": "e64a5f02bdc62e52a12b0e2e24a5de0847e8a1cc809c563af68f770131f6f5da",
+      "sha256": "d2f286c2c2888f7fc813dd763b46195a55d176d8a048f259187969c2539b3d99",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "CHANGELOG.md"
     },
@@ -38,7 +38,7 @@
       "payload": "ChromaSpeech-WSL.ps1"
     },
     "INSTALLATION.md": {
-      "sha256": "ca803c4f90c4423e7c5e0b639228e97cb02fd9404aed47f46f5242f817ac4282",
+      "sha256": "c4d8368ef8e7ccecf7de103b959f1a7251ac9a680b64da6c7ec499173880f4d8",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "INSTALLATION.md"
     },
@@ -48,7 +48,7 @@
       "payload": "Install-ChromaNeural.ps1"
     },
     "KNOWN_LIMITATIONS.md": {
-      "sha256": "0d5646f85b28c0759a20c018842c6de79d04f957b9e85b41ae69b1840340642e",
+      "sha256": "f05cabfdac53dbf4eff0bf23d7702ad38959c35c4511330db95a86eaf85d6249",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "KNOWN_LIMITATIONS.md"
     },
@@ -63,17 +63,17 @@
       "payload": "NOTICE"
     },
     "README-DK.md": {
-      "sha256": "2f23773eb9b5d74fab7a07d84b5f9fe844b3bae2033403e967b1d0e6fe56163c",
+      "sha256": "f1b45d4ae221bc635438c942712bc082cbdcf4ead66e2a28f59227924e4e0420",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "README-DK.md"
     },
     "README.md": {
-      "sha256": "8d048331f041a678677981ffe2aa4926dbfa4f8973e0c4d861787b3b0d638650",
+      "sha256": "5f781a8c35b477d0e59060a4d7f0f7997f0a2c6c6bd3c461115380033e6bfa7a",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "README.md"
     },
     "RELEASE_NOTES.md": {
-      "sha256": "c1ac226d4f3a4cf6bb0b9e8238738a14da66c3fd907971d52f5acbf39ff2c3cd",
+      "sha256": "ed21ead4ef2f4c760011f379a9084ee8a71ea34aaf5d823d70214c8cd119db0c",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "RELEASE_NOTES.md"
     },
@@ -98,12 +98,12 @@
       "payload": "THIRD_PARTY_NOTICES.md"
     },
     "VERIFICATION.md": {
-      "sha256": "bf945a8fa9109e40a7eb9a936aa5d32ae3211fb39e131543caa829c3046c5bd5",
+      "sha256": "0095d0b1ed4f7e5c4ca39a3aa8721b89cf15bbc553ea6a6f051640b45cc3edf5",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "VERIFICATION.md"
     },
     "VERSION": {
-      "sha256": "73bac203e612bba13ccff191c7c60049a4a5f00c6e7fedda8bd705a4b75ac5af",
+      "sha256": "b92c830d7dbe828ef6c3d37977879cff49af041ce192e104bc40b7ce1370c3a0",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "VERSION"
     },
@@ -123,7 +123,7 @@
       "payload": "client/chroma/__init__.py"
     },
     "client/chroma/ai_provider.py": {
-      "sha256": "ed40d0af31e79b00780c53ebc438daa9faada6a1ece354cac4b9e7e1b8278d5b",
+      "sha256": "78ba31392bed6434d3cfd56d7f0ebc5cfb9eb6502b40fae8211d0e9a399a99bd",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/ai_provider.py"
     },
@@ -198,7 +198,7 @@
       "payload": "client/chroma/localized_views.py"
     },
     "client/chroma/mcp_client.py": {
-      "sha256": "f8cb8cd57c18fcc4611e57ab32170f6f0df1e454c1c8cf6bcfb09e0d4e743e3b",
+      "sha256": "8b9a7849a1c51d1e529fdf06ae1492d3188319eb068e057d0bb72f25cbc0e62f",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/mcp_client.py"
     },
@@ -208,12 +208,12 @@
       "payload": "client/chroma/mcp_config.py"
     },
     "client/chroma/mcp_provider.py": {
-      "sha256": "732a961cf1cf68ce14e3e177df72b9c1f056165d57f05342b80561b280c3623d",
+      "sha256": "ed88b687f588485f3044abf4a3ce18f2ab9eca538e87bb9f1069e3741087b605",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/mcp_provider.py"
     },
     "client/chroma/mcp_worker.py": {
-      "sha256": "1cf0569b6603a639dc9d4ebbcc8f13345fe4568c6dc1ac9b6a1ad669d10248cb",
+      "sha256": "f45f2e00ad44561512a0dd561a26419b5e2feb9221322094972470061ecd6835",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/mcp_worker.py"
     },
@@ -223,7 +223,7 @@
       "payload": "client/chroma/native_ai.py"
     },
     "client/chroma/network_state.py": {
-      "sha256": "4fa1e0bf82c7a392dd7288b5f9446b831ad6fe84bc965b6099d604b12d2ffad8",
+      "sha256": "6e813bd10421473348a60841bf591a9ab8cfed19bdd6ee2e01681b49f40b3f56",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/network_state.py"
     },
@@ -233,12 +233,12 @@
       "payload": "client/chroma/node_setup.py"
     },
     "client/chroma/onboarding.py": {
-      "sha256": "6a56ca1534a6d2b3312cea869ced55112602078a0bcd2a91ac8b15e3ab41c57a",
+      "sha256": "b9356f7c245aee2bfa21fee301aefabdeea923084c0fca3875e75e8fe67e78a1",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/onboarding.py"
     },
     "client/chroma/onboarding_ui.py": {
-      "sha256": "eeb4b4c998c5a7e872993e04faef7c94385be6ca81030f4da4b5a028b4830587",
+      "sha256": "e0b5c20fd81d784c99a888d8e0eb4780450acd44f85c1979f97a92d12c7e955f",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/onboarding_ui.py"
     },
@@ -338,7 +338,7 @@
       "payload": "client/chroma/tray.py"
     },
     "client/chroma/ui.py": {
-      "sha256": "7086fb911dee47c7ef2a280295cfed5ffd5b47972614e26990a156ab7ce3904c",
+      "sha256": "0f5aa22ba2417740f3b9a22f286aed4011bd75563001de21f215812341ec3afe",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/ui.py"
     },
@@ -373,7 +373,7 @@
       "payload": "client/locale-registry.json"
     },
     "client/locales/da.json": {
-      "sha256": "acd3698375d356ed5853b935548d9c1ef0a475e6192424c1634fa5bae614072a",
+      "sha256": "86cb388b4b7c17c2ebbbd92282a2c121d4d5e9fd55198d6030f5d0755286f051",
       "classification": "PUBLIC_PRODUCT_JSON",
       "payload": "client/locales/da.json"
     },
@@ -383,7 +383,7 @@
       "payload": "client/locales/de.json"
     },
     "client/locales/en.json": {
-      "sha256": "17f0fd65f549c33df8cc8b69959b660327a106eda416873ddccb1b67f82d8434",
+      "sha256": "6b9a85b6000b7d3a44158e15e9fd0727fa3063383ac102a320f388209534583a",
       "classification": "PUBLIC_PRODUCT_JSON",
       "payload": "client/locales/en.json"
     },
@@ -573,12 +573,12 @@
       "payload": "docs/BRANDING.md"
     },
     "docs/BUILDING.md": {
-      "sha256": "c086bba876acca948b6d111e220280dab468907b8d550ee51cd131cc10476a85",
+      "sha256": "ad3a61f1807e1db7a56937ba6e07176e90c0f1e03314f2b61009fc3b95850e5c",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/BUILDING.md"
     },
     "docs/DOWNLOADS.md": {
-      "sha256": "49d2850c751af253bddad2d58693bce9336f6340ab7a3962d536d5a9ba9cdd2d",
+      "sha256": "a7f27b23ab21bc2d650fb840bcc3527a3162cf9673c195ecaa7d74a0b0fb00de",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/DOWNLOADS.md"
     },
@@ -608,7 +608,7 @@
       "payload": "docs/MCP_ONBOARDING.md"
     },
     "docs/README.md": {
-      "sha256": "2ae5da49f242c8c1659ef41d6d966c54217cc856129d9130f52077d4b068fb20",
+      "sha256": "3bb25dee35870f2b7b13d6d0c65954f855adaa87f65efbe777e30776de5dac7c",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/README.md"
     },
@@ -630,7 +630,7 @@
     "docs/da/guide.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/da/guide.md",
-      "sha256": "fa58c4c1206e8687141bd0398c5c9d92c9800e8299c955b906b81318168a9bc9"
+      "sha256": "242230c89d7ad2a110a4df470956909595ea99b266927040f5c457c3a84d180a"
     },
     "docs/da/images/activity.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
@@ -665,7 +665,7 @@
     "docs/da/installation.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/da/installation.md",
-      "sha256": "88365309a4924975441c75c6c80fa8f96a48c46c0cfab591f9f448e939177c92"
+      "sha256": "681ce962c60fb1215be414998df2489f40746918b19c08e58f7885fa86bc8d00"
     },
     "docs/da/privacy.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
@@ -675,7 +675,7 @@
     "docs/en/guide.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/en/guide.md",
-      "sha256": "06f82bbb2d95ba24d15354f3d96f0b27fd022523f832e32b3af5f6d3cea407ee"
+      "sha256": "697c57174d155a2f72af872ca0b17ee1846511fe0a881ddc37d64a2b0215b9a0"
     },
     "docs/en/images/activity.png": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
@@ -710,7 +710,7 @@
     "docs/en/installation.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "docs/en/installation.md",
-      "sha256": "9b16801b240e3cc563e6babb450bf1ab09dfe60fafdfe87a87f8c7eac6beaa28"
+      "sha256": "d8a9daa246a5c6626c8ef8778cb2245c050fdc40df34b22644f2b4e79357eafd"
     },
     "docs/en/privacy.md": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
@@ -937,7 +937,7 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "packaging/release_privacy.py": {
-      "sha256": "9b359032bd7ab396334dbefafeb5bbc06b1906e1a848c2342ccec24390af8f0e",
+      "sha256": "9e0b65a9ca5dfe67755348a890727b8756ed0719297c751c6f0fa7014a7b95d7",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "packaging/requirements-mcp.txt": {
@@ -969,12 +969,12 @@
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "packaging/test_mcp.py": {
-      "sha256": "f1d629ab749663a23c2b0830f4fced3d14addab78553a5e0a8a1bae9ea15b346",
+      "sha256": "5814be7d7c9ed6fbd001b14e3ec6c1e19b9b0318c62473e7104abec65b5eb714",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
     },
     "packaging/validate_rc5.py": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
-      "sha256": "329d2e0270c57ae120988220b1ceba0bf9dd5fc54902818f247742f1acceaee7"
+      "sha256": "ae01489081809a713114903e06dbe5d995cefc04bcda1d4e45e3064fa32d201a"
     },
     "packaging/windows/ChromaNeural.iss": {
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
@@ -1016,7 +1016,7 @@
       "sha256": "9fc78d19a2fe543b56e99554579c98f27845712bcf85b268b110c94558ffef6a"
     },
     "client/chroma/mcp_catalog.py": {
-      "sha256": "b4f7979e5494d225cbacd50b4e6802d863f0dd46b34d31274a04a2bd42da8412",
+      "sha256": "ba33dfecfa7b31fe1e1f79f6621e8eaf5594e91f26076b10b86aedbe7ec2885d",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE",
       "payload": "client/chroma/mcp_catalog.py"
     },
@@ -1025,8 +1025,101 @@
       "classification": "PUBLIC_PRODUCT_JSON"
     },
     "packaging/test_onboarding_wizard.py": {
-      "sha256": "b3ce1d5c82ef23f694c4fb37ef203739bccac8a6ea92bc06fc9fe51996072b86",
+      "sha256": "b332c214c53bae5c2637894adca73d845946a6abeb4642cb3a27063e9a40aa0a",
       "classification": "PRODUCT_SOURCE_OR_RESOURCE"
+    },
+    "client/chroma/mcp_rea.py": {
+      "sha256": "b6faad35577ed16d62a9e96ac20bef26a0736c32da0de4999b90746c49e08568",
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "payload": "client/chroma/mcp_rea.py"
+    },
+    "packaging/test_rea_profile.py": {
+      "sha256": "69a263044588090fc2bb0b5c9d1a108be8563c4eb5618030fd8734993d780364",
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE"
+    },
+    "client/chroma/rea_isolation.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "22cdb3bc60e1a0523c8f8814116d517c97f02af94002e34f8dada7fd588a5f82",
+      "payload": "client/chroma/rea_isolation.py"
+    },
+    "packaging/test_rea_adapter.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "214068c74fc707c49e8794d38b030ac8edb19dd477f617d6ebe1d4d5b61cc2c6"
+    },
+    "packaging/test_rea_containment.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "1a3afb7dd5bfaabf6577a0c33a0eb303b1e41d6fb80d1ddf403948dcc46c29c2"
+    },
+    "packaging/REA_PROFILE.md": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "4f73a8cc997b42fe87d612f80670418a6e185f617222ec15f44c39671d988872"
+    },
+    "client/chroma/mcp_usage.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "81198cb728fbcded0b9c2dc302d5a264fc85781b984dd4e9c75b2b0ec7b41b9c",
+      "payload": "client/chroma/mcp_usage.py"
+    },
+    "client/chroma/mcp_usage_ui.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "121597240937081e150dd341d3c9622cbe941480f7cb655ee24b4c5d658e7b95",
+      "payload": "client/chroma/mcp_usage_ui.py"
+    },
+    "docs/en/mcp-usage.md": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "fa6c17147bf93bf83c5945e4c6f587487f1d000dab9c141e69bffba2bff1ce7c",
+      "payload": "docs/en/mcp-usage.md"
+    },
+    "docs/da/mcp-usage.md": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "6e126f0b2f00dbbf47cb8bc7427f085f6c49f18e5771894f00d665edcc35a7bf",
+      "payload": "docs/da/mcp-usage.md"
+    },
+    "packaging/test_mcp_usage.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "e6bb75f2f91dd0c560a0b238c839da8c448bf88d8666ac831eed6cc6037dce6b"
+    },
+    "packaging/test_mcp_usage_ui.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "818b2f89d203793dce7939836f8f6c789ed70e4857ac4190177a8e5f3a8093b3"
+    },
+    "client/chroma/resource_policy.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "ae47e4f5d06f3a898ecc21a6a579a56b2b3711b35b26c9a298a134b29f6c99b4",
+      "payload": "client/chroma/resource_policy.py"
+    },
+    "client/chroma/resource_execution.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "ef8a0e151c034906cc60c482bc250ec459b43ae33781af168eb3cd4bca3ad2e8",
+      "payload": "client/chroma/resource_execution.py"
+    },
+    "packaging/test_resource_policy.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "e9a90e18a9026dcd9ed97d07359b76cec136da3ce70a5dcffe23de6d8ae3bc37"
+    },
+    "packaging/test_resource_journal.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "59319ba1977165cb64e695ee088ebb4924c8439c067f1686a408828669bf3a27"
+    },
+    "packaging/test_resource_execution.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "6c52c4870cf509a797c55e8ef7cdc53f8fc0f388456149c2d961d6e97d37ca62"
+    },
+    "client/chroma/roboforge_authorization.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "payload": "client/chroma/roboforge_authorization.py",
+      "sha256": "05945602e5b8a818bb31159ba0d9e040dbbe7bb773d41a47236fc723cf050cf2"
+    },
+    "packaging/test_resource_epoch.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "fcddb06d3d16e08d83d37c94c7b8d4237af248da21507a72c990a6e7a2d40ffe"
+    },
+    "packaging/test_roboforge_authorization.py": {
+      "classification": "PRODUCT_SOURCE_OR_RESOURCE",
+      "sha256": "61c48a505406b686af93a333fe6a17e9e4c0c4332df9c1415f4b552efbbdebc6"
+    },
+    "packaging/rc6-acceptance.json": {
+      "sha256": "0ff9d8ed3e582deb26cff7023557c5ec99b098e4a93d463257c9060b9228a378",
+      "classification": "PUBLIC_PRODUCT_JSON"
     }
   }
 }

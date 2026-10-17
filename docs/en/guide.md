@@ -1,8 +1,8 @@
-# ChromaNeural RC5 user guide
+# ChromaNeural RC6 user guide
 
 [Dansk](../da/guide.md) · [README](../../README.md) · [Installation](installation.md) · [Privacy](privacy.md)
 
-Version 0.2.21-rc.5. Linux prerelease; see [current acceptance status](../../RELEASE_NOTES.md).
+Version 0.2.21-rc.6. Linux prerelease; see [current acceptance status](../../RELEASE_NOTES.md).
 
 ## First start and language
 
@@ -50,6 +50,8 @@ Select **Exit ChromaNeural** to close completely. The window close button can mi
 
 ## Local AI and optional MCP
 
+**RC6: controlled MCP execution is disabled.** Production accounting, production resource measurement and the numeric settlement GUI are **NOT TESTED** and disabled. Setup, discovery and approvals remain available without spending points. Explicitly continue without external tools to use local AI. [Details](mcp-usage.md).
+
 Open **AI & tools setup**. The wizard finds local AI through the existing discovery mechanism. Choose an actually available AI and continue. External tools are optional: **Skip for now** completes setup without MCP. Otherwise choose a catalog profile, follow its setup help, review the target and select **Approve connection and test**. Approve only the tools you need; enabling is a separate choice before **Finish**.
 
 OPC UA, NVIDIA Isaac Sim, Home Assistant and Siemens Xcelerator are **NOT VERIFIED end-to-end**. ROS 2, MQTT / EMQX and Arduino are **EXPERIMENTAL**. No profile is automatically approved or enabled, and no verified vendor integration is claimed. [Catalog boundaries](../MCP_ONBOARDING.md).
@@ -81,3 +83,6 @@ ChromaSpeechAI is node-to-node. MCP is optional node-to-tool. Tool results are u
 Report a redacted problem description and application version. Never submit a connection profile, principal, token, identity directory, queue database or private file. See [privacy](privacy.md) and [known limitations](../../KNOWN_LIMITATIONS.md).
 
 All images above are accepted captures of the actual RC5 GUI with isolated empty account state. They show documentation interactions, not live network acceptance or income.
+
+
+[Resource Fair Use: status and local usage journal](mcp-usage.md)

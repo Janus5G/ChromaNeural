@@ -150,11 +150,15 @@ class App:
         instruction=self.dialogs.askstring((self.locale.msg('studio.ai')), (self.locale.msg('studio.instruction')))
         if not instruction:return
         if not self.dialogs.askyesno((self.locale.msg('studio.consent.title')), (self.locale.msg('studio.consent'))):return
-        servers=[]
+        servers=[];usage_task=None
+        source=self.editor.get("1.0","end-1c")
         if model!="bundled-cpu":
             available=[s for s in config["servers"] if s["approved"] and s["enabled"] and s["tools"]]
-            if available and self.dialogs.askyesno(self.locale.msg("tools_setup.mcp"),self.locale.msg("tools_setup.task.consent",servers=", ".join(s["name"] for s in available))):
-                servers=[s["id"] for s in available]
+            if available:
+                from .mcp_usage_ui import confirm_task
+                result=confirm_task(self.root,self.locale,self.settings_dir,available,source,instruction,model)
+                if result is None:return
+                servers,usage_task=result
         source=self.editor.get("1.0","end-1c");workspace=self.workspace;name=self.name;self.busy=True
         def job():
             try:
@@ -163,12 +167,20 @@ class App:
                     from .native_ai import infer
                     proposed=selected_inference(source,instruction,selection("ollama",model),bundled=infer,
                         mcp_servers=servers,mcp_directory=self.settings_dir,
-                        mcp_secrets={s:self.mcp_secrets.get(s,"") for s in servers}).source
+                        mcp_secrets={s:self.mcp_secrets.get(s,"") for s in servers},
+                        mcp_usage_task=usage_task).source
                 else:
                     from .local_ai import suggest
                     proposed=suggest(source,model,instruction)
                 self.queue.put((True,{"ai_proposal":proposed,"workspace":workspace,"name":name}))
-            except Exception as e:self.queue.put((False,str(e)))
+            except Exception as e:
+                from .mcp_usage import UsageBlocked
+                self.queue.put((False,self.locale.msg("usage.unavailable") if isinstance(e,UsageBlocked) else str(e)))
+            finally:
+                if usage_task:
+                    from .mcp_usage import Usage
+                    try:Usage(self.settings_dir).finish(usage_task)
+                    except Exception:pass # Reserved slots expire; dispatched calls stay charged.
         threading.Thread(target=job,daemon=True).start()
     def network_window(self):
         if self.on_network:return self.on_network()

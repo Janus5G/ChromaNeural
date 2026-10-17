@@ -115,13 +115,13 @@ class WizardTests(unittest.TestCase):
             self.w.test_ai()
             test.assert_not_called()
 
-    def test_catalog_has_seven_profiles_no_network_or_custom(self):
+    def test_catalog_has_eight_profiles_no_network_or_custom(self):
         with patch.object(socket.socket, "connect", side_effect=AssertionError("network")), patch.object(ui, "discover_mcp") as discover:
             self.w.show("catalog")
             discover.assert_not_called()
-        self.assertEqual(len(self.w.catalog_cards), 7)
+        self.assertEqual(len(self.w.catalog_cards), 8)
         self.assertTrue(all(not p.enabled for p in PROFILES))
-        self.assertFalse(any(p.maturity == "SUPPORTED" for p in PROFILES))
+        self.assertTrue(all(p.maturity != "SUPPORTED" for p in PROFILES if p.id != "rea"))
         self.assertFalse(any("Custom" in str(c.cget("text")) for c in children(self.w.body) if isinstance(c, tk.Button)))
 
     def test_experimental_profiles_do_not_expose_guessed_connection(self):
@@ -344,7 +344,7 @@ class DiscoveryTests(unittest.TestCase):
 
     def test_profile_routes_and_limits(self):
         routes = {p.id: p.transport for p in PROFILES}
-        self.assertEqual(routes, dict(opcua="stdio", ros2=None, isaac="http", emqx=None, homeassistant="http", siemens="http", arduino=None))
+        self.assertEqual(routes, dict(opcua="stdio", ros2=None, isaac="http", emqx=None, homeassistant="http", siemens="http", arduino=None, rea="stdio"))
         for p in PROFILES:
             self.assertEqual(p.concurrent_calls, 1)
             self.assertEqual(p.task_calls, 4)
